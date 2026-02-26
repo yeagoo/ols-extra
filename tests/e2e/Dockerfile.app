@@ -9,25 +9,22 @@ FROM litespeedtech/openlitespeed:latest
 # Requirements: 13.2, 13.3, 13.6
 # =============================================================================
 
-# Install LSPHP 8.1 with required extensions
+# Install additional packages needed for PHP app testing.
+# NOTE: The base image already ships LSPHP with gd, mbstring, xml, zip
+# compiled in. Only separate extension packages (mysql, curl, intl) and
+# system utilities need to be installed explicitly.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    lsphp81 \
-    lsphp81-common \
     lsphp81-mysql \
     lsphp81-curl \
-    lsphp81-gd \
     lsphp81-intl \
-    lsphp81-mbstring \
-    lsphp81-xml \
-    lsphp81-zip \
     curl \
     unzip \
     wget \
     mariadb-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Ensure lsphp81 is the default PHP binary
-RUN ln -sf /usr/local/lsws/lsphp81/bin/php /usr/local/bin/php
+# Ensure lsphp81 is the default PHP binary (may already exist in base image)
+RUN ln -sf /usr/local/lsws/lsphp81/bin/php /usr/local/bin/php 2>/dev/null || true
 
 # Copy the compiled ols_htaccess module (Req 13.3)
 COPY build/ols_htaccess.so /usr/local/lsws/modules/ols_htaccess.so
