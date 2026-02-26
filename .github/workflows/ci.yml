@@ -387,14 +387,20 @@ jobs:
 
       - name: Debug OLS config
         run: |
-          echo "=== httpd_config.conf (listener + vhost sections) ==="
-          docker compose -f tests/e2e/docker-compose.yml exec -T ols grep -A5 'listener\|virtualhost\|vhRoot\|docRoot\|scripthandler\|extprocessor\|ols_htaccess' /usr/local/lsws/conf/httpd_config.conf 2>/dev/null || true
+          echo "=== Full httpd_config.conf ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/httpd_config.conf 2>/dev/null || true
           echo ""
-          echo "=== vhconf.conf (localhost vhost) ==="
+          echo "=== docker.conf template ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/templates/docker.conf 2>/dev/null || true
+          echo ""
+          echo "=== vhconf.conf (if exists) ==="
           docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/vhosts/localhost/vhconf.conf 2>/dev/null || true
           echo ""
           echo "=== Document root listing ==="
           docker compose -f tests/e2e/docker-compose.yml exec -T ols ls -la /var/www/vhosts/localhost/html/ 2>/dev/null || true
+          echo ""
+          echo "=== fcgi-bin links ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols ls -la /usr/local/lsws/fcgi-bin/ 2>/dev/null || true
           echo ""
           echo "=== Test static index.html ==="
           curl -sv http://localhost:8088/ 2>&1 || true

@@ -14,7 +14,7 @@ services:
       dockerfile: tests/e2e/Dockerfile.app
     container_name: ols-app-e2e
     ports:
-      - "8088:8088"
+      - "8088:80"
     depends_on:
       db:
         condition: service_healthy
