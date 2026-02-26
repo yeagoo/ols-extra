@@ -380,7 +380,7 @@ jobs:
           cmake --build build --parallel $(nproc)
 
       - name: Start app stack
-        run: docker-compose -f tests/e2e/docker-compose.yml up -d --build
+        run: docker compose -f tests/e2e/docker-compose.yml up -d --build
 
       - name: Wait for services
         run: bash tests/e2e/lib/wait_for_services.sh
@@ -391,9 +391,9 @@ jobs:
       - name: Collect logs on failure
         if: failure()
         run: |
-          docker-compose -f tests/e2e/docker-compose.yml logs ols || true
-          docker-compose -f tests/e2e/docker-compose.yml exec ols cat /usr/local/lsws/logs/error.log || true
+          docker compose -f tests/e2e/docker-compose.yml logs ols || true
+          docker compose -f tests/e2e/docker-compose.yml exec ols cat /usr/local/lsws/logs/error.log || true
 
       - name: Cleanup
         if: always()
-        run: docker-compose -f tests/e2e/docker-compose.yml down -v
+        run: docker compose -f tests/e2e/docker-compose.yml down -v

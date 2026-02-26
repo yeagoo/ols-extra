@@ -59,13 +59,13 @@ cleanup() {
         echo "=== Containers kept for debugging ==="
         echo "  Compose file: ${COMPOSE_FILE}"
         echo "  OLS URL:      http://localhost:8088/"
-        echo "  Logs:         docker-compose -f ${COMPOSE_FILE} logs"
-        echo "  Stop:         docker-compose -f ${COMPOSE_FILE} down -v"
+        echo "  Logs:         docker compose -f ${COMPOSE_FILE} logs"
+        echo "  Stop:         docker compose -f ${COMPOSE_FILE} down -v"
         return
     fi
     echo ""
     echo "=== Cleaning up ==="
-    docker-compose -f "${COMPOSE_FILE}" down -v 2>/dev/null || true
+    docker compose -f "${COMPOSE_FILE}" down -v 2>/dev/null || true
     echo "Containers and volumes removed."
 }
 
@@ -87,10 +87,10 @@ echo "Module compiled successfully."
 echo ""
 
 # ---------------------------------------------------------------------------
-# Step 2: Start the app stack with docker-compose
+# Step 2: Start the app stack with docker compose
 # ---------------------------------------------------------------------------
 echo "--- Step 2: Starting app stack ---"
-docker-compose -f "${COMPOSE_FILE}" up -d --build
+docker compose -f "${COMPOSE_FILE}" up -d --build
 echo "App stack started."
 echo ""
 
