@@ -14,15 +14,16 @@
 
 set -euo pipefail
 
-# Source the assertions library
+# Override globals for the app stack (must be set BEFORE sourcing assertions.sh
+# which uses these as defaults)
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+export OLS_HOST="${OLS_HOST:-http://localhost:8088}"
+export OLS_CONTAINER="${OLS_CONTAINER:-ols-app-e2e}"
+export OLS_DOCROOT="/var/www/vhosts/localhost/html"
+
+# Source the assertions library
 source "${SCRIPT_DIR}/lib/assertions.sh"
 source "${SCRIPT_DIR}/lib/coverage.sh"
-
-# Override globals for the app stack
-OLS_HOST="${OLS_HOST:-http://localhost:8088}"
-OLS_CONTAINER="${OLS_CONTAINER:-ols-app-e2e}"
-OLS_DOCROOT="/var/www/vhosts/localhost/html"
 
 # =============================================================================
 # Helper: run WP-CLI commands inside the container
