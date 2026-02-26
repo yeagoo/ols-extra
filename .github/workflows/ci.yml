@@ -1,0 +1,237 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  # ── Job 1: Build + Unit/Property Tests ──────────────────────────────
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build_type: [Debug, Release]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ ninja-build
+
+      - name: Configure
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+
+      - name: Build
+        run: cmake --build build --parallel $(nproc)
+
+      - name: Verify .so artifact
+        run: |
+          test -f build/ols_htaccess.so
+          file build/ols_htaccess.so | grep "shared object"
+
+      - name: Run unit tests
+        run: ctest --test-dir build -R "unit_tests" --output-on-failure --parallel $(nproc)
+
+      - name: Run property tests
+        run: ctest --test-dir build -R "property_tests" --output-on-failure --parallel $(nproc)
+
+  # ── Job 2: .htaccess Compatibility Tests ────────────────────────────
+  compatibility:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ ninja-build
+
+      - name: Build (Release)
+        run: |
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --parallel $(nproc)
+
+      - name: Run compatibility tests
+        run: ./build/tests/compat_tests
+
+  # ── Job 3: Apache httpd Behaviour Comparison ────────────────────────
+  apache-comparison:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Apache
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apache2 curl
+          sudo a2enmod headers expires rewrite env setenvif
+
+      - name: Prepare document root
+        run: |
+          sudo mkdir -p /var/www/test/subdir
+          echo "<h1>OK</h1>" | sudo tee /var/www/test/index.html
+          echo "<?php phpinfo();" | sudo tee /var/www/test/index.php
+          echo "img" | sudo tee /var/www/test/photo.jpg
+          sudo chown -R www-data:www-data /var/www/test
+
+      - name: Configure Apache vhost
+        run: |
+          sudo tee /etc/apache2/sites-available/test.conf << 'EOF'
+          <VirtualHost *:80>
+              ServerName localhost
+              DocumentRoot /var/www/test
+              <Directory /var/www/test>
+                  AllowOverride All
+                  Require all granted
+              </Directory>
+              LogLevel debug
+              ErrorLog ${APACHE_LOG_DIR}/test-error.log
+          </VirtualHost>
+          EOF
+          sudo a2dissite 000-default
+          sudo a2ensite test
+          sudo systemctl restart apache2
+
+      - name: Test Header directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Header set X-Frame-Options "SAMEORIGIN"
+          Header set X-Content-Type-Options "nosniff"
+          Header append Cache-Control "public"
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "X-Frame-Options: SAMEORIGIN"
+          echo "$RESP" | grep -qi "X-Content-Type-Options: nosniff"
+          echo "$RESP" | grep -qi "Cache-Control.*public"
+          echo "✓ Header directives match Apache behaviour"
+
+      - name: Test Redirect directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Redirect 301 /old-page /new-page
+          Redirect /temp-page /other-page
+          HTACCESS
+          sleep 1
+          # 301 redirect
+          RESP=$(curl -sI http://localhost/old-page)
+          echo "$RESP"
+          echo "$RESP" | grep -q "301"
+          echo "$RESP" | grep -qi "Location:.*/new-page"
+          # Default 302 redirect
+          RESP=$(curl -sI http://localhost/temp-page)
+          echo "$RESP"
+          echo "$RESP" | grep -q "302"
+          echo "$RESP" | grep -qi "Location:.*/other-page"
+          echo "✓ Redirect directives match Apache behaviour"
+
+      - name: Test ErrorDocument directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          ErrorDocument 404 "Custom Not Found Message"
+          ErrorDocument 403 https://example.com/forbidden
+          HTACCESS
+          sleep 1
+          # 404 text message
+          RESP=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/nonexistent)
+          echo "Status: $RESP"
+          test "$RESP" = "404"
+          # 403 external URL → redirect
+          sudo mkdir -p /var/www/test/secret
+          sudo tee /var/www/test/secret/.htaccess << 'INNER'
+          Order Allow,Deny
+          Deny from all
+          ErrorDocument 403 https://example.com/forbidden
+          INNER
+          RESP=$(curl -sI http://localhost/secret/)
+          echo "$RESP"
+          echo "$RESP" | grep -q "302\|403"
+          echo "✓ ErrorDocument directives match Apache behaviour"
+
+      - name: Test Expires directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          ExpiresActive On
+          ExpiresByType text/html "access plus 1 hour"
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/index.html)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "Cache-Control.*max-age=3600"
+          echo "✓ Expires directives match Apache behaviour"
+
+      - name: Test Access Control directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Order Allow,Deny
+          Allow from 127.0.0.1
+          Deny from all
+          HTACCESS
+          sleep 1
+          # Localhost should be allowed
+          RESP=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/)
+          echo "Localhost status: $RESP"
+          test "$RESP" = "200"
+          echo "✓ Access control directives match Apache behaviour"
+
+      - name: Test SetEnv directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          SetEnv APPLICATION_ENV production
+          Header set X-App-Env "%{APPLICATION_ENV}e"
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "X-App-Env.*production"
+          echo "✓ SetEnv directives match Apache behaviour"
+
+      - name: Test FilesMatch directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          <FilesMatch "\.(jpg|jpeg|png|gif)$">
+          Header set X-Image-Cache "HIT"
+          </FilesMatch>
+          HTACCESS
+          sleep 1
+          # .jpg should get the header
+          RESP=$(curl -sI http://localhost/photo.jpg)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "X-Image-Cache: HIT"
+          # .html should NOT get the header
+          RESP=$(curl -sI http://localhost/index.html)
+          echo "$RESP"
+          echo "$RESP" | grep -qvi "X-Image-Cache" || true
+          echo "✓ FilesMatch directives match Apache behaviour"
+
+      - name: Test combined WordPress-style .htaccess
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Header set X-Frame-Options "SAMEORIGIN"
+          Header set X-XSS-Protection "1; mode=block"
+          Header set X-Content-Type-Options "nosniff"
+          ExpiresActive On
+          ExpiresByType text/html "access plus 1 hour"
+          ErrorDocument 404 /index.html
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "X-Frame-Options: SAMEORIGIN"
+          echo "$RESP" | grep -qi "X-XSS-Protection: 1"
+          echo "$RESP" | grep -qi "X-Content-Type-Options: nosniff"
+          echo "$RESP" | grep -qi "Cache-Control.*max-age=3600"
+          echo "✓ Combined WordPress-style .htaccess matches Apache behaviour"
+
+      - name: Collect Apache logs on failure
+        if: failure()
+        run: |
+          echo "=== Apache Error Log ==="
+          sudo cat /var/log/apache2/test-error.log || true
+          echo "=== Apache Access Log ==="
+          sudo cat /var/log/apache2/access.log || true

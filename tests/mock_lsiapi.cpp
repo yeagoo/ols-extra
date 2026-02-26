@@ -1,0 +1,356 @@
+/**
+ * mock_lsiapi.cpp - LSIAPI Mock Layer Implementation
+ *
+ * Provides in-memory simulation of LSIAPI interfaces for testing.
+ * All state is stored in MockSession objects and global registries.
+ *
+ * Validates: Requirements 1.1, 1.3
+ */
+#include "mock_lsiapi.h"
+
+#include <cstdarg>
+#include <cstdio>
+#include <algorithm>
+
+/* ================================================================== */
+/*  Internal helpers                                                    */
+/* ================================================================== */
+
+static inline MockSession *to_mock(lsi_session_t *s) {
+    return reinterpret_cast<MockSession *>(s);
+}
+
+static inline std::string make_str(const char *p, int len) {
+    if (!p || len <= 0) return {};
+    return std::string(p, static_cast<size_t>(len));
+}
+
+/* ================================================================== */
+/*  Global registries                                                   */
+/* ================================================================== */
+
+static std::vector<HookRecord> g_hook_records;
+static std::vector<LogRecord>  g_log_records;
+
+namespace mock_lsiapi {
+
+const std::vector<HookRecord> &get_hook_records() { return g_hook_records; }
+const std::vector<LogRecord>  &get_log_records()  { return g_log_records; }
+
+void reset_global_state() {
+    g_hook_records.clear();
+    g_log_records.clear();
+}
+
+} /* namespace mock_lsiapi */
+
+/* ================================================================== */
+/*  MockSession implementation                                          */
+/* ================================================================== */
+
+MockSession::MockSession() : status_code_(200) {}
+MockSession::~MockSession() = default;
+
+void MockSession::set_request_uri(const std::string &uri)  { request_uri_ = uri; }
+void MockSession::set_doc_root(const std::string &root)    { doc_root_ = root; }
+void MockSession::set_client_ip(const std::string &ip)     { client_ip_ = ip; }
+void MockSession::set_status_code(int code)                { status_code_ = code; }
+
+void MockSession::add_request_header(const std::string &name, const std::string &value) {
+    req_headers_[name] = value;
+}
+
+void MockSession::add_response_header(const std::string &name, const std::string &value) {
+    resp_headers_[name].push_back(value);
+}
+
+void MockSession::add_env_var(const std::string &name, const std::string &value) {
+    env_vars_[name] = value;
+}
+
+std::string MockSession::get_request_uri() const { return request_uri_; }
+std::string MockSession::get_doc_root() const    { return doc_root_; }
+std::string MockSession::get_client_ip() const   { return client_ip_; }
+int         MockSession::get_status_code() const { return status_code_; }
+
+bool MockSession::has_request_header(const std::string &name) const {
+    return req_headers_.count(name) > 0;
+}
+
+std::string MockSession::get_request_header(const std::string &name) const {
+    auto it = req_headers_.find(name);
+    return (it != req_headers_.end()) ? it->second : std::string();
+}
+
+bool MockSession::has_response_header(const std::string &name) const {
+    auto it = resp_headers_.find(name);
+    return it != resp_headers_.end() && !it->second.empty();
+}
+
+std::string MockSession::get_response_header(const std::string &name) const {
+    auto it = resp_headers_.find(name);
+    if (it == resp_headers_.end() || it->second.empty()) return {};
+    return it->second.front();
+}
+
+std::vector<std::string> MockSession::get_all_response_headers(const std::string &name) const {
+    auto it = resp_headers_.find(name);
+    if (it == resp_headers_.end()) return {};
+    return it->second;
+}
+
+int MockSession::count_response_headers(const std::string &name) const {
+    auto it = resp_headers_.find(name);
+    if (it == resp_headers_.end()) return 0;
+    return static_cast<int>(it->second.size());
+}
+
+bool MockSession::has_env_var(const std::string &name) const {
+    return env_vars_.count(name) > 0;
+}
+
+std::string MockSession::get_env_var(const std::string &name) const {
+    auto it = env_vars_.find(name);
+    return (it != env_vars_.end()) ? it->second : std::string();
+}
+
+const std::vector<PhpIniRecord> &MockSession::get_php_ini_records() const {
+    return php_ini_records_;
+}
+
+std::string MockSession::get_resp_body() const { return resp_body_; }
+
+void MockSession::reset() {
+    req_headers_.clear();
+    resp_headers_.clear();
+    env_vars_.clear();
+    request_uri_.clear();
+    doc_root_.clear();
+    client_ip_.clear();
+    status_code_ = 200;
+    php_ini_records_.clear();
+    resp_body_.clear();
+}
+
+lsi_session_t *MockSession::handle() {
+    return reinterpret_cast<lsi_session_t *>(this);
+}
+
+
+/* ================================================================== */
+/*  C-linkage LSIAPI stub implementations                              */
+/* ================================================================== */
+
+extern "C" {
+
+/* ---- Request headers ---- */
+
+const char *lsi_session_get_req_header_by_name(lsi_session_t *session,
+                                                const char *name, int name_len,
+                                                int *val_len) {
+    auto *m = to_mock(session);
+    std::string key = make_str(name, name_len);
+    auto it = m->req_headers_.find(key);
+    if (it == m->req_headers_.end()) {
+        if (val_len) *val_len = 0;
+        return nullptr;
+    }
+    if (val_len) *val_len = static_cast<int>(it->second.size());
+    return it->second.c_str();
+}
+
+int lsi_session_set_req_header(lsi_session_t *session,
+                                const char *name, int name_len,
+                                const char *val, int val_len) {
+    auto *m = to_mock(session);
+    m->req_headers_[make_str(name, name_len)] = make_str(val, val_len);
+    return LSI_OK;
+}
+
+int lsi_session_remove_req_header(lsi_session_t *session,
+                                   const char *name, int name_len) {
+    auto *m = to_mock(session);
+    m->req_headers_.erase(make_str(name, name_len));
+    return LSI_OK;
+}
+
+/* ---- Response headers ---- */
+
+const char *lsi_session_get_resp_header_by_name(lsi_session_t *session,
+                                                 const char *name, int name_len,
+                                                 int *val_len) {
+    auto *m = to_mock(session);
+    std::string key = make_str(name, name_len);
+    auto it = m->resp_headers_.find(key);
+    if (it == m->resp_headers_.end() || it->second.empty()) {
+        if (val_len) *val_len = 0;
+        return nullptr;
+    }
+    /* Return the first value (for single-value semantics) */
+    const std::string &v = it->second.front();
+    if (val_len) *val_len = static_cast<int>(v.size());
+    return v.c_str();
+}
+
+int lsi_session_set_resp_header(lsi_session_t *session,
+                                 const char *name, int name_len,
+                                 const char *val, int val_len) {
+    auto *m = to_mock(session);
+    std::string key = make_str(name, name_len);
+    /* "set" replaces all existing values with a single value */
+    m->resp_headers_[key].clear();
+    m->resp_headers_[key].push_back(make_str(val, val_len));
+    return LSI_OK;
+}
+
+int lsi_session_add_resp_header(lsi_session_t *session,
+                                 const char *name, int name_len,
+                                 const char *val, int val_len) {
+    auto *m = to_mock(session);
+    /* "add" appends a new header entry (even if name already exists) */
+    m->resp_headers_[make_str(name, name_len)].push_back(make_str(val, val_len));
+    return LSI_OK;
+}
+
+int lsi_session_append_resp_header(lsi_session_t *session,
+                                    const char *name, int name_len,
+                                    const char *val, int val_len) {
+    auto *m = to_mock(session);
+    std::string key = make_str(name, name_len);
+    auto &vec = m->resp_headers_[key];
+    std::string append_val = make_str(val, val_len);
+    if (vec.empty()) {
+        vec.push_back(append_val);
+    } else {
+        /* Append to the first value, comma-separated */
+        vec.front() += ", " + append_val;
+    }
+    return LSI_OK;
+}
+
+int lsi_session_remove_resp_header(lsi_session_t *session,
+                                    const char *name, int name_len) {
+    auto *m = to_mock(session);
+    m->resp_headers_.erase(make_str(name, name_len));
+    return LSI_OK;
+}
+
+int lsi_session_get_resp_header_count(lsi_session_t *session,
+                                       const char *name, int name_len) {
+    auto *m = to_mock(session);
+    std::string key = make_str(name, name_len);
+    auto it = m->resp_headers_.find(key);
+    if (it == m->resp_headers_.end()) return 0;
+    return static_cast<int>(it->second.size());
+}
+
+/* ---- Environment variables ---- */
+
+const char *lsi_session_get_env(lsi_session_t *session,
+                                 const char *name, int name_len,
+                                 int *val_len) {
+    auto *m = to_mock(session);
+    std::string key = make_str(name, name_len);
+    auto it = m->env_vars_.find(key);
+    if (it == m->env_vars_.end()) {
+        if (val_len) *val_len = 0;
+        return nullptr;
+    }
+    if (val_len) *val_len = static_cast<int>(it->second.size());
+    return it->second.c_str();
+}
+
+int lsi_session_set_env(lsi_session_t *session,
+                         const char *name, int name_len,
+                         const char *val, int val_len) {
+    auto *m = to_mock(session);
+    m->env_vars_[make_str(name, name_len)] = make_str(val, val_len);
+    return LSI_OK;
+}
+
+/* ---- Response status ---- */
+
+int lsi_session_get_status(lsi_session_t *session) {
+    return to_mock(session)->status_code_;
+}
+
+int lsi_session_set_status(lsi_session_t *session, int code) {
+    to_mock(session)->status_code_ = code;
+    return LSI_OK;
+}
+
+/* ---- Request URI ---- */
+
+const char *lsi_session_get_uri(lsi_session_t *session, int *uri_len) {
+    auto *m = to_mock(session);
+    if (uri_len) *uri_len = static_cast<int>(m->request_uri_.size());
+    return m->request_uri_.c_str();
+}
+
+/* ---- Document root ---- */
+
+const char *lsi_session_get_doc_root(lsi_session_t *session, int *len) {
+    auto *m = to_mock(session);
+    if (len) *len = static_cast<int>(m->doc_root_.size());
+    return m->doc_root_.c_str();
+}
+
+/* ---- Client IP ---- */
+
+const char *lsi_session_get_client_ip(lsi_session_t *session, int *len) {
+    auto *m = to_mock(session);
+    if (len) *len = static_cast<int>(m->client_ip_.size());
+    return m->client_ip_.c_str();
+}
+
+/* ---- PHP configuration ---- */
+
+int lsi_session_set_php_ini(lsi_session_t *session,
+                             const char *name, int name_len,
+                             const char *val, int val_len,
+                             int is_admin) {
+    auto *m = to_mock(session);
+    PhpIniRecord rec;
+    rec.name     = make_str(name, name_len);
+    rec.value    = make_str(val, val_len);
+    rec.is_admin = (is_admin != 0);
+    m->php_ini_records_.push_back(std::move(rec));
+    return LSI_OK;
+}
+
+/* ---- Response body ---- */
+
+int lsi_session_set_resp_body(lsi_session_t *session,
+                               const char *buf, int len) {
+    auto *m = to_mock(session);
+    m->resp_body_ = make_str(buf, len);
+    return LSI_OK;
+}
+
+/* ---- Hook registration ---- */
+
+int lsi_register_hook(int hook_point, lsi_hook_cb cb, int priority) {
+    HookRecord rec;
+    rec.hook_point = hook_point;
+    rec.callback   = cb;
+    rec.priority   = priority;
+    g_hook_records.push_back(rec);
+    return LSI_OK;
+}
+
+/* ---- Logging ---- */
+
+void lsi_log(lsi_session_t * /*session*/, int level, const char *fmt, ...) {
+    char buf[1024];
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf(buf, sizeof(buf), fmt, args);
+    va_end(args);
+
+    LogRecord rec;
+    rec.level   = level;
+    rec.message = buf;
+    g_log_records.push_back(std::move(rec));
+}
+
+} /* extern "C" */
