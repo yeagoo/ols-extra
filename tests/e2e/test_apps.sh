@@ -22,7 +22,7 @@ source "${SCRIPT_DIR}/lib/coverage.sh"
 # Override globals for the app stack
 OLS_HOST="${OLS_HOST:-http://localhost:8088}"
 OLS_CONTAINER="${OLS_CONTAINER:-ols-app-e2e}"
-OLS_DOCROOT="/var/www/vhosts/apps/html"
+OLS_DOCROOT="/var/www/vhosts/localhost/html"
 
 # =============================================================================
 # Helper: run WP-CLI commands inside the container

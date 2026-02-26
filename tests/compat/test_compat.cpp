@@ -373,9 +373,11 @@ TEST_F(CompatTest, PHPConfig_ValuesAndAdminProtection) {
     }
 
     auto &records = session_.get_php_ini_records();
-    /* upload_max_filesize, post_max_size are PHP_INI_SYSTEM → ignored by php_value
-       Only display_errors, max_execution_time (user) + open_basedir, allow_url_fopen (admin) = 4 */
-    EXPECT_EQ(records.size(), 4u);
+    /* upload_max_filesize, post_max_size are PHP_INI_PERDIR → accepted by php_value
+       All 6 directives produce records:
+       upload_max_filesize, post_max_size, max_execution_time, display_errors (user)
+       + open_basedir, allow_url_fopen (admin) = 6 */
+    EXPECT_EQ(records.size(), 6u);
 
     /* Verify admin values are marked as admin level */
     bool found_admin = false;

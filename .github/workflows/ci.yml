@@ -170,15 +170,23 @@ jobs:
 
       - name: Test Access Control directives
         run: |
+          # Test 1: Deny from all → 403
           sudo tee /var/www/test/.htaccess << 'HTACCESS'
           Order Allow,Deny
-          Allow from 127.0.0.1
           Deny from all
           HTACCESS
           sleep 1
-          # Localhost should be allowed
           RESP=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/)
-          echo "Localhost status: $RESP"
+          echo "Deny all status: $RESP"
+          test "$RESP" = "403"
+          # Test 2: Allow from all → 200
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Order Deny,Allow
+          Allow from all
+          HTACCESS
+          sleep 1
+          RESP=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/)
+          echo "Allow all status: $RESP"
           test "$RESP" = "200"
           echo "✓ Access control directives match Apache behaviour"
 
@@ -330,10 +338,17 @@ jobs:
       - name: Health check
         run: |
           for i in $(seq 1 60); do
-            curl -sf http://localhost:8088/ && exit 0
+            if curl -sf http://localhost:8088/ > /dev/null 2>&1; then
+              echo "OLS is ready after ${i}s"
+              exit 0
+            fi
             sleep 1
           done
+          echo "=== Health check failed, collecting diagnostics ==="
           docker logs ols-e2e
+          docker exec ols-e2e cat /usr/local/lsws/logs/error.log 2>/dev/null || true
+          docker exec ols-e2e ls -la /usr/local/lsws/modules/ 2>/dev/null || true
+          docker exec ols-e2e cat /usr/local/lsws/conf/httpd_config.conf 2>/dev/null || true
           exit 1
 
       - name: Run directive E2E tests

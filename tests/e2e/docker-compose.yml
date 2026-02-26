@@ -16,7 +16,7 @@ services:
     ports:
       - "8088:8088"
     volumes:
-      - app-data:/var/www/vhosts/apps/html
+      - app-data:/var/www/vhosts/localhost/html
     depends_on:
       db:
         condition: service_healthy

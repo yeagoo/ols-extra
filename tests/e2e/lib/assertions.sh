@@ -14,7 +14,7 @@ set -euo pipefail
 # Global variables
 # ---------------------------------------------------------------------------
 OLS_HOST="${OLS_HOST:-http://localhost:8088}"
-OLS_DOCROOT="${OLS_DOCROOT:-/var/www/vhosts/test/html}"
+OLS_DOCROOT="${OLS_DOCROOT:-/var/www/vhosts/localhost/html}"
 OLS_CONTAINER="${OLS_CONTAINER:-ols-e2e}"
 PASS_COUNT=0
 FAIL_COUNT=0
