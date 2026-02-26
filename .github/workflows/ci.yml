@@ -387,8 +387,8 @@ jobs:
 
       - name: Debug OLS config
         run: |
-          echo "=== httpd_config.conf ==="
-          docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/httpd_config.conf 2>/dev/null || true
+          echo "=== httpd_config.conf (listener + vhost sections) ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols grep -A5 'listener\|virtualhost\|vhRoot\|docRoot\|scripthandler\|extprocessor' /usr/local/lsws/conf/httpd_config.conf 2>/dev/null || true
           echo ""
           echo "=== vhconf.conf ==="
           docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/vhosts/localhost/vhconf.conf 2>/dev/null || true
@@ -396,8 +396,16 @@ jobs:
           echo "=== Document root listing ==="
           docker compose -f tests/e2e/docker-compose.yml exec -T ols ls -la /var/www/vhosts/localhost/html/ 2>/dev/null || true
           echo ""
-          echo "=== LSPHP versions available ==="
-          docker compose -f tests/e2e/docker-compose.yml exec -T ols ls -la /usr/local/lsws/lsphp*/bin/ 2>/dev/null || true
+          echo "=== Test PHP processing ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols sh -c 'echo "<?php echo \"PHP OK\";" > /var/www/vhosts/localhost/html/test.php && chown nobody:nogroup /var/www/vhosts/localhost/html/test.php'
+          curl -sv http://localhost:8088/test.php 2>&1 || true
+          echo ""
+          echo "=== Test static file in subdir ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols sh -c 'mkdir -p /var/www/vhosts/localhost/html/testdir && echo "subdir ok" > /var/www/vhosts/localhost/html/testdir/index.html && chown -R nobody:nogroup /var/www/vhosts/localhost/html/testdir'
+          curl -sv http://localhost:8088/testdir/index.html 2>&1 || true
+          echo ""
+          echo "=== LSPHP versions ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols ls /usr/local/lsws/lsphp*/bin/ 2>/dev/null || true
           echo ""
           echo "=== PHP version ==="
           docker compose -f tests/e2e/docker-compose.yml exec -T ols php -v 2>/dev/null || true
