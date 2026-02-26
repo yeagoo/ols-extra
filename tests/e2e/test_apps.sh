@@ -75,7 +75,26 @@ install_wordpress() {
         --admin_email=test@test.com
 
     # Enable pretty permalinks (Req 14.5)
-    wp_cli rewrite structure '/%postname%/' --hard
+    wp_cli rewrite structure '/%postname%/' --hard || true
+
+    # WP-CLI on LiteSpeed cannot auto-generate .htaccess (no Apache module).
+    # Manually create the standard WordPress rewrite rules if missing.
+    docker exec "${OLS_CONTAINER}" bash -c "
+        if [ ! -f '${OLS_DOCROOT}/wordpress/.htaccess' ] || ! grep -q 'RewriteRule' '${OLS_DOCROOT}/wordpress/.htaccess' 2>/dev/null; then
+            cat > '${OLS_DOCROOT}/wordpress/.htaccess' <<'WPHTEOF'
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpress/
+RewriteRule ^index\\.php\$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wordpress/index.php [L]
+</IfModule>
+# END WordPress
+WPHTEOF
+        fi
+    "
 
     # Create a sample post for permalink testing (Req 14.5)
     wp_cli post create \

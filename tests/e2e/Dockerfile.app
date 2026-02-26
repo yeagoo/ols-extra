@@ -38,14 +38,32 @@ RUN mkdir -p /var/www/vhosts/localhost/html/wordpress \
     && echo "<h1>App Stack OK</h1>" > /var/www/vhosts/localhost/html/index.html \
     && chown -R nobody:nogroup /var/www/vhosts/localhost
 
-# Patch the default vhost config to enable .htaccess support and PHP
-# The base image vhost config may already have a scripthandler, but we ensure
-# lsphp81 is configured since we installed lsphp81 extensions.
+# Patch the default vhost config to enable .htaccess support, rewrite, and PHP.
+# We overwrite the base image's vhconf.conf entirely to ensure a known-good state.
 RUN VHCONF="/usr/local/lsws/conf/vhosts/localhost/vhconf.conf" && \
-    if [ -f "$VHCONF" ]; then \
-      sed -i 's/allowOverride.*/allowOverride             255/' "$VHCONF" || true; \
-      grep -q 'allowOverride' "$VHCONF" || echo 'allowOverride 255' >> "$VHCONF"; \
-    fi
+    mkdir -p "$(dirname "$VHCONF")" && \
+    cat > "$VHCONF" <<'VHEOF'
+docRoot                   /var/www/vhosts/localhost/html
+enableRewrite             1
+allowOverride             255
+autoIndex                 0
+
+rewrite  {
+  enable                  1
+}
+
+context / {
+  allowBrowse             1
+  location                /var/www/vhosts/localhost/html
+  rewrite  {
+    enable                1
+  }
+}
+
+scripthandler {
+  add                     lsapi:lsphp php
+}
+VHEOF
 
 # Ensure the httpd_config has an lsphp extprocessor and scripthandler.
 # The base image may use a different PHP version — we patch to use lsphp81
