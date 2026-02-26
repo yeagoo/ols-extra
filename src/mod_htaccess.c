@@ -24,6 +24,14 @@
 #include "htaccess_exec_expires.h"
 #include "htaccess_exec_error_doc.h"
 #include "htaccess_exec_files_match.h"
+#include "htaccess_exec_options.h"
+#include "htaccess_exec_require.h"
+#include "htaccess_exec_limit.h"
+#include "htaccess_exec_auth.h"
+#include "htaccess_exec_handler.h"
+#include "htaccess_exec_dirindex.h"
+#include "htaccess_exec_forcetype.h"
+#include "htaccess_exec_encoding.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -313,8 +321,48 @@ static int on_recv_req_header(lsi_session_t *session)
         return LSI_OK;
     }
 
-    /* (b) Redirects */
+    /* (a2) Apache 2.4 Require access control */
+    int ip_len = 0;
+    const char *client_ip = lsi_session_get_client_ip(session, &ip_len);
+    rc = exec_require(session, directives, client_ip);
+    if (rc == LSI_ERROR) {
+        lsi_log(session, LSI_LOG_DEBUG,
+                "mod_htaccess: access denied by Require");
+        htaccess_directives_free(directives);
+        return LSI_OK;
+    }
+
+    /* (a3) Limit/LimitExcept method restriction */
+    int method_len = 0;
+    const char *http_method = lsi_session_get_method(session, &method_len);
     const htaccess_directive_t *dir;
+    for (dir = directives; dir != NULL; dir = dir->next) {
+        if (dir->type == DIR_LIMIT || dir->type == DIR_LIMIT_EXCEPT) {
+            if (http_method && limit_should_exec(dir, http_method)) {
+                /* Execute children of the Limit/LimitExcept block */
+                const htaccess_directive_t *child;
+                for (child = dir->data.limit.children; child; child = child->next) {
+                    /* Children may contain access control directives */
+                    if (child->type == DIR_REQUIRE_ALL_DENIED) {
+                        lsi_session_set_status(session, 403);
+                        htaccess_directives_free(directives);
+                        return LSI_OK;
+                    }
+                }
+            }
+        }
+    }
+
+    /* (a4) AuthType Basic authentication */
+    rc = exec_auth_basic(session, directives);
+    if (rc == LSI_ERROR) {
+        lsi_log(session, LSI_LOG_DEBUG,
+                "mod_htaccess: authentication failed");
+        htaccess_directives_free(directives);
+        return LSI_OK;
+    }
+
+    /* (b) Redirects */
     for (dir = directives; dir != NULL; dir = dir->next) {
         int redir_rc = 0;
         if (dir->type == DIR_REDIRECT) {
@@ -390,13 +438,29 @@ static int on_recv_req_header(lsi_session_t *session)
     }
 
     /* (e) Brute force protection */
-    int ip_len = 0;
-    const char *client_ip = lsi_session_get_client_ip(session, &ip_len);
     if (client_ip && ip_len > 0) {
         rc = exec_brute_force(session, directives, client_ip);
         if (rc == LSI_ERROR) {
             lsi_log(session, LSI_LOG_DEBUG,
                     "mod_htaccess: request blocked by brute force protection");
+        }
+    }
+
+    /* (f) Options */
+    for (dir = directives; dir != NULL; dir = dir->next) {
+        if (dir->type == DIR_OPTIONS)
+            exec_options(session, dir);
+    }
+
+    /* (g) DirectoryIndex */
+    {
+        char *tdir = build_target_dir(doc_root, doc_root_len, uri, uri_len);
+        if (tdir) {
+            for (dir = directives; dir != NULL; dir = dir->next) {
+                if (dir->type == DIR_DIRECTORY_INDEX)
+                    exec_directory_index(session, dir, tdir);
+            }
+            free(tdir);
         }
     }
 
@@ -461,6 +525,11 @@ static int on_send_resp_header(lsi_session_t *session)
         case DIR_HEADER_APPEND:
         case DIR_HEADER_MERGE:
         case DIR_HEADER_ADD:
+        case DIR_HEADER_ALWAYS_SET:
+        case DIR_HEADER_ALWAYS_UNSET:
+        case DIR_HEADER_ALWAYS_APPEND:
+        case DIR_HEADER_ALWAYS_MERGE:
+        case DIR_HEADER_ALWAYS_ADD:
             hdr_rc = exec_header(session, dir);
             break;
         case DIR_REQUEST_HEADER_SET:
@@ -474,6 +543,23 @@ static int on_send_resp_header(lsi_session_t *session)
             log_directive_ok(session, dir, type_name);
         else
             log_directive_fail(session, dir, type_name, "header error");
+    }
+
+    /* (a2) Files blocks — exact filename match */
+    for (dir = directives; dir != NULL; dir = dir->next) {
+        if (dir->type == DIR_FILES && dir->name && filename) {
+            if (strcmp(dir->name, filename) == 0) {
+                /* Execute children directives */
+                const htaccess_directive_t *child;
+                for (child = dir->data.files.children; child; child = child->next) {
+                    if (child->type >= DIR_HEADER_SET && child->type <= DIR_HEADER_ADD)
+                        exec_header(session, child);
+                    else if (child->type >= DIR_HEADER_ALWAYS_SET &&
+                             child->type <= DIR_HEADER_ALWAYS_ADD)
+                        exec_header(session, child);
+                }
+            }
+        }
     }
 
     /* (b) FilesMatch conditional blocks */
@@ -505,6 +591,34 @@ static int on_send_resp_header(lsi_session_t *session)
         else if (ed_rc < 0)
             log_directive_fail(session, dir, "ErrorDocument",
                                "error document processing failed");
+    }
+
+    /* (e) AddType / ForceType / AddEncoding / AddCharset */
+    for (dir = directives; dir != NULL; dir = dir->next) {
+        switch (dir->type) {
+        case DIR_ADD_TYPE:
+            exec_add_type(session, dir, filename);
+            break;
+        case DIR_FORCE_TYPE:
+            exec_force_type(session, dir);
+            break;
+        case DIR_ADD_ENCODING:
+            exec_add_encoding(session, dir, filename);
+            break;
+        case DIR_ADD_CHARSET:
+            exec_add_charset(session, dir, filename);
+            break;
+        default:
+            break;
+        }
+    }
+
+    /* (f) AddHandler / SetHandler (DEBUG log only) */
+    for (dir = directives; dir != NULL; dir = dir->next) {
+        if (dir->type == DIR_ADD_HANDLER)
+            exec_add_handler(session, dir);
+        else if (dir->type == DIR_SET_HANDLER)
+            exec_set_handler(session, dir);
     }
 
     htaccess_directives_free(directives);

@@ -142,10 +142,24 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_acl.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.s
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o: /home/ivmm/ols-extra/src/htaccess_exec_auth.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_auth.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_auth.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_auth.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.s
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o: /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.i: cmake_force
@@ -156,10 +170,38 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.s
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o: /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.s
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o: /home/ivmm/ols-extra/src/htaccess_exec_encoding.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_encoding.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_encoding.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_encoding.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.s
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o: /home/ivmm/ols-extra/src/htaccess_exec_env.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_env.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.i: cmake_force
@@ -173,7 +215,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o: /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.i: cmake_force
@@ -187,7 +229,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o: /home/ivmm/ols-extra/src/htaccess_exec_expires.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_expires.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.i: cmake_force
@@ -201,7 +243,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o: /home/ivmm/ols-extra/src/htaccess_exec_files_match.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_files_match.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.i: cmake_force
@@ -212,10 +254,38 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_files_match.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.s
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o: /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.s
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o: /home/ivmm/ols-extra/src/htaccess_exec_handler.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_handler.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_handler.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_handler.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.s
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o: /home/ivmm/ols-extra/src/htaccess_exec_header.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_header.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.i: cmake_force
@@ -226,10 +296,38 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_header.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.s
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o: /home/ivmm/ols-extra/src/htaccess_exec_limit.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_limit.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_limit.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_limit.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.s
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o: /home/ivmm/ols-extra/src/htaccess_exec_options.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_options.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_options.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_options.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.s
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o: /home/ivmm/ols-extra/src/htaccess_exec_php.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_php.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.i: cmake_force
@@ -243,7 +341,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o: /home/ivmm/ols-extra/src/htaccess_exec_redirect.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_redirect.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.i: cmake_force
@@ -254,10 +352,24 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_redirect.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.s
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o: CMakeFiles/ols_htaccess.dir/flags.make
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o: /home/ivmm/ols-extra/src/htaccess_exec_require.c
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_require.c
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_require.c > CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.i
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_require.c -o CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.s
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o: /home/ivmm/ols-extra/src/htaccess_expires.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o -c /home/ivmm/ols-extra/src/htaccess_expires.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.i: cmake_force
@@ -271,7 +383,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o: /home/ivmm/ols-extra/src/htaccess_parser.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o -c /home/ivmm/ols-extra/src/htaccess_parser.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.i: cmake_force
@@ -285,7 +397,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o: /home/ivmm/ols-extra/src/htaccess_printer.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o -c /home/ivmm/ols-extra/src/htaccess_printer.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.i: cmake_force
@@ -299,7 +411,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o: /home/ivmm/ols-extra/src/htaccess_shm.c
 CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o -MF CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o.d -o CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o -c /home/ivmm/ols-extra/src/htaccess_shm.c
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.i: cmake_force
@@ -313,7 +425,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.s: cmake_force
 CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o: CMakeFiles/ols_htaccess.dir/flags.make
 CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o: /home/ivmm/ols-extra/src/mod_htaccess.c
 CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o -MF CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o.d -o CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o -c /home/ivmm/ols-extra/src/mod_htaccess.c
 
 CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.i: cmake_force
@@ -331,14 +443,22 @@ ols_htaccess_OBJECTS = \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_directive.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_dirwalker.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o" \
+"CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o" \
 "CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o" \
@@ -353,14 +473,22 @@ ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_cidr.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_directive.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_dirwalker.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o
+ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o
@@ -369,7 +497,7 @@ ols_htaccess.so: CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/build.make
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/compiler_depend.ts
 ols_htaccess.so: CMakeFiles/ols_htaccess.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking C shared library ols_htaccess.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C shared library ols_htaccess.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ols_htaccess.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -263,18 +263,102 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.o: /home/ivmm/ols-extra/src/
   /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h \
   /usr/lib/gcc/aarch64-linux-gnu/14/include/stdint.h
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o: /home/ivmm/ols-extra/src/htaccess_exec_auth.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_auth.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/confname.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/environments.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
+  /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/unistd.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stdarg.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o: /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c \
+  /home/ivmm/ols-extra/include/htaccess_cidr.h \
   /home/ivmm/ols-extra/include/htaccess_directive.h \
   /home/ivmm/ols-extra/include/htaccess_exec_brute_force.h \
   /home/ivmm/ols-extra/include/htaccess_shm.h \
   /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
   /usr/include/aarch64-linux-gnu/bits/endian.h \
   /usr/include/aarch64-linux-gnu/bits/endianness.h \
   /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
   /usr/include/aarch64-linux-gnu/bits/floatn.h \
   /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
   /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-least.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/time.h \
   /usr/include/aarch64-linux-gnu/bits/time64.h \
   /usr/include/aarch64-linux-gnu/bits/timesize.h \
@@ -285,28 +369,158 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o: /home/ivmm/ols-ex
   /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h \
   /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
   /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
   /usr/include/aarch64-linux-gnu/bits/wordsize.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
   /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/time.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stdarg.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stdint.h
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o: /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_dirindex.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o: /home/ivmm/ols-extra/src/htaccess_exec_encoding.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_encoding.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/time.h \
   /usr/lib/gcc/aarch64-linux-gnu/14/include/stdarg.h \
   /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
 
@@ -472,9 +686,155 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o: /home/ivmm/ols-ex
   /usr/include/strings.h \
   /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o: /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_forcetype.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o: /home/ivmm/ols-extra/src/htaccess_exec_handler.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_handler.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o: /home/ivmm/ols-extra/src/htaccess_exec_header.c \
   /home/ivmm/ols-extra/include/htaccess_directive.h \
   /home/ivmm/ols-extra/include/htaccess_exec_header.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o: /home/ivmm/ols-extra/src/htaccess_exec_limit.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_limit.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o: /home/ivmm/ols-extra/src/htaccess_exec_options.c \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_options.h \
   /home/ivmm/ols-extra/include/ls.h \
   /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
   /usr/include/aarch64-linux-gnu/bits/long-double.h \
@@ -558,6 +918,65 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o: /home/ivmm/ols-extra
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o: /home/ivmm/ols-extra/src/htaccess_exec_require.c \
+  /home/ivmm/ols-extra/include/htaccess_cidr.h \
+  /home/ivmm/ols-extra/include/htaccess_directive.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_require.h \
+  /home/ivmm/ols-extra/include/ls.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-least.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stddef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/14/include/stdint.h
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o: /home/ivmm/ols-extra/src/htaccess_expires.c \
   /home/ivmm/ols-extra/include/htaccess_expires.h \
@@ -788,14 +1207,22 @@ CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o: /home/ivmm/ols-extra/src/mod_h
   /home/ivmm/ols-extra/include/htaccess_directive.h \
   /home/ivmm/ols-extra/include/htaccess_dirwalker.h \
   /home/ivmm/ols-extra/include/htaccess_exec_acl.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_auth.h \
   /home/ivmm/ols-extra/include/htaccess_exec_brute_force.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_dirindex.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_encoding.h \
   /home/ivmm/ols-extra/include/htaccess_exec_env.h \
   /home/ivmm/ols-extra/include/htaccess_exec_error_doc.h \
   /home/ivmm/ols-extra/include/htaccess_exec_expires.h \
   /home/ivmm/ols-extra/include/htaccess_exec_files_match.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_forcetype.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_handler.h \
   /home/ivmm/ols-extra/include/htaccess_exec_header.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_limit.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_options.h \
   /home/ivmm/ols-extra/include/htaccess_exec_php.h \
   /home/ivmm/ols-extra/include/htaccess_exec_redirect.h \
+  /home/ivmm/ols-extra/include/htaccess_exec_require.h \
   /home/ivmm/ols-extra/include/htaccess_shm.h \
   /home/ivmm/ols-extra/include/ls.h \
   /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
@@ -857,6 +1284,7 @@ ols_htaccess.so: /lib/aarch64-linux-gnu/libc.so.6 \
   /usr/lib/aarch64-linux-gnu/crti.o \
   /usr/lib/aarch64-linux-gnu/crtn.o \
   /usr/lib/aarch64-linux-gnu/libc.so \
+  /usr/lib/aarch64-linux-gnu/libcrypt.so \
   /usr/lib/aarch64-linux-gnu/libgcc_s.so.1 \
   /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o \
   /usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o \
@@ -867,14 +1295,22 @@ ols_htaccess.so: /lib/aarch64-linux-gnu/libc.so.6 \
   CMakeFiles/ols_htaccess.dir/src/htaccess_directive.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_dirwalker.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o \
+  CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o \
   CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o \
@@ -882,29 +1318,63 @@ ols_htaccess.so: /lib/aarch64-linux-gnu/libc.so.6 \
   CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o
 
 
-CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o:
-
 CMakeFiles/ols_htaccess.dir/src/htaccess_parser.c.o:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o:
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.o:
 
-CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o:
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o:
 
-/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.o:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_cache.c.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/14/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/14/libgcc.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o:
+
+/usr/lib/aarch64-linux-gnu/libcrypt.so:
+
+/usr/lib/aarch64-linux-gnu/libc.so:
+
+/usr/lib/aarch64-linux-gnu/crtn.o:
+
+/usr/lib/aarch64-linux-gnu/crti.o:
+
+/lib/ld-linux-aarch64.so.1:
+
+/home/ivmm/ols-extra/src/mod_htaccess.c:
 
 /home/ivmm/ols-extra/include/htaccess_printer.h:
+
+/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/stdc-predef.h:
 
 /usr/include/features-time64.h:
 
-/home/ivmm/ols-extra/src/htaccess_parser.c:
+/home/ivmm/ols-extra/src/htaccess_exec_limit.c:
 
 /usr/include/endian.h:
 
-CMakeFiles/ols_htaccess.dir/src/htaccess_cache.c.o:
+CMakeFiles/ols_htaccess.dir/src/htaccess_shm.c.o:
+
+/home/ivmm/ols-extra/include/htaccess_exec_auth.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdint-least.h:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_dirwalker.c.o:
+
+/usr/include/aarch64-linux-gnu/sys/select.h:
 
 /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
 
@@ -912,11 +1382,13 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_cache.c.o:
 
 /usr/include/aarch64-linux-gnu/bits/wordsize.h:
 
-/lib/ld-linux-aarch64.so.1:
-
 /usr/include/aarch64-linux-gnu/bits/waitflags.h:
 
 /usr/include/aarch64-linux-gnu/bits/wchar.h:
+
+/home/ivmm/ols-extra/src/htaccess_printer.c:
+
+/usr/include/aarch64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/aarch64-linux-gnu/sys/cdefs.h:
 
@@ -925,6 +1397,10 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_cache.c.o:
 /usr/include/aarch64-linux-gnu/bits/types/time_t.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/14/include/stdarg.h:
+
+/home/ivmm/ols-extra/src/htaccess_shm.c:
+
+/home/ivmm/ols-extra/include/htaccess_exec_error_doc.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -936,7 +1412,7 @@ CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o:
 
 /home/ivmm/ols-extra/src/htaccess_dirwalker.c:
 
-/usr/lib/aarch64-linux-gnu/libgcc_s.so.1:
+/usr/include/aarch64-linux-gnu/bits/confname.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
 
@@ -948,15 +1424,11 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o:
 
 /home/ivmm/ols-extra/src/htaccess_exec_env.c:
 
-/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o:
-
-/usr/lib/aarch64-linux-gnu/libc.so:
-
-/usr/lib/gcc/aarch64-linux-gnu/14/crtendS.o:
-
 CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o:
 
 /usr/include/aarch64-linux-gnu/bits/floatn-common.h:
+
+/home/ivmm/ols-extra/include/htaccess_exec_limit.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -978,8 +1450,6 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o:
 
 /home/ivmm/ols-extra/src/htaccess_exec_acl.c:
 
-/usr/include/aarch64-linux-gnu/bits/byteswap.h:
-
 /usr/lib/aarch64-linux-gnu/libc_nonshared.a:
 
 /usr/include/aarch64-linux-gnu/bits/endian.h:
@@ -988,7 +1458,11 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o:
 
 /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/lib/gcc/aarch64-linux-gnu/14/libgcc.a:
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o:
+
+/home/ivmm/ols-extra/src/htaccess_cache.c:
 
 /home/ivmm/ols-extra/src/htaccess_cidr.c:
 
@@ -996,7 +1470,9 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o:
 
 /usr/include/stdlib.h:
 
-/home/ivmm/ols-extra/include/htaccess_directive.h:
+/usr/lib/aarch64-linux-gnu/libgcc_s.so.1:
+
+/home/ivmm/ols-extra/src/htaccess_exec_forcetype.c:
 
 /usr/include/aarch64-linux-gnu/bits/waitstatus.h:
 
@@ -1007,6 +1483,8 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.o:
 /usr/include/aarch64-linux-gnu/bits/select.h:
 
 /usr/include/aarch64-linux-gnu/bits/timesize.h:
+
+/home/ivmm/ols-extra/src/htaccess_exec_options.c:
 
 /usr/include/aarch64-linux-gnu/bits/struct_mutex.h:
 
@@ -1022,9 +1500,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_expires.c.o:
 
 /usr/include/features.h:
 
-CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o:
-
-/usr/include/aarch64-linux-gnu/bits/thread-shared-types.h:
+/home/ivmm/ols-extra/include/htaccess_exec_forcetype.h:
 
 /home/ivmm/ols-extra/include/htaccess_shm.h:
 
@@ -1042,21 +1518,35 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o:
 
 /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_php.c.o:
 
-/home/ivmm/ols-extra/src/htaccess_expires.c:
+/usr/include/aarch64-linux-gnu/bits/thread-shared-types.h:
+
+/home/ivmm/ols-extra/src/htaccess_exec_handler.c:
+
+/usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_directive.c.o:
 
+/home/ivmm/ols-extra/src/htaccess_expires.c:
+
 /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/aarch64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h:
 
+/home/ivmm/ols-extra/include/htaccess_exec_options.h:
+
 /usr/include/aarch64-linux-gnu/bits/long-double.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/14/include/stdint.h:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.o:
+
+/home/ivmm/ols-extra/include/htaccess_exec_dirindex.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
 
@@ -1066,27 +1556,35 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_directive.c.o:
 
 /home/ivmm/ols-extra/include/htaccess_dirwalker.h:
 
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o:
+
 /home/ivmm/ols-extra/include/htaccess_parser.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
 
 /home/ivmm/ols-extra/include/ls.h:
 
-/usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o:
 
-CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.o:
+/usr/include/aarch64-linux-gnu/bits/stat.h:
+
+/usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/FILE.h:
 
-/home/ivmm/ols-extra/include/htaccess_exec_error_doc.h:
+/lib/aarch64-linux-gnu/libc.so.6:
 
-/home/ivmm/ols-extra/src/htaccess_shm.c:
+/usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
 
 CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o:
 
 /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o:
 
 /usr/include/stdint.h:
 
@@ -1096,15 +1594,43 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_printer.c.o:
 
 /usr/include/stdio.h:
 
+/home/ivmm/ols-extra/src/htaccess_exec_auth.c:
+
+/usr/include/aarch64-linux-gnu/bits/environments.h:
+
+/usr/include/aarch64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/aarch64-linux-gnu/bits/byteswap.h:
+
+/usr/include/aarch64-linux-gnu/bits/unistd_ext.h:
+
+/home/ivmm/ols-extra/include/htaccess_directive.h:
+
+/usr/include/linux/close_range.h:
+
+/home/ivmm/ols-extra/include/htaccess_exec_encoding.h:
+
+/usr/include/unistd.h:
+
+CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o:
+
+/home/ivmm/ols-extra/src/htaccess_exec_redirect.c:
+
 /home/ivmm/ols-extra/include/htaccess_exec_brute_force.h:
 
-CMakeFiles/ols_htaccess.dir/src/htaccess_exec_error_doc.c.o:
+/home/ivmm/ols-extra/src/htaccess_exec_dirindex.c:
+
+/home/ivmm/ols-extra/src/htaccess_parser.c:
+
+/home/ivmm/ols-extra/src/htaccess_exec_encoding.c:
 
 /usr/include/aarch64-linux-gnu/bits/endianness.h:
 
 /usr/include/ctype.h:
 
 /home/ivmm/ols-extra/include/htaccess_exec_env.h:
+
+/home/ivmm/ols-extra/include/htaccess_exec_require.h:
 
 /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c:
 
@@ -1120,38 +1646,14 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_cidr.c.o:
 
 /usr/include/aarch64-linux-gnu/bits/floatn.h:
 
+/usr/include/aarch64-linux-gnu/bits/posix_opt.h:
+
 /home/ivmm/ols-extra/src/htaccess_exec_header.c:
 
 /home/ivmm/ols-extra/include/htaccess_expires.h:
 
 /home/ivmm/ols-extra/include/htaccess_exec_php.h:
 
-/home/ivmm/ols-extra/src/htaccess_exec_redirect.c:
+/home/ivmm/ols-extra/include/htaccess_exec_handler.h:
 
-/usr/include/aarch64-linux-gnu/bits/uintn-identity.h:
-
-/home/ivmm/ols-extra/src/htaccess_printer.c:
-
-/home/ivmm/ols-extra/src/mod_htaccess.c:
-
-/usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
-
-/lib/aarch64-linux-gnu/libc.so.6:
-
-/usr/lib/aarch64-linux-gnu/crti.o:
-
-/usr/lib/aarch64-linux-gnu/crtn.o:
-
-/usr/lib/gcc/aarch64-linux-gnu/14/libgcc_s.so:
-
-/usr/include/aarch64-linux-gnu/sys/select.h:
-
-CMakeFiles/ols_htaccess.dir/src/htaccess_dirwalker.c.o:
-
-/home/ivmm/ols-extra/src/htaccess_cache.c:
-
-CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.o:
-
-/usr/include/aarch64-linux-gnu/bits/stat.h:
-
-CMakeFiles/ols_htaccess.dir/src/htaccess_exec_env.c.o:
+/home/ivmm/ols-extra/src/htaccess_exec_require.c:

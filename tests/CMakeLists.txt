@@ -23,6 +23,7 @@ if(UNIT_TEST_SOURCES)
     target_link_libraries(unit_tests
         GTest::gtest
         GTest::gtest_main
+        crypt
     )
     gtest_discover_tests(unit_tests)
 endif()
@@ -36,6 +37,7 @@ if(PROPERTY_TEST_SOURCES)
         GTest::gtest_main
         rapidcheck
         rapidcheck_gtest
+        crypt
     )
     gtest_discover_tests(property_tests)
 endif()
@@ -50,6 +52,7 @@ if(COMPAT_TEST_SOURCES)
     target_link_libraries(compat_tests
         GTest::gtest
         GTest::gtest_main
+        crypt
     )
     gtest_discover_tests(compat_tests)
 endif()

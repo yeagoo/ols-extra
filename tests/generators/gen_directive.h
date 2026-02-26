@@ -24,6 +24,11 @@ extern "C" {
 #include "gen_cidr.h"
 #include "gen_regex.h"
 #include "gen_expires.h"
+#include "gen_options.h"
+#include "gen_http_method.h"
+#include "gen_mime.h"
+#include "gen_extension.h"
+#include "gen_require.h"
 
 namespace gen {
 
@@ -70,7 +75,7 @@ inline rc::Gen<directive_type_t> directiveType()
 }
 
 /**
- * Generate remaining directive types (split due to rc::gen::element arity).
+ * Generate remaining v1 directive types (split due to rc::gen::element arity).
  */
 inline rc::Gen<directive_type_t> directiveTypeExtra()
 {
@@ -87,11 +92,61 @@ inline rc::Gen<directive_type_t> directiveTypeExtra()
 }
 
 /**
- * Generate any of the 28 directive types.
+ * Generate v2 directive types — first batch.
+ */
+inline rc::Gen<directive_type_t> directiveTypeV2a()
+{
+    return rc::gen::element(
+        DIR_IFMODULE,
+        DIR_OPTIONS,
+        DIR_FILES,
+        DIR_HEADER_ALWAYS_SET,
+        DIR_HEADER_ALWAYS_UNSET,
+        DIR_HEADER_ALWAYS_APPEND,
+        DIR_HEADER_ALWAYS_MERGE,
+        DIR_HEADER_ALWAYS_ADD,
+        DIR_EXPIRES_DEFAULT,
+        DIR_REQUIRE_ALL_GRANTED,
+        DIR_REQUIRE_ALL_DENIED,
+        DIR_REQUIRE_IP,
+        DIR_REQUIRE_NOT_IP,
+        DIR_REQUIRE_ANY_OPEN,
+        DIR_REQUIRE_ALL_OPEN,
+        DIR_LIMIT,
+        DIR_LIMIT_EXCEPT
+    );
+}
+
+/**
+ * Generate v2 directive types — second batch.
+ */
+inline rc::Gen<directive_type_t> directiveTypeV2b()
+{
+    return rc::gen::element(
+        DIR_AUTH_TYPE,
+        DIR_AUTH_NAME,
+        DIR_AUTH_USER_FILE,
+        DIR_REQUIRE_VALID_USER,
+        DIR_ADD_HANDLER,
+        DIR_SET_HANDLER,
+        DIR_ADD_TYPE,
+        DIR_DIRECTORY_INDEX,
+        DIR_FORCE_TYPE,
+        DIR_ADD_ENCODING,
+        DIR_ADD_CHARSET,
+        DIR_BRUTE_FORCE_X_FORWARDED_FOR,
+        DIR_BRUTE_FORCE_WHITELIST,
+        DIR_BRUTE_FORCE_PROTECT_PATH
+    );
+}
+
+/**
+ * Generate any of the 59 directive types (v1 + v2).
  */
 inline rc::Gen<directive_type_t> anyDirectiveType()
 {
-    return rc::gen::oneOf(directiveType(), directiveTypeExtra());
+    return rc::gen::oneOf(directiveType(), directiveTypeExtra(),
+                          directiveTypeV2a(), directiveTypeV2b());
 }
 
 /**
@@ -347,6 +402,256 @@ inline rc::Gen<htaccess_directive_t *> directiveOfType(directive_type_t type)
                 return d;
             });
 
+    /* === v2 directive types === */
+
+    case DIR_IFMODULE:
+        return rc::gen::map(
+            rc::gen::pair(
+                rc::gen::element<std::string>("mod_rewrite.c", "mod_headers.c",
+                    "mod_expires.c", "mod_deflate.c"),
+                rc::gen::arbitrary<bool>()),
+            [](const std::pair<std::string, bool> &p) {
+                auto *d = allocDir(DIR_IFMODULE);
+                d->name = strdup(p.first.c_str());
+                d->data.ifmodule.negated = p.second ? 1 : 0;
+                d->data.ifmodule.children = nullptr;
+                return d;
+            });
+
+    case DIR_OPTIONS:
+        return rc::gen::map(
+            rc::gen::tuple(
+                rc::gen::element(-1, 0, 1),
+                rc::gen::element(-1, 0, 1),
+                rc::gen::element(-1, 0, 1),
+                rc::gen::element(-1, 0, 1)),
+            [](const std::tuple<int, int, int, int> &t) {
+                auto *d = allocDir(DIR_OPTIONS);
+                d->data.options.indexes = std::get<0>(t);
+                d->data.options.follow_symlinks = std::get<1>(t);
+                d->data.options.multiviews = std::get<2>(t);
+                d->data.options.exec_cgi = std::get<3>(t);
+                return d;
+            });
+
+    case DIR_FILES:
+        return rc::gen::map(
+            rc::gen::element<std::string>("index.html", ".htaccess",
+                "wp-config.php", "robots.txt"),
+            [](const std::string &name) {
+                auto *d = allocDir(DIR_FILES);
+                d->name = strdup(name.c_str());
+                d->data.files.children = nullptr;
+                return d;
+            });
+
+    case DIR_HEADER_ALWAYS_SET:
+    case DIR_HEADER_ALWAYS_APPEND:
+    case DIR_HEADER_ALWAYS_MERGE:
+    case DIR_HEADER_ALWAYS_ADD:
+        return rc::gen::map(
+            rc::gen::pair(headerName(), headerValue()),
+            [type](const std::pair<std::string, std::string> &p) {
+                auto *d = allocDir(type);
+                d->name = strdup(p.first.c_str());
+                d->value = strdup(p.second.c_str());
+                return d;
+            });
+
+    case DIR_HEADER_ALWAYS_UNSET:
+        return rc::gen::map(headerName(),
+            [](const std::string &n) {
+                auto *d = allocDir(DIR_HEADER_ALWAYS_UNSET);
+                d->name = strdup(n.c_str());
+                return d;
+            });
+
+    case DIR_EXPIRES_DEFAULT: {
+        return rc::gen::map(expiresDuration(),
+            [](const ExpiresResult &p) {
+                auto *d = allocDir(DIR_EXPIRES_DEFAULT);
+                d->value = strdup(p.first.c_str());
+                d->data.expires.duration_sec = p.second;
+                return d;
+            });
+    }
+
+    case DIR_REQUIRE_ALL_GRANTED:
+        return rc::gen::just(allocDir(DIR_REQUIRE_ALL_GRANTED));
+
+    case DIR_REQUIRE_ALL_DENIED:
+        return rc::gen::just(allocDir(DIR_REQUIRE_ALL_DENIED));
+
+    case DIR_REQUIRE_IP:
+        return rc::gen::map(cidrString(),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_REQUIRE_IP);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_REQUIRE_NOT_IP:
+        return rc::gen::map(cidrString(),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_REQUIRE_NOT_IP);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_REQUIRE_ANY_OPEN:
+        return rc::gen::just([]() {
+            auto *d = allocDir(DIR_REQUIRE_ANY_OPEN);
+            d->data.require_container.children = nullptr;
+            return d;
+        }());
+
+    case DIR_REQUIRE_ALL_OPEN:
+        return rc::gen::just([]() {
+            auto *d = allocDir(DIR_REQUIRE_ALL_OPEN);
+            d->data.require_container.children = nullptr;
+            return d;
+        }());
+
+    case DIR_LIMIT:
+    case DIR_LIMIT_EXCEPT:
+        return rc::gen::map(
+            rc::gen::element<std::string>("GET", "POST", "GET POST",
+                "PUT DELETE", "GET POST PUT"),
+            [type](const std::string &methods) {
+                auto *d = allocDir(type);
+                d->data.limit.methods = strdup(methods.c_str());
+                d->data.limit.children = nullptr;
+                return d;
+            });
+
+    case DIR_AUTH_TYPE:
+        return rc::gen::just([]() {
+            auto *d = allocDir(DIR_AUTH_TYPE);
+            d->value = strdup("Basic");
+            return d;
+        }());
+
+    case DIR_AUTH_NAME:
+        return rc::gen::map(simpleValue(),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_AUTH_NAME);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_AUTH_USER_FILE:
+        return rc::gen::map(simpleValue(),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_AUTH_USER_FILE);
+                d->value = strdup(("/etc/htpasswd/" + v).c_str());
+                return d;
+            });
+
+    case DIR_REQUIRE_VALID_USER:
+        return rc::gen::just(allocDir(DIR_REQUIRE_VALID_USER));
+
+    case DIR_ADD_HANDLER:
+        return rc::gen::map(
+            rc::gen::pair(simpleValue(), simpleValue()),
+            [](const std::pair<std::string, std::string> &p) {
+                auto *d = allocDir(DIR_ADD_HANDLER);
+                d->name = strdup(p.first.c_str());
+                d->value = strdup(("." + p.second).c_str());
+                return d;
+            });
+
+    case DIR_SET_HANDLER:
+        return rc::gen::map(simpleValue(),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_SET_HANDLER);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_ADD_TYPE:
+        return rc::gen::map(
+            rc::gen::pair(
+                rc::gen::element<std::string>("text/html", "application/json",
+                    "image/png", "text/css"),
+                rc::gen::element<std::string>(".html", ".json", ".png", ".css")),
+            [](const std::pair<std::string, std::string> &p) {
+                auto *d = allocDir(DIR_ADD_TYPE);
+                d->name = strdup(p.first.c_str());
+                d->value = strdup(p.second.c_str());
+                return d;
+            });
+
+    case DIR_DIRECTORY_INDEX:
+        return rc::gen::map(
+            rc::gen::element<std::string>("index.html", "index.php",
+                "index.html index.php", "default.html"),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_DIRECTORY_INDEX);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_FORCE_TYPE:
+        return rc::gen::map(
+            rc::gen::element<std::string>("text/html", "application/json",
+                "text/plain", "application/octet-stream"),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_FORCE_TYPE);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_ADD_ENCODING:
+        return rc::gen::map(
+            rc::gen::pair(
+                rc::gen::element<std::string>("gzip", "deflate", "br"),
+                rc::gen::element<std::string>(".gz", ".Z", ".br")),
+            [](const std::pair<std::string, std::string> &p) {
+                auto *d = allocDir(DIR_ADD_ENCODING);
+                d->name = strdup(p.first.c_str());
+                d->value = strdup(p.second.c_str());
+                return d;
+            });
+
+    case DIR_ADD_CHARSET:
+        return rc::gen::map(
+            rc::gen::pair(
+                rc::gen::element<std::string>("UTF-8", "ISO-8859-1", "Windows-1252"),
+                rc::gen::element<std::string>(".html", ".txt", ".css")),
+            [](const std::pair<std::string, std::string> &p) {
+                auto *d = allocDir(DIR_ADD_CHARSET);
+                d->name = strdup(p.first.c_str());
+                d->value = strdup(p.second.c_str());
+                return d;
+            });
+
+    case DIR_BRUTE_FORCE_X_FORWARDED_FOR:
+        return rc::gen::map(
+            rc::gen::arbitrary<bool>(),
+            [](bool on) {
+                auto *d = allocDir(DIR_BRUTE_FORCE_X_FORWARDED_FOR);
+                d->data.brute_force.enabled = on ? 1 : 0;
+                return d;
+            });
+
+    case DIR_BRUTE_FORCE_WHITELIST:
+        return rc::gen::map(cidrString(),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_BRUTE_FORCE_WHITELIST);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
+    case DIR_BRUTE_FORCE_PROTECT_PATH:
+        return rc::gen::map(
+            rc::gen::element<std::string>("/wp-login.php", "/admin",
+                "/login", "/xmlrpc.php"),
+            [](const std::string &v) {
+                auto *d = allocDir(DIR_BRUTE_FORCE_PROTECT_PATH);
+                d->value = strdup(v.c_str());
+                return d;
+            });
+
     default:
         /* Fallback: generate a simple Header set directive */
         return rc::gen::map(
@@ -361,15 +666,18 @@ inline rc::Gen<htaccess_directive_t *> directiveOfType(directive_type_t type)
 }
 
 /**
- * Generate a random directive of any non-FilesMatch type.
+ * Generate a random directive of any non-container type.
  */
 inline rc::Gen<htaccess_directive_t *> simpleDirective()
 {
     return rc::gen::mapcat(
         anyDirectiveType(),
         [](directive_type_t type) {
-            /* Skip FilesMatch to avoid recursion in simple contexts */
-            if (type == DIR_FILES_MATCH)
+            /* Skip container types to avoid recursion in simple contexts */
+            if (type == DIR_FILES_MATCH || type == DIR_IFMODULE ||
+                type == DIR_FILES || type == DIR_REQUIRE_ANY_OPEN ||
+                type == DIR_REQUIRE_ALL_OPEN || type == DIR_LIMIT ||
+                type == DIR_LIMIT_EXCEPT)
                 return directiveOfType(DIR_HEADER_SET);
             return directiveOfType(type);
         });

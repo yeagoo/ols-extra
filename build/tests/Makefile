@@ -363,6 +363,36 @@ __/src/htaccess_exec_acl.c.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.s
 .PHONY : __/src/htaccess_exec_acl.c.s
 
+__/src/htaccess_exec_auth.o: __/src/htaccess_exec_auth.c.o
+.PHONY : __/src/htaccess_exec_auth.o
+
+# target to build an object file
+__/src/htaccess_exec_auth.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_auth.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o
+.PHONY : __/src/htaccess_exec_auth.c.o
+
+__/src/htaccess_exec_auth.i: __/src/htaccess_exec_auth.c.i
+.PHONY : __/src/htaccess_exec_auth.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_auth.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_auth.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.i
+.PHONY : __/src/htaccess_exec_auth.c.i
+
+__/src/htaccess_exec_auth.s: __/src/htaccess_exec_auth.c.s
+.PHONY : __/src/htaccess_exec_auth.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_auth.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_auth.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.s
+.PHONY : __/src/htaccess_exec_auth.c.s
+
 __/src/htaccess_exec_brute_force.o: __/src/htaccess_exec_brute_force.c.o
 .PHONY : __/src/htaccess_exec_brute_force.o
 
@@ -392,6 +422,66 @@ __/src/htaccess_exec_brute_force.c.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_brute_force.c.s
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.s
 .PHONY : __/src/htaccess_exec_brute_force.c.s
+
+__/src/htaccess_exec_dirindex.o: __/src/htaccess_exec_dirindex.c.o
+.PHONY : __/src/htaccess_exec_dirindex.o
+
+# target to build an object file
+__/src/htaccess_exec_dirindex.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_dirindex.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o
+.PHONY : __/src/htaccess_exec_dirindex.c.o
+
+__/src/htaccess_exec_dirindex.i: __/src/htaccess_exec_dirindex.c.i
+.PHONY : __/src/htaccess_exec_dirindex.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_dirindex.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_dirindex.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.i
+.PHONY : __/src/htaccess_exec_dirindex.c.i
+
+__/src/htaccess_exec_dirindex.s: __/src/htaccess_exec_dirindex.c.s
+.PHONY : __/src/htaccess_exec_dirindex.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_dirindex.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_dirindex.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.s
+.PHONY : __/src/htaccess_exec_dirindex.c.s
+
+__/src/htaccess_exec_encoding.o: __/src/htaccess_exec_encoding.c.o
+.PHONY : __/src/htaccess_exec_encoding.o
+
+# target to build an object file
+__/src/htaccess_exec_encoding.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_encoding.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o
+.PHONY : __/src/htaccess_exec_encoding.c.o
+
+__/src/htaccess_exec_encoding.i: __/src/htaccess_exec_encoding.c.i
+.PHONY : __/src/htaccess_exec_encoding.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_encoding.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_encoding.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.i
+.PHONY : __/src/htaccess_exec_encoding.c.i
+
+__/src/htaccess_exec_encoding.s: __/src/htaccess_exec_encoding.c.s
+.PHONY : __/src/htaccess_exec_encoding.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_encoding.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_encoding.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.s
+.PHONY : __/src/htaccess_exec_encoding.c.s
 
 __/src/htaccess_exec_env.o: __/src/htaccess_exec_env.c.o
 .PHONY : __/src/htaccess_exec_env.o
@@ -513,6 +603,66 @@ __/src/htaccess_exec_files_match.c.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.s
 .PHONY : __/src/htaccess_exec_files_match.c.s
 
+__/src/htaccess_exec_forcetype.o: __/src/htaccess_exec_forcetype.c.o
+.PHONY : __/src/htaccess_exec_forcetype.o
+
+# target to build an object file
+__/src/htaccess_exec_forcetype.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_forcetype.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o
+.PHONY : __/src/htaccess_exec_forcetype.c.o
+
+__/src/htaccess_exec_forcetype.i: __/src/htaccess_exec_forcetype.c.i
+.PHONY : __/src/htaccess_exec_forcetype.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_forcetype.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_forcetype.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.i
+.PHONY : __/src/htaccess_exec_forcetype.c.i
+
+__/src/htaccess_exec_forcetype.s: __/src/htaccess_exec_forcetype.c.s
+.PHONY : __/src/htaccess_exec_forcetype.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_forcetype.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_forcetype.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.s
+.PHONY : __/src/htaccess_exec_forcetype.c.s
+
+__/src/htaccess_exec_handler.o: __/src/htaccess_exec_handler.c.o
+.PHONY : __/src/htaccess_exec_handler.o
+
+# target to build an object file
+__/src/htaccess_exec_handler.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_handler.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o
+.PHONY : __/src/htaccess_exec_handler.c.o
+
+__/src/htaccess_exec_handler.i: __/src/htaccess_exec_handler.c.i
+.PHONY : __/src/htaccess_exec_handler.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_handler.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_handler.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.i
+.PHONY : __/src/htaccess_exec_handler.c.i
+
+__/src/htaccess_exec_handler.s: __/src/htaccess_exec_handler.c.s
+.PHONY : __/src/htaccess_exec_handler.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_handler.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_handler.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.s
+.PHONY : __/src/htaccess_exec_handler.c.s
+
 __/src/htaccess_exec_header.o: __/src/htaccess_exec_header.c.o
 .PHONY : __/src/htaccess_exec_header.o
 
@@ -542,6 +692,66 @@ __/src/htaccess_exec_header.c.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_header.c.s
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.s
 .PHONY : __/src/htaccess_exec_header.c.s
+
+__/src/htaccess_exec_limit.o: __/src/htaccess_exec_limit.c.o
+.PHONY : __/src/htaccess_exec_limit.o
+
+# target to build an object file
+__/src/htaccess_exec_limit.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_limit.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o
+.PHONY : __/src/htaccess_exec_limit.c.o
+
+__/src/htaccess_exec_limit.i: __/src/htaccess_exec_limit.c.i
+.PHONY : __/src/htaccess_exec_limit.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_limit.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_limit.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.i
+.PHONY : __/src/htaccess_exec_limit.c.i
+
+__/src/htaccess_exec_limit.s: __/src/htaccess_exec_limit.c.s
+.PHONY : __/src/htaccess_exec_limit.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_limit.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_limit.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.s
+.PHONY : __/src/htaccess_exec_limit.c.s
+
+__/src/htaccess_exec_options.o: __/src/htaccess_exec_options.c.o
+.PHONY : __/src/htaccess_exec_options.o
+
+# target to build an object file
+__/src/htaccess_exec_options.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_options.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o
+.PHONY : __/src/htaccess_exec_options.c.o
+
+__/src/htaccess_exec_options.i: __/src/htaccess_exec_options.c.i
+.PHONY : __/src/htaccess_exec_options.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_options.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_options.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.i
+.PHONY : __/src/htaccess_exec_options.c.i
+
+__/src/htaccess_exec_options.s: __/src/htaccess_exec_options.c.s
+.PHONY : __/src/htaccess_exec_options.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_options.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_options.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.s
+.PHONY : __/src/htaccess_exec_options.c.s
 
 __/src/htaccess_exec_php.o: __/src/htaccess_exec_php.c.o
 .PHONY : __/src/htaccess_exec_php.o
@@ -602,6 +812,36 @@ __/src/htaccess_exec_redirect.c.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_redirect.c.s
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.s
 .PHONY : __/src/htaccess_exec_redirect.c.s
+
+__/src/htaccess_exec_require.o: __/src/htaccess_exec_require.c.o
+.PHONY : __/src/htaccess_exec_require.o
+
+# target to build an object file
+__/src/htaccess_exec_require.c.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_require.c.o
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o
+.PHONY : __/src/htaccess_exec_require.c.o
+
+__/src/htaccess_exec_require.i: __/src/htaccess_exec_require.c.i
+.PHONY : __/src/htaccess_exec_require.i
+
+# target to preprocess a source file
+__/src/htaccess_exec_require.c.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_require.c.i
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.i
+.PHONY : __/src/htaccess_exec_require.c.i
+
+__/src/htaccess_exec_require.s: __/src/htaccess_exec_require.c.s
+.PHONY : __/src/htaccess_exec_require.s
+
+# target to generate assembly for a file
+__/src/htaccess_exec_require.c.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/__/src/htaccess_exec_require.c.s
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.s
+.PHONY : __/src/htaccess_exec_require.c.s
 
 __/src/htaccess_expires.o: __/src/htaccess_expires.c.o
 .PHONY : __/src/htaccess_expires.o
@@ -777,6 +1017,30 @@ compat/test_compat.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/compat/test_compat.cpp.s
 .PHONY : compat/test_compat.cpp.s
 
+compat/test_compat_v2.o: compat/test_compat_v2.cpp.o
+.PHONY : compat/test_compat_v2.o
+
+# target to build an object file
+compat/test_compat_v2.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o
+.PHONY : compat/test_compat_v2.cpp.o
+
+compat/test_compat_v2.i: compat/test_compat_v2.cpp.i
+.PHONY : compat/test_compat_v2.i
+
+# target to preprocess a source file
+compat/test_compat_v2.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.i
+.PHONY : compat/test_compat_v2.cpp.i
+
+compat/test_compat_v2.s: compat/test_compat_v2.cpp.s
+.PHONY : compat/test_compat_v2.s
+
+# target to generate assembly for a file
+compat/test_compat_v2.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/compat_tests.dir/build.make tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.s
+.PHONY : compat/test_compat_v2.cpp.s
+
 mock_lsiapi.o: mock_lsiapi.cpp.o
 .PHONY : mock_lsiapi.o
 
@@ -831,6 +1095,54 @@ property/prop_acl.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_acl.cpp.s
 .PHONY : property/prop_acl.cpp.s
 
+property/prop_add_type.o: property/prop_add_type.cpp.o
+.PHONY : property/prop_add_type.o
+
+# target to build an object file
+property/prop_add_type.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_add_type.cpp.o
+.PHONY : property/prop_add_type.cpp.o
+
+property/prop_add_type.i: property/prop_add_type.cpp.i
+.PHONY : property/prop_add_type.i
+
+# target to preprocess a source file
+property/prop_add_type.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_add_type.cpp.i
+.PHONY : property/prop_add_type.cpp.i
+
+property/prop_add_type.s: property/prop_add_type.cpp.s
+.PHONY : property/prop_add_type.s
+
+# target to generate assembly for a file
+property/prop_add_type.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_add_type.cpp.s
+.PHONY : property/prop_add_type.cpp.s
+
+property/prop_auth_basic.o: property/prop_auth_basic.cpp.o
+.PHONY : property/prop_auth_basic.o
+
+# target to build an object file
+property/prop_auth_basic.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_auth_basic.cpp.o
+.PHONY : property/prop_auth_basic.cpp.o
+
+property/prop_auth_basic.i: property/prop_auth_basic.cpp.i
+.PHONY : property/prop_auth_basic.i
+
+# target to preprocess a source file
+property/prop_auth_basic.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_auth_basic.cpp.i
+.PHONY : property/prop_auth_basic.cpp.i
+
+property/prop_auth_basic.s: property/prop_auth_basic.cpp.s
+.PHONY : property/prop_auth_basic.s
+
+# target to generate assembly for a file
+property/prop_auth_basic.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_auth_basic.cpp.s
+.PHONY : property/prop_auth_basic.cpp.s
+
 property/prop_brute_force.o: property/prop_brute_force.cpp.o
 .PHONY : property/prop_brute_force.o
 
@@ -854,6 +1166,30 @@ property/prop_brute_force.s: property/prop_brute_force.cpp.s
 property/prop_brute_force.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_brute_force.cpp.s
 .PHONY : property/prop_brute_force.cpp.s
+
+property/prop_brute_force_v2.o: property/prop_brute_force_v2.cpp.o
+.PHONY : property/prop_brute_force_v2.o
+
+# target to build an object file
+property/prop_brute_force_v2.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_brute_force_v2.cpp.o
+.PHONY : property/prop_brute_force_v2.cpp.o
+
+property/prop_brute_force_v2.i: property/prop_brute_force_v2.cpp.i
+.PHONY : property/prop_brute_force_v2.i
+
+# target to preprocess a source file
+property/prop_brute_force_v2.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_brute_force_v2.cpp.i
+.PHONY : property/prop_brute_force_v2.cpp.i
+
+property/prop_brute_force_v2.s: property/prop_brute_force_v2.cpp.s
+.PHONY : property/prop_brute_force_v2.s
+
+# target to generate assembly for a file
+property/prop_brute_force_v2.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_brute_force_v2.cpp.s
+.PHONY : property/prop_brute_force_v2.cpp.s
 
 property/prop_cache.o: property/prop_cache.cpp.o
 .PHONY : property/prop_cache.o
@@ -927,6 +1263,54 @@ property/prop_dir_inherit.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_dir_inherit.cpp.s
 .PHONY : property/prop_dir_inherit.cpp.s
 
+property/prop_dirindex.o: property/prop_dirindex.cpp.o
+.PHONY : property/prop_dirindex.o
+
+# target to build an object file
+property/prop_dirindex.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_dirindex.cpp.o
+.PHONY : property/prop_dirindex.cpp.o
+
+property/prop_dirindex.i: property/prop_dirindex.cpp.i
+.PHONY : property/prop_dirindex.i
+
+# target to preprocess a source file
+property/prop_dirindex.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_dirindex.cpp.i
+.PHONY : property/prop_dirindex.cpp.i
+
+property/prop_dirindex.s: property/prop_dirindex.cpp.s
+.PHONY : property/prop_dirindex.s
+
+# target to generate assembly for a file
+property/prop_dirindex.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_dirindex.cpp.s
+.PHONY : property/prop_dirindex.cpp.s
+
+property/prop_encoding_charset.o: property/prop_encoding_charset.cpp.o
+.PHONY : property/prop_encoding_charset.o
+
+# target to build an object file
+property/prop_encoding_charset.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_encoding_charset.cpp.o
+.PHONY : property/prop_encoding_charset.cpp.o
+
+property/prop_encoding_charset.i: property/prop_encoding_charset.cpp.i
+.PHONY : property/prop_encoding_charset.i
+
+# target to preprocess a source file
+property/prop_encoding_charset.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_encoding_charset.cpp.i
+.PHONY : property/prop_encoding_charset.cpp.i
+
+property/prop_encoding_charset.s: property/prop_encoding_charset.cpp.s
+.PHONY : property/prop_encoding_charset.s
+
+# target to generate assembly for a file
+property/prop_encoding_charset.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_encoding_charset.cpp.s
+.PHONY : property/prop_encoding_charset.cpp.s
+
 property/prop_env.o: property/prop_env.cpp.o
 .PHONY : property/prop_env.o
 
@@ -975,6 +1359,30 @@ property/prop_error_document.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_error_document.cpp.s
 .PHONY : property/prop_error_document.cpp.s
 
+property/prop_errordoc_text.o: property/prop_errordoc_text.cpp.o
+.PHONY : property/prop_errordoc_text.o
+
+# target to build an object file
+property/prop_errordoc_text.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_errordoc_text.cpp.o
+.PHONY : property/prop_errordoc_text.cpp.o
+
+property/prop_errordoc_text.i: property/prop_errordoc_text.cpp.i
+.PHONY : property/prop_errordoc_text.i
+
+# target to preprocess a source file
+property/prop_errordoc_text.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_errordoc_text.cpp.i
+.PHONY : property/prop_errordoc_text.cpp.i
+
+property/prop_errordoc_text.s: property/prop_errordoc_text.cpp.s
+.PHONY : property/prop_errordoc_text.s
+
+# target to generate assembly for a file
+property/prop_errordoc_text.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_errordoc_text.cpp.s
+.PHONY : property/prop_errordoc_text.cpp.s
+
 property/prop_expires.o: property/prop_expires.cpp.o
 .PHONY : property/prop_expires.o
 
@@ -998,6 +1406,30 @@ property/prop_expires.s: property/prop_expires.cpp.s
 property/prop_expires.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_expires.cpp.s
 .PHONY : property/prop_expires.cpp.s
+
+property/prop_expires_default.o: property/prop_expires_default.cpp.o
+.PHONY : property/prop_expires_default.o
+
+# target to build an object file
+property/prop_expires_default.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_expires_default.cpp.o
+.PHONY : property/prop_expires_default.cpp.o
+
+property/prop_expires_default.i: property/prop_expires_default.cpp.i
+.PHONY : property/prop_expires_default.i
+
+# target to preprocess a source file
+property/prop_expires_default.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_expires_default.cpp.i
+.PHONY : property/prop_expires_default.cpp.i
+
+property/prop_expires_default.s: property/prop_expires_default.cpp.s
+.PHONY : property/prop_expires_default.s
+
+# target to generate assembly for a file
+property/prop_expires_default.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_expires_default.cpp.s
+.PHONY : property/prop_expires_default.cpp.s
 
 property/prop_expires_exec.o: property/prop_expires_exec.cpp.o
 .PHONY : property/prop_expires_exec.o
@@ -1023,6 +1455,30 @@ property/prop_expires_exec.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_expires_exec.cpp.s
 .PHONY : property/prop_expires_exec.cpp.s
 
+property/prop_files.o: property/prop_files.cpp.o
+.PHONY : property/prop_files.o
+
+# target to build an object file
+property/prop_files.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_files.cpp.o
+.PHONY : property/prop_files.cpp.o
+
+property/prop_files.i: property/prop_files.cpp.i
+.PHONY : property/prop_files.i
+
+# target to preprocess a source file
+property/prop_files.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_files.cpp.i
+.PHONY : property/prop_files.cpp.i
+
+property/prop_files.s: property/prop_files.cpp.s
+.PHONY : property/prop_files.s
+
+# target to generate assembly for a file
+property/prop_files.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_files.cpp.s
+.PHONY : property/prop_files.cpp.s
+
 property/prop_files_match.o: property/prop_files_match.cpp.o
 .PHONY : property/prop_files_match.o
 
@@ -1046,6 +1502,30 @@ property/prop_files_match.s: property/prop_files_match.cpp.s
 property/prop_files_match.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_files_match.cpp.s
 .PHONY : property/prop_files_match.cpp.s
+
+property/prop_forcetype.o: property/prop_forcetype.cpp.o
+.PHONY : property/prop_forcetype.o
+
+# target to build an object file
+property/prop_forcetype.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_forcetype.cpp.o
+.PHONY : property/prop_forcetype.cpp.o
+
+property/prop_forcetype.i: property/prop_forcetype.cpp.i
+.PHONY : property/prop_forcetype.i
+
+# target to preprocess a source file
+property/prop_forcetype.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_forcetype.cpp.i
+.PHONY : property/prop_forcetype.cpp.i
+
+property/prop_forcetype.s: property/prop_forcetype.cpp.s
+.PHONY : property/prop_forcetype.s
+
+# target to generate assembly for a file
+property/prop_forcetype.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_forcetype.cpp.s
+.PHONY : property/prop_forcetype.cpp.s
 
 property/prop_generators_smoke.o: property/prop_generators_smoke.cpp.o
 .PHONY : property/prop_generators_smoke.o
@@ -1094,6 +1574,102 @@ property/prop_header.s: property/prop_header.cpp.s
 property/prop_header.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_header.cpp.s
 .PHONY : property/prop_header.cpp.s
+
+property/prop_header_always.o: property/prop_header_always.cpp.o
+.PHONY : property/prop_header_always.o
+
+# target to build an object file
+property/prop_header_always.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_header_always.cpp.o
+.PHONY : property/prop_header_always.cpp.o
+
+property/prop_header_always.i: property/prop_header_always.cpp.i
+.PHONY : property/prop_header_always.i
+
+# target to preprocess a source file
+property/prop_header_always.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_header_always.cpp.i
+.PHONY : property/prop_header_always.cpp.i
+
+property/prop_header_always.s: property/prop_header_always.cpp.s
+.PHONY : property/prop_header_always.s
+
+# target to generate assembly for a file
+property/prop_header_always.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_header_always.cpp.s
+.PHONY : property/prop_header_always.cpp.s
+
+property/prop_ifmodule.o: property/prop_ifmodule.cpp.o
+.PHONY : property/prop_ifmodule.o
+
+# target to build an object file
+property/prop_ifmodule.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_ifmodule.cpp.o
+.PHONY : property/prop_ifmodule.cpp.o
+
+property/prop_ifmodule.i: property/prop_ifmodule.cpp.i
+.PHONY : property/prop_ifmodule.i
+
+# target to preprocess a source file
+property/prop_ifmodule.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_ifmodule.cpp.i
+.PHONY : property/prop_ifmodule.cpp.i
+
+property/prop_ifmodule.s: property/prop_ifmodule.cpp.s
+.PHONY : property/prop_ifmodule.s
+
+# target to generate assembly for a file
+property/prop_ifmodule.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_ifmodule.cpp.s
+.PHONY : property/prop_ifmodule.cpp.s
+
+property/prop_limit.o: property/prop_limit.cpp.o
+.PHONY : property/prop_limit.o
+
+# target to build an object file
+property/prop_limit.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_limit.cpp.o
+.PHONY : property/prop_limit.cpp.o
+
+property/prop_limit.i: property/prop_limit.cpp.i
+.PHONY : property/prop_limit.i
+
+# target to preprocess a source file
+property/prop_limit.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_limit.cpp.i
+.PHONY : property/prop_limit.cpp.i
+
+property/prop_limit.s: property/prop_limit.cpp.s
+.PHONY : property/prop_limit.s
+
+# target to generate assembly for a file
+property/prop_limit.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_limit.cpp.s
+.PHONY : property/prop_limit.cpp.s
+
+property/prop_options.o: property/prop_options.cpp.o
+.PHONY : property/prop_options.o
+
+# target to build an object file
+property/prop_options.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_options.cpp.o
+.PHONY : property/prop_options.cpp.o
+
+property/prop_options.i: property/prop_options.cpp.i
+.PHONY : property/prop_options.i
+
+# target to preprocess a source file
+property/prop_options.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_options.cpp.i
+.PHONY : property/prop_options.cpp.i
+
+property/prop_options.s: property/prop_options.cpp.s
+.PHONY : property/prop_options.s
+
+# target to generate assembly for a file
+property/prop_options.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_options.cpp.s
+.PHONY : property/prop_options.cpp.s
 
 property/prop_parser_order.o: property/prop_parser_order.cpp.o
 .PHONY : property/prop_parser_order.o
@@ -1167,6 +1743,30 @@ property/prop_php_admin.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_php_admin.cpp.s
 .PHONY : property/prop_php_admin.cpp.s
 
+property/prop_php_blacklist.o: property/prop_php_blacklist.cpp.o
+.PHONY : property/prop_php_blacklist.o
+
+# target to build an object file
+property/prop_php_blacklist.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_php_blacklist.cpp.o
+.PHONY : property/prop_php_blacklist.cpp.o
+
+property/prop_php_blacklist.i: property/prop_php_blacklist.cpp.i
+.PHONY : property/prop_php_blacklist.i
+
+# target to preprocess a source file
+property/prop_php_blacklist.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_php_blacklist.cpp.i
+.PHONY : property/prop_php_blacklist.cpp.i
+
+property/prop_php_blacklist.s: property/prop_php_blacklist.cpp.s
+.PHONY : property/prop_php_blacklist.s
+
+# target to generate assembly for a file
+property/prop_php_blacklist.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_php_blacklist.cpp.s
+.PHONY : property/prop_php_blacklist.cpp.s
+
 property/prop_redirect.o: property/prop_redirect.cpp.o
 .PHONY : property/prop_redirect.o
 
@@ -1190,6 +1790,78 @@ property/prop_redirect.s: property/prop_redirect.cpp.s
 property/prop_redirect.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_redirect.cpp.s
 .PHONY : property/prop_redirect.cpp.s
+
+property/prop_require.o: property/prop_require.cpp.o
+.PHONY : property/prop_require.o
+
+# target to build an object file
+property/prop_require.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_require.cpp.o
+.PHONY : property/prop_require.cpp.o
+
+property/prop_require.i: property/prop_require.cpp.i
+.PHONY : property/prop_require.i
+
+# target to preprocess a source file
+property/prop_require.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_require.cpp.i
+.PHONY : property/prop_require.cpp.i
+
+property/prop_require.s: property/prop_require.cpp.s
+.PHONY : property/prop_require.s
+
+# target to generate assembly for a file
+property/prop_require.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_require.cpp.s
+.PHONY : property/prop_require.cpp.s
+
+property/prop_v2_roundtrip.o: property/prop_v2_roundtrip.cpp.o
+.PHONY : property/prop_v2_roundtrip.o
+
+# target to build an object file
+property/prop_v2_roundtrip.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_v2_roundtrip.cpp.o
+.PHONY : property/prop_v2_roundtrip.cpp.o
+
+property/prop_v2_roundtrip.i: property/prop_v2_roundtrip.cpp.i
+.PHONY : property/prop_v2_roundtrip.i
+
+# target to preprocess a source file
+property/prop_v2_roundtrip.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_v2_roundtrip.cpp.i
+.PHONY : property/prop_v2_roundtrip.cpp.i
+
+property/prop_v2_roundtrip.s: property/prop_v2_roundtrip.cpp.s
+.PHONY : property/prop_v2_roundtrip.s
+
+# target to generate assembly for a file
+property/prop_v2_roundtrip.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/property_tests.dir/build.make tests/CMakeFiles/property_tests.dir/property/prop_v2_roundtrip.cpp.s
+.PHONY : property/prop_v2_roundtrip.cpp.s
+
+unit/test_brute_force_v2.o: unit/test_brute_force_v2.cpp.o
+.PHONY : unit/test_brute_force_v2.o
+
+# target to build an object file
+unit/test_brute_force_v2.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o
+.PHONY : unit/test_brute_force_v2.cpp.o
+
+unit/test_brute_force_v2.i: unit/test_brute_force_v2.cpp.i
+.PHONY : unit/test_brute_force_v2.i
+
+# target to preprocess a source file
+unit/test_brute_force_v2.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.i
+.PHONY : unit/test_brute_force_v2.cpp.i
+
+unit/test_brute_force_v2.s: unit/test_brute_force_v2.cpp.s
+.PHONY : unit/test_brute_force_v2.s
+
+# target to generate assembly for a file
+unit/test_brute_force_v2.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.s
+.PHONY : unit/test_brute_force_v2.cpp.s
 
 unit/test_cache.o: unit/test_cache.cpp.o
 .PHONY : unit/test_cache.o
@@ -1287,6 +1959,30 @@ unit/test_dirwalker.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.s
 .PHONY : unit/test_dirwalker.cpp.s
 
+unit/test_errordoc_quote_fix.o: unit/test_errordoc_quote_fix.cpp.o
+.PHONY : unit/test_errordoc_quote_fix.o
+
+# target to build an object file
+unit/test_errordoc_quote_fix.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o
+.PHONY : unit/test_errordoc_quote_fix.cpp.o
+
+unit/test_errordoc_quote_fix.i: unit/test_errordoc_quote_fix.cpp.i
+.PHONY : unit/test_errordoc_quote_fix.i
+
+# target to preprocess a source file
+unit/test_errordoc_quote_fix.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.i
+.PHONY : unit/test_errordoc_quote_fix.cpp.i
+
+unit/test_errordoc_quote_fix.s: unit/test_errordoc_quote_fix.cpp.s
+.PHONY : unit/test_errordoc_quote_fix.s
+
+# target to generate assembly for a file
+unit/test_errordoc_quote_fix.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.s
+.PHONY : unit/test_errordoc_quote_fix.cpp.s
+
 unit/test_exec_acl.o: unit/test_exec_acl.cpp.o
 .PHONY : unit/test_exec_acl.o
 
@@ -1310,6 +2006,30 @@ unit/test_exec_acl.s: unit/test_exec_acl.cpp.s
 unit/test_exec_acl.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.s
 .PHONY : unit/test_exec_acl.cpp.s
+
+unit/test_exec_auth.o: unit/test_exec_auth.cpp.o
+.PHONY : unit/test_exec_auth.o
+
+# target to build an object file
+unit/test_exec_auth.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o
+.PHONY : unit/test_exec_auth.cpp.o
+
+unit/test_exec_auth.i: unit/test_exec_auth.cpp.i
+.PHONY : unit/test_exec_auth.i
+
+# target to preprocess a source file
+unit/test_exec_auth.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.i
+.PHONY : unit/test_exec_auth.cpp.i
+
+unit/test_exec_auth.s: unit/test_exec_auth.cpp.s
+.PHONY : unit/test_exec_auth.s
+
+# target to generate assembly for a file
+unit/test_exec_auth.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.s
+.PHONY : unit/test_exec_auth.cpp.s
 
 unit/test_exec_brute_force.o: unit/test_exec_brute_force.cpp.o
 .PHONY : unit/test_exec_brute_force.o
@@ -1335,6 +2055,126 @@ unit/test_exec_brute_force.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.s
 .PHONY : unit/test_exec_brute_force.cpp.s
 
+unit/test_exec_dirindex.o: unit/test_exec_dirindex.cpp.o
+.PHONY : unit/test_exec_dirindex.o
+
+# target to build an object file
+unit/test_exec_dirindex.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o
+.PHONY : unit/test_exec_dirindex.cpp.o
+
+unit/test_exec_dirindex.i: unit/test_exec_dirindex.cpp.i
+.PHONY : unit/test_exec_dirindex.i
+
+# target to preprocess a source file
+unit/test_exec_dirindex.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.i
+.PHONY : unit/test_exec_dirindex.cpp.i
+
+unit/test_exec_dirindex.s: unit/test_exec_dirindex.cpp.s
+.PHONY : unit/test_exec_dirindex.s
+
+# target to generate assembly for a file
+unit/test_exec_dirindex.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.s
+.PHONY : unit/test_exec_dirindex.cpp.s
+
+unit/test_exec_encoding.o: unit/test_exec_encoding.cpp.o
+.PHONY : unit/test_exec_encoding.o
+
+# target to build an object file
+unit/test_exec_encoding.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o
+.PHONY : unit/test_exec_encoding.cpp.o
+
+unit/test_exec_encoding.i: unit/test_exec_encoding.cpp.i
+.PHONY : unit/test_exec_encoding.i
+
+# target to preprocess a source file
+unit/test_exec_encoding.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.i
+.PHONY : unit/test_exec_encoding.cpp.i
+
+unit/test_exec_encoding.s: unit/test_exec_encoding.cpp.s
+.PHONY : unit/test_exec_encoding.s
+
+# target to generate assembly for a file
+unit/test_exec_encoding.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.s
+.PHONY : unit/test_exec_encoding.cpp.s
+
+unit/test_exec_expires_default.o: unit/test_exec_expires_default.cpp.o
+.PHONY : unit/test_exec_expires_default.o
+
+# target to build an object file
+unit/test_exec_expires_default.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o
+.PHONY : unit/test_exec_expires_default.cpp.o
+
+unit/test_exec_expires_default.i: unit/test_exec_expires_default.cpp.i
+.PHONY : unit/test_exec_expires_default.i
+
+# target to preprocess a source file
+unit/test_exec_expires_default.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.i
+.PHONY : unit/test_exec_expires_default.cpp.i
+
+unit/test_exec_expires_default.s: unit/test_exec_expires_default.cpp.s
+.PHONY : unit/test_exec_expires_default.s
+
+# target to generate assembly for a file
+unit/test_exec_expires_default.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.s
+.PHONY : unit/test_exec_expires_default.cpp.s
+
+unit/test_exec_forcetype.o: unit/test_exec_forcetype.cpp.o
+.PHONY : unit/test_exec_forcetype.o
+
+# target to build an object file
+unit/test_exec_forcetype.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o
+.PHONY : unit/test_exec_forcetype.cpp.o
+
+unit/test_exec_forcetype.i: unit/test_exec_forcetype.cpp.i
+.PHONY : unit/test_exec_forcetype.i
+
+# target to preprocess a source file
+unit/test_exec_forcetype.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.i
+.PHONY : unit/test_exec_forcetype.cpp.i
+
+unit/test_exec_forcetype.s: unit/test_exec_forcetype.cpp.s
+.PHONY : unit/test_exec_forcetype.s
+
+# target to generate assembly for a file
+unit/test_exec_forcetype.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.s
+.PHONY : unit/test_exec_forcetype.cpp.s
+
+unit/test_exec_handler.o: unit/test_exec_handler.cpp.o
+.PHONY : unit/test_exec_handler.o
+
+# target to build an object file
+unit/test_exec_handler.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o
+.PHONY : unit/test_exec_handler.cpp.o
+
+unit/test_exec_handler.i: unit/test_exec_handler.cpp.i
+.PHONY : unit/test_exec_handler.i
+
+# target to preprocess a source file
+unit/test_exec_handler.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.i
+.PHONY : unit/test_exec_handler.cpp.i
+
+unit/test_exec_handler.s: unit/test_exec_handler.cpp.s
+.PHONY : unit/test_exec_handler.s
+
+# target to generate assembly for a file
+unit/test_exec_handler.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.s
+.PHONY : unit/test_exec_handler.cpp.s
+
 unit/test_exec_header.o: unit/test_exec_header.cpp.o
 .PHONY : unit/test_exec_header.o
 
@@ -1359,6 +2199,54 @@ unit/test_exec_header.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.s
 .PHONY : unit/test_exec_header.cpp.s
 
+unit/test_exec_limit.o: unit/test_exec_limit.cpp.o
+.PHONY : unit/test_exec_limit.o
+
+# target to build an object file
+unit/test_exec_limit.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o
+.PHONY : unit/test_exec_limit.cpp.o
+
+unit/test_exec_limit.i: unit/test_exec_limit.cpp.i
+.PHONY : unit/test_exec_limit.i
+
+# target to preprocess a source file
+unit/test_exec_limit.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.i
+.PHONY : unit/test_exec_limit.cpp.i
+
+unit/test_exec_limit.s: unit/test_exec_limit.cpp.s
+.PHONY : unit/test_exec_limit.s
+
+# target to generate assembly for a file
+unit/test_exec_limit.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.s
+.PHONY : unit/test_exec_limit.cpp.s
+
+unit/test_exec_options.o: unit/test_exec_options.cpp.o
+.PHONY : unit/test_exec_options.o
+
+# target to build an object file
+unit/test_exec_options.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o
+.PHONY : unit/test_exec_options.cpp.o
+
+unit/test_exec_options.i: unit/test_exec_options.cpp.i
+.PHONY : unit/test_exec_options.i
+
+# target to preprocess a source file
+unit/test_exec_options.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.i
+.PHONY : unit/test_exec_options.cpp.i
+
+unit/test_exec_options.s: unit/test_exec_options.cpp.s
+.PHONY : unit/test_exec_options.s
+
+# target to generate assembly for a file
+unit/test_exec_options.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.s
+.PHONY : unit/test_exec_options.cpp.s
+
 unit/test_exec_redirect.o: unit/test_exec_redirect.cpp.o
 .PHONY : unit/test_exec_redirect.o
 
@@ -1382,6 +2270,30 @@ unit/test_exec_redirect.s: unit/test_exec_redirect.cpp.s
 unit/test_exec_redirect.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.s
 .PHONY : unit/test_exec_redirect.cpp.s
+
+unit/test_exec_require.o: unit/test_exec_require.cpp.o
+.PHONY : unit/test_exec_require.o
+
+# target to build an object file
+unit/test_exec_require.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o
+.PHONY : unit/test_exec_require.cpp.o
+
+unit/test_exec_require.i: unit/test_exec_require.cpp.i
+.PHONY : unit/test_exec_require.i
+
+# target to preprocess a source file
+unit/test_exec_require.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.i
+.PHONY : unit/test_exec_require.cpp.i
+
+unit/test_exec_require.s: unit/test_exec_require.cpp.s
+.PHONY : unit/test_exec_require.s
+
+# target to generate assembly for a file
+unit/test_exec_require.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.s
+.PHONY : unit/test_exec_require.cpp.s
 
 unit/test_expires_parse.o: unit/test_expires_parse.cpp.o
 .PHONY : unit/test_expires_parse.o
@@ -1479,6 +2391,54 @@ unit/test_parser.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.s
 .PHONY : unit/test_parser.cpp.s
 
+unit/test_parser_v2.o: unit/test_parser_v2.cpp.o
+.PHONY : unit/test_parser_v2.o
+
+# target to build an object file
+unit/test_parser_v2.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o
+.PHONY : unit/test_parser_v2.cpp.o
+
+unit/test_parser_v2.i: unit/test_parser_v2.cpp.i
+.PHONY : unit/test_parser_v2.i
+
+# target to preprocess a source file
+unit/test_parser_v2.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.i
+.PHONY : unit/test_parser_v2.cpp.i
+
+unit/test_parser_v2.s: unit/test_parser_v2.cpp.s
+.PHONY : unit/test_parser_v2.s
+
+# target to generate assembly for a file
+unit/test_parser_v2.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.s
+.PHONY : unit/test_parser_v2.cpp.s
+
+unit/test_php_blacklist_fix.o: unit/test_php_blacklist_fix.cpp.o
+.PHONY : unit/test_php_blacklist_fix.o
+
+# target to build an object file
+unit/test_php_blacklist_fix.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o
+.PHONY : unit/test_php_blacklist_fix.cpp.o
+
+unit/test_php_blacklist_fix.i: unit/test_php_blacklist_fix.cpp.i
+.PHONY : unit/test_php_blacklist_fix.i
+
+# target to preprocess a source file
+unit/test_php_blacklist_fix.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.i
+.PHONY : unit/test_php_blacklist_fix.cpp.i
+
+unit/test_php_blacklist_fix.s: unit/test_php_blacklist_fix.cpp.s
+.PHONY : unit/test_php_blacklist_fix.s
+
+# target to generate assembly for a file
+unit/test_php_blacklist_fix.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.s
+.PHONY : unit/test_php_blacklist_fix.cpp.s
+
 unit/test_printer.o: unit/test_printer.cpp.o
 .PHONY : unit/test_printer.o
 
@@ -1502,6 +2462,30 @@ unit/test_printer.s: unit/test_printer.cpp.s
 unit/test_printer.cpp.s:
 	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.s
 .PHONY : unit/test_printer.cpp.s
+
+unit/test_printer_v2.o: unit/test_printer_v2.cpp.o
+.PHONY : unit/test_printer_v2.o
+
+# target to build an object file
+unit/test_printer_v2.cpp.o:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o
+.PHONY : unit/test_printer_v2.cpp.o
+
+unit/test_printer_v2.i: unit/test_printer_v2.cpp.i
+.PHONY : unit/test_printer_v2.i
+
+# target to preprocess a source file
+unit/test_printer_v2.cpp.i:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.i
+.PHONY : unit/test_printer_v2.cpp.i
+
+unit/test_printer_v2.s: unit/test_printer_v2.cpp.s
+.PHONY : unit/test_printer_v2.s
+
+# target to generate assembly for a file
+unit/test_printer_v2.cpp.s:
+	cd /home/ivmm/ols-extra/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.s
+.PHONY : unit/test_printer_v2.cpp.s
 
 # Help Target
 help:
@@ -1534,9 +2518,18 @@ help:
 	@echo "... __/src/htaccess_exec_acl.o"
 	@echo "... __/src/htaccess_exec_acl.i"
 	@echo "... __/src/htaccess_exec_acl.s"
+	@echo "... __/src/htaccess_exec_auth.o"
+	@echo "... __/src/htaccess_exec_auth.i"
+	@echo "... __/src/htaccess_exec_auth.s"
 	@echo "... __/src/htaccess_exec_brute_force.o"
 	@echo "... __/src/htaccess_exec_brute_force.i"
 	@echo "... __/src/htaccess_exec_brute_force.s"
+	@echo "... __/src/htaccess_exec_dirindex.o"
+	@echo "... __/src/htaccess_exec_dirindex.i"
+	@echo "... __/src/htaccess_exec_dirindex.s"
+	@echo "... __/src/htaccess_exec_encoding.o"
+	@echo "... __/src/htaccess_exec_encoding.i"
+	@echo "... __/src/htaccess_exec_encoding.s"
 	@echo "... __/src/htaccess_exec_env.o"
 	@echo "... __/src/htaccess_exec_env.i"
 	@echo "... __/src/htaccess_exec_env.s"
@@ -1549,15 +2542,30 @@ help:
 	@echo "... __/src/htaccess_exec_files_match.o"
 	@echo "... __/src/htaccess_exec_files_match.i"
 	@echo "... __/src/htaccess_exec_files_match.s"
+	@echo "... __/src/htaccess_exec_forcetype.o"
+	@echo "... __/src/htaccess_exec_forcetype.i"
+	@echo "... __/src/htaccess_exec_forcetype.s"
+	@echo "... __/src/htaccess_exec_handler.o"
+	@echo "... __/src/htaccess_exec_handler.i"
+	@echo "... __/src/htaccess_exec_handler.s"
 	@echo "... __/src/htaccess_exec_header.o"
 	@echo "... __/src/htaccess_exec_header.i"
 	@echo "... __/src/htaccess_exec_header.s"
+	@echo "... __/src/htaccess_exec_limit.o"
+	@echo "... __/src/htaccess_exec_limit.i"
+	@echo "... __/src/htaccess_exec_limit.s"
+	@echo "... __/src/htaccess_exec_options.o"
+	@echo "... __/src/htaccess_exec_options.i"
+	@echo "... __/src/htaccess_exec_options.s"
 	@echo "... __/src/htaccess_exec_php.o"
 	@echo "... __/src/htaccess_exec_php.i"
 	@echo "... __/src/htaccess_exec_php.s"
 	@echo "... __/src/htaccess_exec_redirect.o"
 	@echo "... __/src/htaccess_exec_redirect.i"
 	@echo "... __/src/htaccess_exec_redirect.s"
+	@echo "... __/src/htaccess_exec_require.o"
+	@echo "... __/src/htaccess_exec_require.i"
+	@echo "... __/src/htaccess_exec_require.s"
 	@echo "... __/src/htaccess_expires.o"
 	@echo "... __/src/htaccess_expires.i"
 	@echo "... __/src/htaccess_expires.s"
@@ -1576,15 +2584,27 @@ help:
 	@echo "... compat/test_compat.o"
 	@echo "... compat/test_compat.i"
 	@echo "... compat/test_compat.s"
+	@echo "... compat/test_compat_v2.o"
+	@echo "... compat/test_compat_v2.i"
+	@echo "... compat/test_compat_v2.s"
 	@echo "... mock_lsiapi.o"
 	@echo "... mock_lsiapi.i"
 	@echo "... mock_lsiapi.s"
 	@echo "... property/prop_acl.o"
 	@echo "... property/prop_acl.i"
 	@echo "... property/prop_acl.s"
+	@echo "... property/prop_add_type.o"
+	@echo "... property/prop_add_type.i"
+	@echo "... property/prop_add_type.s"
+	@echo "... property/prop_auth_basic.o"
+	@echo "... property/prop_auth_basic.i"
+	@echo "... property/prop_auth_basic.s"
 	@echo "... property/prop_brute_force.o"
 	@echo "... property/prop_brute_force.i"
 	@echo "... property/prop_brute_force.s"
+	@echo "... property/prop_brute_force_v2.o"
+	@echo "... property/prop_brute_force_v2.i"
+	@echo "... property/prop_brute_force_v2.s"
 	@echo "... property/prop_cache.o"
 	@echo "... property/prop_cache.i"
 	@echo "... property/prop_cache.s"
@@ -1594,27 +2614,57 @@ help:
 	@echo "... property/prop_dir_inherit.o"
 	@echo "... property/prop_dir_inherit.i"
 	@echo "... property/prop_dir_inherit.s"
+	@echo "... property/prop_dirindex.o"
+	@echo "... property/prop_dirindex.i"
+	@echo "... property/prop_dirindex.s"
+	@echo "... property/prop_encoding_charset.o"
+	@echo "... property/prop_encoding_charset.i"
+	@echo "... property/prop_encoding_charset.s"
 	@echo "... property/prop_env.o"
 	@echo "... property/prop_env.i"
 	@echo "... property/prop_env.s"
 	@echo "... property/prop_error_document.o"
 	@echo "... property/prop_error_document.i"
 	@echo "... property/prop_error_document.s"
+	@echo "... property/prop_errordoc_text.o"
+	@echo "... property/prop_errordoc_text.i"
+	@echo "... property/prop_errordoc_text.s"
 	@echo "... property/prop_expires.o"
 	@echo "... property/prop_expires.i"
 	@echo "... property/prop_expires.s"
+	@echo "... property/prop_expires_default.o"
+	@echo "... property/prop_expires_default.i"
+	@echo "... property/prop_expires_default.s"
 	@echo "... property/prop_expires_exec.o"
 	@echo "... property/prop_expires_exec.i"
 	@echo "... property/prop_expires_exec.s"
+	@echo "... property/prop_files.o"
+	@echo "... property/prop_files.i"
+	@echo "... property/prop_files.s"
 	@echo "... property/prop_files_match.o"
 	@echo "... property/prop_files_match.i"
 	@echo "... property/prop_files_match.s"
+	@echo "... property/prop_forcetype.o"
+	@echo "... property/prop_forcetype.i"
+	@echo "... property/prop_forcetype.s"
 	@echo "... property/prop_generators_smoke.o"
 	@echo "... property/prop_generators_smoke.i"
 	@echo "... property/prop_generators_smoke.s"
 	@echo "... property/prop_header.o"
 	@echo "... property/prop_header.i"
 	@echo "... property/prop_header.s"
+	@echo "... property/prop_header_always.o"
+	@echo "... property/prop_header_always.i"
+	@echo "... property/prop_header_always.s"
+	@echo "... property/prop_ifmodule.o"
+	@echo "... property/prop_ifmodule.i"
+	@echo "... property/prop_ifmodule.s"
+	@echo "... property/prop_limit.o"
+	@echo "... property/prop_limit.i"
+	@echo "... property/prop_limit.s"
+	@echo "... property/prop_options.o"
+	@echo "... property/prop_options.i"
+	@echo "... property/prop_options.s"
 	@echo "... property/prop_parser_order.o"
 	@echo "... property/prop_parser_order.i"
 	@echo "... property/prop_parser_order.s"
@@ -1624,9 +2674,21 @@ help:
 	@echo "... property/prop_php_admin.o"
 	@echo "... property/prop_php_admin.i"
 	@echo "... property/prop_php_admin.s"
+	@echo "... property/prop_php_blacklist.o"
+	@echo "... property/prop_php_blacklist.i"
+	@echo "... property/prop_php_blacklist.s"
 	@echo "... property/prop_redirect.o"
 	@echo "... property/prop_redirect.i"
 	@echo "... property/prop_redirect.s"
+	@echo "... property/prop_require.o"
+	@echo "... property/prop_require.i"
+	@echo "... property/prop_require.s"
+	@echo "... property/prop_v2_roundtrip.o"
+	@echo "... property/prop_v2_roundtrip.i"
+	@echo "... property/prop_v2_roundtrip.s"
+	@echo "... unit/test_brute_force_v2.o"
+	@echo "... unit/test_brute_force_v2.i"
+	@echo "... unit/test_brute_force_v2.s"
 	@echo "... unit/test_cache.o"
 	@echo "... unit/test_cache.i"
 	@echo "... unit/test_cache.s"
@@ -1639,18 +2701,48 @@ help:
 	@echo "... unit/test_dirwalker.o"
 	@echo "... unit/test_dirwalker.i"
 	@echo "... unit/test_dirwalker.s"
+	@echo "... unit/test_errordoc_quote_fix.o"
+	@echo "... unit/test_errordoc_quote_fix.i"
+	@echo "... unit/test_errordoc_quote_fix.s"
 	@echo "... unit/test_exec_acl.o"
 	@echo "... unit/test_exec_acl.i"
 	@echo "... unit/test_exec_acl.s"
+	@echo "... unit/test_exec_auth.o"
+	@echo "... unit/test_exec_auth.i"
+	@echo "... unit/test_exec_auth.s"
 	@echo "... unit/test_exec_brute_force.o"
 	@echo "... unit/test_exec_brute_force.i"
 	@echo "... unit/test_exec_brute_force.s"
+	@echo "... unit/test_exec_dirindex.o"
+	@echo "... unit/test_exec_dirindex.i"
+	@echo "... unit/test_exec_dirindex.s"
+	@echo "... unit/test_exec_encoding.o"
+	@echo "... unit/test_exec_encoding.i"
+	@echo "... unit/test_exec_encoding.s"
+	@echo "... unit/test_exec_expires_default.o"
+	@echo "... unit/test_exec_expires_default.i"
+	@echo "... unit/test_exec_expires_default.s"
+	@echo "... unit/test_exec_forcetype.o"
+	@echo "... unit/test_exec_forcetype.i"
+	@echo "... unit/test_exec_forcetype.s"
+	@echo "... unit/test_exec_handler.o"
+	@echo "... unit/test_exec_handler.i"
+	@echo "... unit/test_exec_handler.s"
 	@echo "... unit/test_exec_header.o"
 	@echo "... unit/test_exec_header.i"
 	@echo "... unit/test_exec_header.s"
+	@echo "... unit/test_exec_limit.o"
+	@echo "... unit/test_exec_limit.i"
+	@echo "... unit/test_exec_limit.s"
+	@echo "... unit/test_exec_options.o"
+	@echo "... unit/test_exec_options.i"
+	@echo "... unit/test_exec_options.s"
 	@echo "... unit/test_exec_redirect.o"
 	@echo "... unit/test_exec_redirect.i"
 	@echo "... unit/test_exec_redirect.s"
+	@echo "... unit/test_exec_require.o"
+	@echo "... unit/test_exec_require.i"
+	@echo "... unit/test_exec_require.s"
 	@echo "... unit/test_expires_parse.o"
 	@echo "... unit/test_expires_parse.i"
 	@echo "... unit/test_expires_parse.s"
@@ -1663,9 +2755,18 @@ help:
 	@echo "... unit/test_parser.o"
 	@echo "... unit/test_parser.i"
 	@echo "... unit/test_parser.s"
+	@echo "... unit/test_parser_v2.o"
+	@echo "... unit/test_parser_v2.i"
+	@echo "... unit/test_parser_v2.s"
+	@echo "... unit/test_php_blacklist_fix.o"
+	@echo "... unit/test_php_blacklist_fix.i"
+	@echo "... unit/test_php_blacklist_fix.s"
 	@echo "... unit/test_printer.o"
 	@echo "... unit/test_printer.i"
 	@echo "... unit/test_printer.s"
+	@echo "... unit/test_printer_v2.o"
+	@echo "... unit/test_printer_v2.i"
+	@echo "... unit/test_printer_v2.s"
 .PHONY : help
 
 

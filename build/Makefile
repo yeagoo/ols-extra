@@ -408,6 +408,30 @@ src/htaccess_exec_acl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_acl.c.s
 .PHONY : src/htaccess_exec_acl.c.s
 
+src/htaccess_exec_auth.o: src/htaccess_exec_auth.c.o
+.PHONY : src/htaccess_exec_auth.o
+
+# target to build an object file
+src/htaccess_exec_auth.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.o
+.PHONY : src/htaccess_exec_auth.c.o
+
+src/htaccess_exec_auth.i: src/htaccess_exec_auth.c.i
+.PHONY : src/htaccess_exec_auth.i
+
+# target to preprocess a source file
+src/htaccess_exec_auth.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.i
+.PHONY : src/htaccess_exec_auth.c.i
+
+src/htaccess_exec_auth.s: src/htaccess_exec_auth.c.s
+.PHONY : src/htaccess_exec_auth.s
+
+# target to generate assembly for a file
+src/htaccess_exec_auth.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_auth.c.s
+.PHONY : src/htaccess_exec_auth.c.s
+
 src/htaccess_exec_brute_force.o: src/htaccess_exec_brute_force.c.o
 .PHONY : src/htaccess_exec_brute_force.o
 
@@ -431,6 +455,54 @@ src/htaccess_exec_brute_force.s: src/htaccess_exec_brute_force.c.s
 src/htaccess_exec_brute_force.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_brute_force.c.s
 .PHONY : src/htaccess_exec_brute_force.c.s
+
+src/htaccess_exec_dirindex.o: src/htaccess_exec_dirindex.c.o
+.PHONY : src/htaccess_exec_dirindex.o
+
+# target to build an object file
+src/htaccess_exec_dirindex.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.o
+.PHONY : src/htaccess_exec_dirindex.c.o
+
+src/htaccess_exec_dirindex.i: src/htaccess_exec_dirindex.c.i
+.PHONY : src/htaccess_exec_dirindex.i
+
+# target to preprocess a source file
+src/htaccess_exec_dirindex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.i
+.PHONY : src/htaccess_exec_dirindex.c.i
+
+src/htaccess_exec_dirindex.s: src/htaccess_exec_dirindex.c.s
+.PHONY : src/htaccess_exec_dirindex.s
+
+# target to generate assembly for a file
+src/htaccess_exec_dirindex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_dirindex.c.s
+.PHONY : src/htaccess_exec_dirindex.c.s
+
+src/htaccess_exec_encoding.o: src/htaccess_exec_encoding.c.o
+.PHONY : src/htaccess_exec_encoding.o
+
+# target to build an object file
+src/htaccess_exec_encoding.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.o
+.PHONY : src/htaccess_exec_encoding.c.o
+
+src/htaccess_exec_encoding.i: src/htaccess_exec_encoding.c.i
+.PHONY : src/htaccess_exec_encoding.i
+
+# target to preprocess a source file
+src/htaccess_exec_encoding.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.i
+.PHONY : src/htaccess_exec_encoding.c.i
+
+src/htaccess_exec_encoding.s: src/htaccess_exec_encoding.c.s
+.PHONY : src/htaccess_exec_encoding.s
+
+# target to generate assembly for a file
+src/htaccess_exec_encoding.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_encoding.c.s
+.PHONY : src/htaccess_exec_encoding.c.s
 
 src/htaccess_exec_env.o: src/htaccess_exec_env.c.o
 .PHONY : src/htaccess_exec_env.o
@@ -528,6 +600,54 @@ src/htaccess_exec_files_match.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_files_match.c.s
 .PHONY : src/htaccess_exec_files_match.c.s
 
+src/htaccess_exec_forcetype.o: src/htaccess_exec_forcetype.c.o
+.PHONY : src/htaccess_exec_forcetype.o
+
+# target to build an object file
+src/htaccess_exec_forcetype.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.o
+.PHONY : src/htaccess_exec_forcetype.c.o
+
+src/htaccess_exec_forcetype.i: src/htaccess_exec_forcetype.c.i
+.PHONY : src/htaccess_exec_forcetype.i
+
+# target to preprocess a source file
+src/htaccess_exec_forcetype.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.i
+.PHONY : src/htaccess_exec_forcetype.c.i
+
+src/htaccess_exec_forcetype.s: src/htaccess_exec_forcetype.c.s
+.PHONY : src/htaccess_exec_forcetype.s
+
+# target to generate assembly for a file
+src/htaccess_exec_forcetype.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_forcetype.c.s
+.PHONY : src/htaccess_exec_forcetype.c.s
+
+src/htaccess_exec_handler.o: src/htaccess_exec_handler.c.o
+.PHONY : src/htaccess_exec_handler.o
+
+# target to build an object file
+src/htaccess_exec_handler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.o
+.PHONY : src/htaccess_exec_handler.c.o
+
+src/htaccess_exec_handler.i: src/htaccess_exec_handler.c.i
+.PHONY : src/htaccess_exec_handler.i
+
+# target to preprocess a source file
+src/htaccess_exec_handler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.i
+.PHONY : src/htaccess_exec_handler.c.i
+
+src/htaccess_exec_handler.s: src/htaccess_exec_handler.c.s
+.PHONY : src/htaccess_exec_handler.s
+
+# target to generate assembly for a file
+src/htaccess_exec_handler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_handler.c.s
+.PHONY : src/htaccess_exec_handler.c.s
+
 src/htaccess_exec_header.o: src/htaccess_exec_header.c.o
 .PHONY : src/htaccess_exec_header.o
 
@@ -551,6 +671,54 @@ src/htaccess_exec_header.s: src/htaccess_exec_header.c.s
 src/htaccess_exec_header.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_header.c.s
 .PHONY : src/htaccess_exec_header.c.s
+
+src/htaccess_exec_limit.o: src/htaccess_exec_limit.c.o
+.PHONY : src/htaccess_exec_limit.o
+
+# target to build an object file
+src/htaccess_exec_limit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.o
+.PHONY : src/htaccess_exec_limit.c.o
+
+src/htaccess_exec_limit.i: src/htaccess_exec_limit.c.i
+.PHONY : src/htaccess_exec_limit.i
+
+# target to preprocess a source file
+src/htaccess_exec_limit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.i
+.PHONY : src/htaccess_exec_limit.c.i
+
+src/htaccess_exec_limit.s: src/htaccess_exec_limit.c.s
+.PHONY : src/htaccess_exec_limit.s
+
+# target to generate assembly for a file
+src/htaccess_exec_limit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_limit.c.s
+.PHONY : src/htaccess_exec_limit.c.s
+
+src/htaccess_exec_options.o: src/htaccess_exec_options.c.o
+.PHONY : src/htaccess_exec_options.o
+
+# target to build an object file
+src/htaccess_exec_options.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.o
+.PHONY : src/htaccess_exec_options.c.o
+
+src/htaccess_exec_options.i: src/htaccess_exec_options.c.i
+.PHONY : src/htaccess_exec_options.i
+
+# target to preprocess a source file
+src/htaccess_exec_options.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.i
+.PHONY : src/htaccess_exec_options.c.i
+
+src/htaccess_exec_options.s: src/htaccess_exec_options.c.s
+.PHONY : src/htaccess_exec_options.s
+
+# target to generate assembly for a file
+src/htaccess_exec_options.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_options.c.s
+.PHONY : src/htaccess_exec_options.c.s
 
 src/htaccess_exec_php.o: src/htaccess_exec_php.c.o
 .PHONY : src/htaccess_exec_php.o
@@ -599,6 +767,30 @@ src/htaccess_exec_redirect.s: src/htaccess_exec_redirect.c.s
 src/htaccess_exec_redirect.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_redirect.c.s
 .PHONY : src/htaccess_exec_redirect.c.s
+
+src/htaccess_exec_require.o: src/htaccess_exec_require.c.o
+.PHONY : src/htaccess_exec_require.o
+
+# target to build an object file
+src/htaccess_exec_require.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.o
+.PHONY : src/htaccess_exec_require.c.o
+
+src/htaccess_exec_require.i: src/htaccess_exec_require.c.i
+.PHONY : src/htaccess_exec_require.i
+
+# target to preprocess a source file
+src/htaccess_exec_require.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.i
+.PHONY : src/htaccess_exec_require.c.i
+
+src/htaccess_exec_require.s: src/htaccess_exec_require.c.s
+.PHONY : src/htaccess_exec_require.s
+
+# target to generate assembly for a file
+src/htaccess_exec_require.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ols_htaccess.dir/build.make CMakeFiles/ols_htaccess.dir/src/htaccess_exec_require.c.s
+.PHONY : src/htaccess_exec_require.c.s
 
 src/htaccess_expires.o: src/htaccess_expires.c.o
 .PHONY : src/htaccess_expires.o
@@ -757,9 +949,18 @@ help:
 	@echo "... src/htaccess_exec_acl.o"
 	@echo "... src/htaccess_exec_acl.i"
 	@echo "... src/htaccess_exec_acl.s"
+	@echo "... src/htaccess_exec_auth.o"
+	@echo "... src/htaccess_exec_auth.i"
+	@echo "... src/htaccess_exec_auth.s"
 	@echo "... src/htaccess_exec_brute_force.o"
 	@echo "... src/htaccess_exec_brute_force.i"
 	@echo "... src/htaccess_exec_brute_force.s"
+	@echo "... src/htaccess_exec_dirindex.o"
+	@echo "... src/htaccess_exec_dirindex.i"
+	@echo "... src/htaccess_exec_dirindex.s"
+	@echo "... src/htaccess_exec_encoding.o"
+	@echo "... src/htaccess_exec_encoding.i"
+	@echo "... src/htaccess_exec_encoding.s"
 	@echo "... src/htaccess_exec_env.o"
 	@echo "... src/htaccess_exec_env.i"
 	@echo "... src/htaccess_exec_env.s"
@@ -772,15 +973,30 @@ help:
 	@echo "... src/htaccess_exec_files_match.o"
 	@echo "... src/htaccess_exec_files_match.i"
 	@echo "... src/htaccess_exec_files_match.s"
+	@echo "... src/htaccess_exec_forcetype.o"
+	@echo "... src/htaccess_exec_forcetype.i"
+	@echo "... src/htaccess_exec_forcetype.s"
+	@echo "... src/htaccess_exec_handler.o"
+	@echo "... src/htaccess_exec_handler.i"
+	@echo "... src/htaccess_exec_handler.s"
 	@echo "... src/htaccess_exec_header.o"
 	@echo "... src/htaccess_exec_header.i"
 	@echo "... src/htaccess_exec_header.s"
+	@echo "... src/htaccess_exec_limit.o"
+	@echo "... src/htaccess_exec_limit.i"
+	@echo "... src/htaccess_exec_limit.s"
+	@echo "... src/htaccess_exec_options.o"
+	@echo "... src/htaccess_exec_options.i"
+	@echo "... src/htaccess_exec_options.s"
 	@echo "... src/htaccess_exec_php.o"
 	@echo "... src/htaccess_exec_php.i"
 	@echo "... src/htaccess_exec_php.s"
 	@echo "... src/htaccess_exec_redirect.o"
 	@echo "... src/htaccess_exec_redirect.i"
 	@echo "... src/htaccess_exec_redirect.s"
+	@echo "... src/htaccess_exec_require.o"
+	@echo "... src/htaccess_exec_require.i"
+	@echo "... src/htaccess_exec_require.s"
 	@echo "... src/htaccess_expires.o"
 	@echo "... src/htaccess_expires.i"
 	@echo "... src/htaccess_expires.s"

@@ -28,7 +28,7 @@ CMakeFiles/ols_htaccess.dir/src/htaccess_exec_expires.c.o: \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
  /usr/include/aarch64-linux-gnu/bits/floatn.h \
  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
- /usr/include/string.h \
+ /usr/include/aarch64-linux-gnu/bits/stdio.h /usr/include/string.h \
  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/time.h \

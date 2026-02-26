@@ -120,6 +120,26 @@ const std::vector<PhpIniRecord> &MockSession::get_php_ini_records() const {
 
 std::string MockSession::get_resp_body() const { return resp_body_; }
 
+/* v2 setup helpers */
+void MockSession::set_method(const std::string &method)       { method_ = method; }
+void MockSession::set_auth_header(const std::string &value)   { auth_header_ = value; }
+void MockSession::add_existing_file(const std::string &path)  { existing_files_[path] = true; }
+
+/* v2 inspection helpers */
+std::string MockSession::get_method() const              { return method_; }
+std::string MockSession::get_auth_header_value() const   { return auth_header_; }
+std::string MockSession::get_internal_uri() const        { return internal_uri_; }
+std::string MockSession::get_www_authenticate() const    { return www_authenticate_; }
+
+int MockSession::get_dir_option(const std::string &option) const {
+    auto it = dir_options_.find(option);
+    return (it != dir_options_.end()) ? it->second : -1; /* -1 = not set */
+}
+
+bool MockSession::file_exists(const std::string &path) const {
+    return existing_files_.count(path) > 0;
+}
+
 void MockSession::reset() {
     req_headers_.clear();
     resp_headers_.clear();
@@ -130,6 +150,12 @@ void MockSession::reset() {
     status_code_ = 200;
     php_ini_records_.clear();
     resp_body_.clear();
+    dir_options_.clear();
+    internal_uri_.clear();
+    method_.clear();
+    auth_header_.clear();
+    www_authenticate_.clear();
+    existing_files_.clear();
 }
 
 lsi_session_t *MockSession::handle() {
@@ -351,6 +377,86 @@ void lsi_log(lsi_session_t * /*session*/, int level, const char *fmt, ...) {
     rec.level   = level;
     rec.message = buf;
     g_log_records.push_back(std::move(rec));
+}
+
+/* ---- v2: Directory options ---- */
+
+int lsi_session_set_dir_option(lsi_session_t *session,
+                                const char *option, int enabled) {
+    if (!session || !option) return LSI_ERROR;
+    auto *m = to_mock(session);
+    m->dir_options_[std::string(option)] = enabled;
+    return LSI_OK;
+}
+
+int lsi_session_get_dir_option(lsi_session_t *session,
+                                const char *option) {
+    if (!session || !option) return -1;
+    auto *m = to_mock(session);
+    auto it = m->dir_options_.find(std::string(option));
+    return (it != m->dir_options_.end()) ? it->second : -1;
+}
+
+/* ---- v2: Internal URI redirect ---- */
+
+int lsi_session_set_uri_internal(lsi_session_t *session,
+                                  const char *uri, int uri_len) {
+    if (!session || !uri || uri_len <= 0) return LSI_ERROR;
+    auto *m = to_mock(session);
+    m->internal_uri_ = std::string(uri, static_cast<size_t>(uri_len));
+    return LSI_OK;
+}
+
+/* ---- v2: File existence check ---- */
+
+int lsi_session_file_exists(lsi_session_t *session, const char *path) {
+    if (!session || !path) return 0;
+    auto *m = to_mock(session);
+    return m->existing_files_.count(std::string(path)) > 0 ? 1 : 0;
+}
+
+/* ---- v2: Request method ---- */
+
+const char *lsi_session_get_method(lsi_session_t *session, int *len) {
+    if (!session) {
+        if (len) *len = 0;
+        return nullptr;
+    }
+    auto *m = to_mock(session);
+    if (m->method_.empty()) {
+        if (len) *len = 0;
+        return nullptr;
+    }
+    if (len) *len = static_cast<int>(m->method_.size());
+    return m->method_.c_str();
+}
+
+/* ---- v2: Authorization header ---- */
+
+const char *lsi_session_get_auth_header(lsi_session_t *session, int *len) {
+    if (!session) {
+        if (len) *len = 0;
+        return nullptr;
+    }
+    auto *m = to_mock(session);
+    if (m->auth_header_.empty()) {
+        if (len) *len = 0;
+        return nullptr;
+    }
+    if (len) *len = static_cast<int>(m->auth_header_.size());
+    return m->auth_header_.c_str();
+}
+
+/* ---- v2: WWW-Authenticate header ---- */
+
+int lsi_session_set_www_authenticate(lsi_session_t *session,
+                                      const char *realm, int realm_len) {
+    if (!session || !realm || realm_len <= 0) return LSI_ERROR;
+    auto *m = to_mock(session);
+    m->www_authenticate_ = "Basic realm=\""
+                         + std::string(realm, static_cast<size_t>(realm_len))
+                         + "\"";
+    return LSI_OK;
 }
 
 } /* extern "C" */

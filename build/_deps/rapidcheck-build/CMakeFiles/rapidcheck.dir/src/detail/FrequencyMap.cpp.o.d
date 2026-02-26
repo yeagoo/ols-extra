@@ -86,5 +86,7 @@ _deps/rapidcheck-build/CMakeFiles/rapidcheck.dir/src/detail/FrequencyMap.cpp.o: 
  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
- /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/alloca.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/14/bits/std_abs.h

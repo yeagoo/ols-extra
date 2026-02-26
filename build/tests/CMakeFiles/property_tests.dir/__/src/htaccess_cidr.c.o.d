@@ -46,5 +46,6 @@ tests/CMakeFiles/property_tests.dir/__/src/htaccess_cidr.c.o: \
  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
- /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
- /usr/include/ctype.h
+ /usr/include/alloca.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-float.h /usr/include/ctype.h

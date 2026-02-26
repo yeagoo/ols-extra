@@ -72,10 +72,24 @@ include tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/codegen:
 .PHONY : tests/CMakeFiles/unit_tests.dir/codegen
 
+tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o: /home/ivmm/ols-extra/tests/unit/test_brute_force_v2.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_brute_force_v2.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_brute_force_v2.cpp > CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_brute_force_v2.cpp -o CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o: /home/ivmm/ols-extra/tests/unit/test_cache.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_cache.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.i: cmake_force
@@ -89,7 +103,7 @@ tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o: /home/ivmm/ols-extra/tests/unit/test_cidr.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_cidr.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.i: cmake_force
@@ -103,7 +117,7 @@ tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o: /home/ivmm/ols-extra/tests/unit/test_directive.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_directive.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.i: cmake_force
@@ -117,7 +131,7 @@ tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o: /home/ivmm/ols-extra/tests/unit/test_dirwalker.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_dirwalker.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.i: cmake_force
@@ -128,10 +142,24 @@ tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_dirwalker.cpp -o CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o: /home/ivmm/ols-extra/tests/unit/test_errordoc_quote_fix.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_errordoc_quote_fix.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_errordoc_quote_fix.cpp > CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_errordoc_quote_fix.cpp -o CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_acl.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_acl.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.i: cmake_force
@@ -142,10 +170,24 @@ tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_acl.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_auth.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_auth.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_auth.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_auth.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_brute_force.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_brute_force.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.i: cmake_force
@@ -156,10 +198,80 @@ tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_brute_force.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_dirindex.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_dirindex.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_dirindex.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_dirindex.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_encoding.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_encoding.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_encoding.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_encoding.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_expires_default.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_expires_default.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_expires_default.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_expires_default.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_forcetype.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_forcetype.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_forcetype.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_forcetype.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_handler.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_handler.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_handler.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_handler.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_header.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_header.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.i: cmake_force
@@ -170,10 +282,38 @@ tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_header.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_limit.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_limit.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_limit.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_limit.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_options.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_options.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_options.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_options.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_redirect.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_redirect.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.i: cmake_force
@@ -184,10 +324,24 @@ tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_redirect.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o: /home/ivmm/ols-extra/tests/unit/test_exec_require.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_exec_require.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_exec_require.cpp > CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_exec_require.cpp -o CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o: /home/ivmm/ols-extra/tests/unit/test_expires_parse.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_expires_parse.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.i: cmake_force
@@ -201,7 +355,7 @@ tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o: /home/ivmm/ols-extra/tests/unit/test_integration.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_integration.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.i: cmake_force
@@ -215,7 +369,7 @@ tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o: /home/ivmm/ols-extra/tests/unit/test_mock_lsiapi.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_mock_lsiapi.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.i: cmake_force
@@ -229,7 +383,7 @@ tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o: /home/ivmm/ols-extra/tests/unit/test_parser.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_parser.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.i: cmake_force
@@ -240,10 +394,38 @@ tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_parser.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_parser.cpp -o CMakeFiles/unit_tests.dir/unit/test_parser.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o: /home/ivmm/ols-extra/tests/unit/test_parser_v2.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_parser_v2.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_parser_v2.cpp > CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_parser_v2.cpp -o CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.s
+
+tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o: /home/ivmm/ols-extra/tests/unit/test_php_blacklist_fix.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_php_blacklist_fix.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_php_blacklist_fix.cpp > CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_php_blacklist_fix.cpp -o CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o: /home/ivmm/ols-extra/tests/unit/test_printer.cpp
 tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_printer.cpp
 
 tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.i: cmake_force
@@ -254,10 +436,24 @@ tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_printer.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_printer.cpp -o CMakeFiles/unit_tests.dir/unit/test_printer.cpp.s
 
+tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o: /home/ivmm/ols-extra/tests/unit/test_printer_v2.cpp
+tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o -MF CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o.d -o CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o -c /home/ivmm/ols-extra/tests/unit/test_printer_v2.cpp
+
+tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/unit/test_printer_v2.cpp > CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.i
+
+tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/unit/test_printer_v2.cpp -o CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.s
+
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o: /home/ivmm/ols-extra/src/htaccess_cache.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o -c /home/ivmm/ols-extra/src/htaccess_cache.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.i: cmake_force
@@ -271,7 +467,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o: /home/ivmm/ols-extra/src/htaccess_cidr.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o -c /home/ivmm/ols-extra/src/htaccess_cidr.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.i: cmake_force
@@ -285,7 +481,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o: /home/ivmm/ols-extra/src/htaccess_directive.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o -c /home/ivmm/ols-extra/src/htaccess_directive.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.i: cmake_force
@@ -299,7 +495,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o: /home/ivmm/ols-extra/src/htaccess_dirwalker.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o -c /home/ivmm/ols-extra/src/htaccess_dirwalker.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.i: cmake_force
@@ -313,7 +509,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o: /home/ivmm/ols-extra/src/htaccess_exec_acl.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_acl.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.i: cmake_force
@@ -324,10 +520,24 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_acl.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.s
 
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o: /home/ivmm/ols-extra/src/htaccess_exec_auth.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_auth.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_auth.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_auth.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.s
+
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o: /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.i: cmake_force
@@ -338,10 +548,38 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.s
 
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o: /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.s
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o: /home/ivmm/ols-extra/src/htaccess_exec_encoding.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_encoding.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_encoding.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_encoding.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.s
+
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o: /home/ivmm/ols-extra/src/htaccess_exec_env.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_env.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.i: cmake_force
@@ -355,7 +593,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o: /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.i: cmake_force
@@ -369,7 +607,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o: /home/ivmm/ols-extra/src/htaccess_exec_expires.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_expires.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.i: cmake_force
@@ -383,7 +621,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o: /home/ivmm/ols-extra/src/htaccess_exec_files_match.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_files_match.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.i: cmake_force
@@ -394,10 +632,38 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_files_match.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.s
 
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o: /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.s
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o: /home/ivmm/ols-extra/src/htaccess_exec_handler.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_handler.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_handler.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_handler.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.s
+
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o: /home/ivmm/ols-extra/src/htaccess_exec_header.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_header.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.i: cmake_force
@@ -408,10 +674,38 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_header.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.s
 
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o: /home/ivmm/ols-extra/src/htaccess_exec_limit.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_limit.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_limit.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_limit.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.s
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o: /home/ivmm/ols-extra/src/htaccess_exec_options.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_options.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_options.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_options.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.s
+
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o: /home/ivmm/ols-extra/src/htaccess_exec_php.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_php.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.i: cmake_force
@@ -425,7 +719,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o: /home/ivmm/ols-extra/src/htaccess_exec_redirect.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_redirect.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.i: cmake_force
@@ -436,10 +730,24 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_redirect.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.s
 
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o: /home/ivmm/ols-extra/src/htaccess_exec_require.c
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_require.c
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_require.c > CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.i
+
+tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_require.c -o CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.s
+
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o: /home/ivmm/ols-extra/src/htaccess_expires.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o -c /home/ivmm/ols-extra/src/htaccess_expires.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.i: cmake_force
@@ -453,7 +761,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o: /home/ivmm/ols-extra/src/htaccess_parser.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o -c /home/ivmm/ols-extra/src/htaccess_parser.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.i: cmake_force
@@ -467,7 +775,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o: /home/ivmm/ols-extra/src/htaccess_printer.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o -c /home/ivmm/ols-extra/src/htaccess_printer.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.i: cmake_force
@@ -481,7 +789,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o: /home/ivmm/ols-extra/src/htaccess_shm.c
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o -MF CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o.d -o CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.o -c /home/ivmm/ols-extra/src/htaccess_shm.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.i: cmake_force
@@ -495,7 +803,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/htaccess_shm.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o: /home/ivmm/ols-extra/src/mod_htaccess.c
 tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o -MF CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o.d -o CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.o -c /home/ivmm/ols-extra/src/mod_htaccess.c
 
 tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.i: cmake_force
@@ -509,7 +817,7 @@ tests/CMakeFiles/unit_tests.dir/__/src/mod_htaccess.c.s: cmake_force
 tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o: tests/CMakeFiles/unit_tests.dir/flags.make
 tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o: /home/ivmm/ols-extra/tests/mock_lsiapi.cpp
 tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o: tests/CMakeFiles/unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o -MF CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o.d -o CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.o -c /home/ivmm/ols-extra/tests/mock_lsiapi.cpp
 
 tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.i: cmake_force
@@ -522,32 +830,54 @@ tests/CMakeFiles/unit_tests.dir/mock_lsiapi.cpp.s: cmake_force
 
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
+"CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o" \
 "CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o" \
+"CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o" \
+"CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o" \
 "CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o" \
@@ -558,32 +888,54 @@ unit_tests_OBJECTS = \
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS =
 
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_brute_force_v2.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_cache.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_cidr.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_directive.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_dirwalker.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_errordoc_quote_fix.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_acl.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_auth.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_brute_force.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_dirindex.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_encoding.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_expires_default.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_forcetype.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_handler.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_header.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_limit.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_options.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_redirect.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_exec_require.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_expires_parse.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_integration.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_mock_lsiapi.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_parser.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_parser_v2.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_php_blacklist_fix.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_printer.cpp.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/unit/test_printer_v2.cpp.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cache.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_cidr.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_directive.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_dirwalker.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_acl.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_auth.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_brute_force.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_dirindex.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_encoding.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_env.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_error_doc.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_expires.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_files_match.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_forcetype.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_handler.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_header.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_limit.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_options.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_php.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_redirect.c.o
+tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_exec_require.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_expires.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_parser.c.o
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/__/src/htaccess_printer.c.o
@@ -596,7 +948,7 @@ tests/unit_tests: lib/libgtest.a
 tests/unit_tests: lib/libgtest_main.a
 tests/unit_tests: lib/libgtest.a
 tests/unit_tests: tests/CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Linking CXX executable unit_tests"
 	cd /home/ivmm/ols-extra/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cmake -D TEST_TARGET=unit_tests -D TEST_EXECUTABLE=/home/ivmm/ols-extra/build/tests/unit_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/ivmm/ols-extra/build/tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=unit_tests_TESTS -D CTEST_FILE=/home/ivmm/ols-extra/build/tests/unit_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.31/Modules/GoogleTestAddTests.cmake
 

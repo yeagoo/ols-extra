@@ -37,6 +37,9 @@ jobs:
       - name: Run property tests
         run: ctest --test-dir build -R "property_tests" --output-on-failure --parallel $(nproc)
 
+      - name: Run compatibility tests
+        run: ctest --test-dir build -R "compat_tests" --output-on-failure --parallel $(nproc)
+
   # ── Job 2: .htaccess Compatibility Tests ────────────────────────────
   compatibility:
     runs-on: ubuntu-latest
@@ -227,6 +230,72 @@ jobs:
           echo "$RESP" | grep -qi "X-Content-Type-Options: nosniff"
           echo "$RESP" | grep -qi "Cache-Control.*max-age=3600"
           echo "✓ Combined WordPress-style .htaccess matches Apache behaviour"
+
+      - name: Test v2 Header always directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Header always set X-Frame-Options "DENY"
+          Header always set X-Content-Type-Options "nosniff"
+          Header always unset X-Powered-By
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "X-Frame-Options: DENY"
+          echo "$RESP" | grep -qi "X-Content-Type-Options: nosniff"
+          echo "✓ Header always directives match Apache behaviour"
+
+      - name: Test v2 Options directive
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Options -Indexes +FollowSymLinks
+          HTACCESS
+          sleep 1
+          # Directory listing should be forbidden (no index file in subdir)
+          RESP=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/subdir/)
+          echo "Status: $RESP"
+          test "$RESP" = "403"
+          echo "✓ Options -Indexes matches Apache behaviour"
+
+      - name: Test v2 ExpiresDefault directive
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          ExpiresActive On
+          ExpiresDefault "access plus 2 hours"
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/index.html)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "Cache-Control.*max-age=7200"
+          echo "✓ ExpiresDefault matches Apache behaviour"
+
+      - name: Test v2 Require directives
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          Require all granted
+          HTACCESS
+          sleep 1
+          RESP=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/)
+          echo "Status: $RESP"
+          test "$RESP" = "200"
+          echo "✓ Require all granted matches Apache behaviour"
+
+      - name: Test v2 IfModule directive
+        run: |
+          sudo tee /var/www/test/.htaccess << 'HTACCESS'
+          <IfModule mod_headers.c>
+          Header set X-IfModule-Test "active"
+          </IfModule>
+          <IfModule !mod_nonexistent.c>
+          Header set X-Negated-Test "active"
+          </IfModule>
+          HTACCESS
+          sleep 1
+          RESP=$(curl -sI http://localhost/)
+          echo "$RESP"
+          echo "$RESP" | grep -qi "X-IfModule-Test: active"
+          echo "$RESP" | grep -qi "X-Negated-Test: active"
+          echo "✓ IfModule directives match Apache behaviour"
 
       - name: Collect Apache logs on failure
         if: failure()

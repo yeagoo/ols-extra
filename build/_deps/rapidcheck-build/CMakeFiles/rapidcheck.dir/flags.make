@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/ivmm/ols-extra/include -I/home/ivmm/ols-extra/build/_deps/rapidcheck-src/include
 
-CXX_FLAGS =  -Wall -Wno-missing-braces -Wno-unused-command-line-argument -g -std=gnu++11 -fPIC
+CXX_FLAGS =  -Wall -Wno-missing-braces -Wno-unused-command-line-argument -O3 -DNDEBUG -std=gnu++11 -fPIC
 
 # Custom flags: _deps/rapidcheck-build/CMakeFiles/rapidcheck.dir/src/Random.cpp.o_FLAGS =  -O3
 

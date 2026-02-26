@@ -257,7 +257,10 @@ TEST_F(ParserTest, ErrorDocumentQuotedMessage) {
     ASSERT_NE(d, nullptr);
     EXPECT_EQ(d->type, DIR_ERROR_DOCUMENT);
     EXPECT_EQ(d->data.error_doc.error_code, 503);
-    EXPECT_STREQ(d->value, "Service Temporarily Unavailable");
+    /* After bug fix (task 1.2): leading quote is preserved so the executor
+       can detect text message mode via value[0] == '"' */
+    EXPECT_EQ(d->value[0], '"');
+    EXPECT_TRUE(strstr(d->value, "Service Temporarily Unavailable") != nullptr);
     htaccess_directives_free(d);
 }
 

@@ -86,10 +86,24 @@ tests/CMakeFiles/compat_tests.dir/compat/test_compat.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/compat_tests.dir/compat/test_compat.cpp.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/compat/test_compat.cpp -o CMakeFiles/compat_tests.dir/compat/test_compat.cpp.s
 
+tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o: /home/ivmm/ols-extra/tests/compat/test_compat_v2.cpp
+tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o -MF CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o.d -o CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o -c /home/ivmm/ols-extra/tests/compat/test_compat_v2.cpp
+
+tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivmm/ols-extra/tests/compat/test_compat_v2.cpp > CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.i
+
+tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivmm/ols-extra/tests/compat/test_compat_v2.cpp -o CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.s
+
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o: /home/ivmm/ols-extra/src/htaccess_cache.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o -c /home/ivmm/ols-extra/src/htaccess_cache.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.i: cmake_force
@@ -103,7 +117,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o: /home/ivmm/ols-extra/src/htaccess_cidr.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o -c /home/ivmm/ols-extra/src/htaccess_cidr.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.i: cmake_force
@@ -117,7 +131,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o: /home/ivmm/ols-extra/src/htaccess_directive.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o -c /home/ivmm/ols-extra/src/htaccess_directive.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.i: cmake_force
@@ -131,7 +145,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o: /home/ivmm/ols-extra/src/htaccess_dirwalker.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o -c /home/ivmm/ols-extra/src/htaccess_dirwalker.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.i: cmake_force
@@ -145,7 +159,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o: /home/ivmm/ols-extra/src/htaccess_exec_acl.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_acl.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.i: cmake_force
@@ -156,10 +170,24 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_acl.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.s
 
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o: /home/ivmm/ols-extra/src/htaccess_exec_auth.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_auth.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_auth.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_auth.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.s
+
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o: /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.i: cmake_force
@@ -170,10 +198,38 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_brute_force.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.s
 
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o: /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_dirindex.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.s
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o: /home/ivmm/ols-extra/src/htaccess_exec_encoding.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_encoding.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_encoding.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_encoding.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.s
+
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o: /home/ivmm/ols-extra/src/htaccess_exec_env.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_env.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.i: cmake_force
@@ -187,7 +243,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o: /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_error_doc.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.i: cmake_force
@@ -201,7 +257,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.s: cmake_forc
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o: /home/ivmm/ols-extra/src/htaccess_exec_expires.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_expires.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.i: cmake_force
@@ -215,7 +271,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o: /home/ivmm/ols-extra/src/htaccess_exec_files_match.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_files_match.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.i: cmake_force
@@ -226,10 +282,38 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_files_match.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.s
 
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o: /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_forcetype.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.s
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o: /home/ivmm/ols-extra/src/htaccess_exec_handler.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_handler.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_handler.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_handler.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.s
+
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o: /home/ivmm/ols-extra/src/htaccess_exec_header.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_header.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.i: cmake_force
@@ -240,10 +324,38 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_header.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.s
 
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o: /home/ivmm/ols-extra/src/htaccess_exec_limit.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_limit.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_limit.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_limit.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.s
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o: /home/ivmm/ols-extra/src/htaccess_exec_options.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_options.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_options.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_options.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.s
+
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o: /home/ivmm/ols-extra/src/htaccess_exec_php.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_php.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.i: cmake_force
@@ -257,7 +369,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o: /home/ivmm/ols-extra/src/htaccess_exec_redirect.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_redirect.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.i: cmake_force
@@ -268,10 +380,24 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.s"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_redirect.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.s
 
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o: /home/ivmm/ols-extra/src/htaccess_exec_require.c
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o -c /home/ivmm/ols-extra/src/htaccess_exec_require.c
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.i"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivmm/ols-extra/src/htaccess_exec_require.c > CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.i
+
+tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.s"
+	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivmm/ols-extra/src/htaccess_exec_require.c -o CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.s
+
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o: /home/ivmm/ols-extra/src/htaccess_expires.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o -c /home/ivmm/ols-extra/src/htaccess_expires.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.i: cmake_force
@@ -285,7 +411,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o: /home/ivmm/ols-extra/src/htaccess_parser.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o -c /home/ivmm/ols-extra/src/htaccess_parser.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.i: cmake_force
@@ -299,7 +425,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o: /home/ivmm/ols-extra/src/htaccess_printer.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o -c /home/ivmm/ols-extra/src/htaccess_printer.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.i: cmake_force
@@ -313,7 +439,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o: /home/ivmm/ols-extra/src/htaccess_shm.c
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o -MF CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o.d -o CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.o -c /home/ivmm/ols-extra/src/htaccess_shm.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.i: cmake_force
@@ -327,7 +453,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/htaccess_shm.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o: /home/ivmm/ols-extra/src/mod_htaccess.c
 tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o -MF CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o.d -o CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.o -c /home/ivmm/ols-extra/src/mod_htaccess.c
 
 tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.i: cmake_force
@@ -341,7 +467,7 @@ tests/CMakeFiles/compat_tests.dir/__/src/mod_htaccess.c.s: cmake_force
 tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o: tests/CMakeFiles/compat_tests.dir/flags.make
 tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o: /home/ivmm/ols-extra/tests/mock_lsiapi.cpp
 tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o: tests/CMakeFiles/compat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o"
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o -MF CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o.d -o CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o -c /home/ivmm/ols-extra/tests/mock_lsiapi.cpp
 
 tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.i: cmake_force
@@ -355,19 +481,28 @@ tests/CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.s: cmake_force
 # Object files for target compat_tests
 compat_tests_OBJECTS = \
 "CMakeFiles/compat_tests.dir/compat/test_compat.cpp.o" \
+"CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o" \
+"CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o" \
 "CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o" \
@@ -379,19 +514,28 @@ compat_tests_OBJECTS = \
 compat_tests_EXTERNAL_OBJECTS =
 
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/compat/test_compat.cpp.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o
+tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o
@@ -404,7 +548,7 @@ tests/compat_tests: lib/libgtest.a
 tests/compat_tests: lib/libgtest_main.a
 tests/compat_tests: lib/libgtest.a
 tests/compat_tests: tests/CMakeFiles/compat_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable compat_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ivmm/ols-extra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable compat_tests"
 	cd /home/ivmm/ols-extra/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/compat_tests.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/ivmm/ols-extra/build/tests && /usr/bin/cmake -D TEST_TARGET=compat_tests -D TEST_EXECUTABLE=/home/ivmm/ols-extra/build/tests/compat_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/ivmm/ols-extra/build/tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=compat_tests_TESTS -D CTEST_FILE=/home/ivmm/ols-extra/build/tests/compat_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.31/Modules/GoogleTestAddTests.cmake
 

@@ -7,11 +7,11 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/ivmm/ols-extra/include -I/home/ivmm/ols-extra/tests -I/home/ivmm/ols-extra/tests/generators -isystem /home/ivmm/ols-extra/build/_deps/googletest-src/googletest/include -isystem /home/ivmm/ols-extra/build/_deps/googletest-src/googletest
 
-C_FLAGS = -g -std=gnu11 -fPIE
+C_FLAGS = -O3 -DNDEBUG -std=gnu11 -fPIE
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = -I/home/ivmm/ols-extra/include -I/home/ivmm/ols-extra/tests -I/home/ivmm/ols-extra/tests/generators -isystem /home/ivmm/ols-extra/build/_deps/googletest-src/googletest/include -isystem /home/ivmm/ols-extra/build/_deps/googletest-src/googletest
 
-CXX_FLAGS = -g -std=gnu++17 -fPIE
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -fPIE
 

@@ -19,6 +19,10 @@
 #include "gen_cidr.h"
 #include "gen_regex.h"
 #include "gen_expires.h"
+#include "gen_options.h"
+#include "gen_http_method.h"
+#include "gen_mime.h"
+#include "gen_extension.h"
 
 extern "C" {
 #include "htaccess_directive.h"
@@ -178,8 +182,166 @@ inline rc::Gen<TaggedLine> taggedDirectiveLine()
 }
 
 /**
+ * Generate v2 directive lines — first batch.
+ */
+inline rc::Gen<TaggedLine> taggedDirectiveLineV2a()
+{
+    return rc::gen::oneOf(
+        /* Options +/-flags */
+        rc::gen::map(options_line(),
+            [](const std::string &s) -> TaggedLine {
+                return {s, DIR_OPTIONS};
+            }),
+        /* Header always set <name> <value> */
+        rc::gen::map(
+            rc::gen::pair(headerName(), simpleValue()),
+            [](const std::pair<std::string, std::string> &p) -> TaggedLine {
+                return {"Header always set " + p.first + " " + p.second,
+                        DIR_HEADER_ALWAYS_SET};
+            }),
+        /* Header always unset <name> */
+        rc::gen::map(headerName(),
+            [](const std::string &n) -> TaggedLine {
+                return {"Header always unset " + n, DIR_HEADER_ALWAYS_UNSET};
+            }),
+        /* Header always append <name> <value> */
+        rc::gen::map(
+            rc::gen::pair(headerName(), simpleValue()),
+            [](const std::pair<std::string, std::string> &p) -> TaggedLine {
+                return {"Header always append " + p.first + " " + p.second,
+                        DIR_HEADER_ALWAYS_APPEND};
+            }),
+        /* ExpiresDefault */
+        rc::gen::map(expiresDuration(),
+            [](const ExpiresResult &p) -> TaggedLine {
+                return {"ExpiresDefault \"" + p.first + "\"",
+                        DIR_EXPIRES_DEFAULT};
+            }),
+        /* Require all granted */
+        rc::gen::just(TaggedLine{"Require all granted", DIR_REQUIRE_ALL_GRANTED}),
+        /* Require all denied */
+        rc::gen::just(TaggedLine{"Require all denied", DIR_REQUIRE_ALL_DENIED}),
+        /* Require ip <cidr> */
+        rc::gen::map(cidrString(),
+            [](const std::string &v) -> TaggedLine {
+                return {"Require ip " + v, DIR_REQUIRE_IP};
+            }),
+        /* Require not ip <cidr> */
+        rc::gen::map(cidrString(),
+            [](const std::string &v) -> TaggedLine {
+                return {"Require not ip " + v, DIR_REQUIRE_NOT_IP};
+            }),
+        /* AuthType Basic */
+        rc::gen::just(TaggedLine{"AuthType Basic", DIR_AUTH_TYPE}),
+        /* AuthName <realm> */
+        rc::gen::map(simpleValue(),
+            [](const std::string &v) -> TaggedLine {
+                return {"AuthName \"" + v + "\"", DIR_AUTH_NAME};
+            }),
+        /* AuthUserFile <path> */
+        rc::gen::map(simpleValue(),
+            [](const std::string &v) -> TaggedLine {
+                return {"AuthUserFile /etc/htpasswd/" + v, DIR_AUTH_USER_FILE};
+            }),
+        /* Require valid-user */
+        rc::gen::just(TaggedLine{"Require valid-user", DIR_REQUIRE_VALID_USER})
+    );
+}
+
+/**
+ * Generate v2 directive lines — second batch.
+ */
+inline rc::Gen<TaggedLine> taggedDirectiveLineV2b()
+{
+    return rc::gen::oneOf(
+        /* AddHandler <handler> <ext> */
+        rc::gen::map(
+            rc::gen::pair(simpleValue(), file_extension()),
+            [](const std::pair<std::string, std::string> &p) -> TaggedLine {
+                return {"AddHandler " + p.first + " " + p.second,
+                        DIR_ADD_HANDLER};
+            }),
+        /* SetHandler <handler> */
+        rc::gen::map(simpleValue(),
+            [](const std::string &v) -> TaggedLine {
+                return {"SetHandler " + v, DIR_SET_HANDLER};
+            }),
+        /* AddType <mime> <ext> */
+        rc::gen::map(
+            rc::gen::pair(mime_type(), file_extension()),
+            [](const std::pair<std::string, std::string> &p) -> TaggedLine {
+                return {"AddType " + p.first + " " + p.second, DIR_ADD_TYPE};
+            }),
+        /* DirectoryIndex <files> */
+        rc::gen::map(
+            rc::gen::element<std::string>("index.html", "index.php",
+                "index.html index.php", "default.html"),
+            [](const std::string &v) -> TaggedLine {
+                return {"DirectoryIndex " + v, DIR_DIRECTORY_INDEX};
+            }),
+        /* ForceType <mime> */
+        rc::gen::map(mime_type(),
+            [](const std::string &v) -> TaggedLine {
+                return {"ForceType " + v, DIR_FORCE_TYPE};
+            }),
+        /* AddEncoding <enc> <ext> */
+        rc::gen::map(
+            rc::gen::pair(
+                rc::gen::element<std::string>("gzip", "deflate", "br"),
+                file_extension()),
+            [](const std::pair<std::string, std::string> &p) -> TaggedLine {
+                return {"AddEncoding " + p.first + " " + p.second,
+                        DIR_ADD_ENCODING};
+            }),
+        /* AddCharset <charset> <ext> */
+        rc::gen::map(
+            rc::gen::pair(
+                rc::gen::element<std::string>("UTF-8", "ISO-8859-1"),
+                file_extension()),
+            [](const std::pair<std::string, std::string> &p) -> TaggedLine {
+                return {"AddCharset " + p.first + " " + p.second,
+                        DIR_ADD_CHARSET};
+            }),
+        /* BruteForceXForwardedFor On/Off */
+        rc::gen::map(
+            rc::gen::arbitrary<bool>(),
+            [](bool on) -> TaggedLine {
+                return {on ? "BruteForceXForwardedFor On"
+                           : "BruteForceXForwardedFor Off",
+                        DIR_BRUTE_FORCE_X_FORWARDED_FOR};
+            }),
+        /* BruteForceWhitelist <cidr> */
+        rc::gen::map(cidrString(),
+            [](const std::string &v) -> TaggedLine {
+                return {"BruteForceWhitelist " + v,
+                        DIR_BRUTE_FORCE_WHITELIST};
+            }),
+        /* BruteForceProtectPath <path> */
+        rc::gen::map(
+            rc::gen::element<std::string>("/wp-login.php", "/admin",
+                "/login", "/xmlrpc.php"),
+            [](const std::string &v) -> TaggedLine {
+                return {"BruteForceProtectPath " + v,
+                        DIR_BRUTE_FORCE_PROTECT_PATH};
+            })
+    );
+}
+
+/**
+ * Generate any tagged directive line (v1 + v2).
+ */
+inline rc::Gen<TaggedLine> anyTaggedDirectiveLine()
+{
+    return rc::gen::oneOf(
+        taggedDirectiveLine(),
+        taggedDirectiveLineV2a(),
+        taggedDirectiveLineV2b()
+    );
+}
+
+/**
  * Generate a random .htaccess file content string with 1-maxLines
- * directive lines. Returns the content string.
+ * directive lines (v1 only). Returns the content string.
  */
 inline rc::Gen<std::string> htaccessContent(int maxLines = 10)
 {
@@ -190,6 +352,27 @@ inline rc::Gen<std::string> htaccessContent(int maxLines = 10)
                 rc::gen::container<std::vector<TaggedLine>>(
                     (std::size_t)count,
                     taggedDirectiveLine()),
+                [](const std::vector<TaggedLine> &lines) {
+                    std::string content;
+                    for (const auto &tl : lines)
+                        content += tl.first + "\n";
+                    return content;
+                });
+        });
+}
+
+/**
+ * Generate a random .htaccess file content string with v1+v2 directives.
+ */
+inline rc::Gen<std::string> htaccessContentV2(int maxLines = 10)
+{
+    return rc::gen::mapcat(
+        rc::gen::inRange(1, maxLines + 1),
+        [](int count) {
+            return rc::gen::map(
+                rc::gen::container<std::vector<TaggedLine>>(
+                    (std::size_t)count,
+                    anyTaggedDirectiveLine()),
                 [](const std::vector<TaggedLine> &lines) {
                     std::string content;
                     for (const auto &tl : lines)
@@ -214,6 +397,30 @@ inline rc::Gen<TaggedContent> taggedHtaccessContent(int maxLines = 10)
                 rc::gen::container<std::vector<TaggedLine>>(
                     (std::size_t)count,
                     taggedDirectiveLine()),
+                [](const std::vector<TaggedLine> &lines) -> TaggedContent {
+                    std::string content;
+                    std::vector<directive_type_t> types;
+                    for (const auto &tl : lines) {
+                        content += tl.first + "\n";
+                        types.push_back(tl.second);
+                    }
+                    return {content, types};
+                });
+        });
+}
+
+/**
+ * Generate tagged .htaccess content with v1+v2 directives.
+ */
+inline rc::Gen<TaggedContent> taggedHtaccessContentV2(int maxLines = 10)
+{
+    return rc::gen::mapcat(
+        rc::gen::inRange(1, maxLines + 1),
+        [](int count) {
+            return rc::gen::map(
+                rc::gen::container<std::vector<TaggedLine>>(
+                    (std::size_t)count,
+                    anyTaggedDirectiveLine()),
                 [](const std::vector<TaggedLine> &lines) -> TaggedContent {
                     std::string content;
                     std::vector<directive_type_t> types;

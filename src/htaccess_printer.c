@@ -200,7 +200,12 @@ static int print_directive(strbuf_t *sb, const htaccess_directive_t *d)
     case DIR_ERROR_DOCUMENT:
         snprintf(tmp, sizeof(tmp), "ErrorDocument %d ", d->data.error_doc.error_code);
         if (strbuf_append(sb, tmp) != 0) return -1;
-        if (strbuf_append(sb, d->value) != 0) return -1;
+        if (d->value && d->value[0] == '"') {
+            /* Value already contains quotes (text message mode) — output directly */
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        } else {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
         break;
 
     /* --- FilesMatch block --- */
@@ -219,6 +224,80 @@ static int print_directive(strbuf_t *sb, const htaccess_directive_t *d)
         if (strbuf_append(sb, "</FilesMatch>") != 0) return -1;
         break;
 
+    /* --- IfModule block --- */
+    case DIR_IFMODULE:
+        if (strbuf_append(sb, "<IfModule ") != 0) return -1;
+        if (d->name) {
+            if (strbuf_append(sb, d->name) != 0) return -1;
+        }
+        if (strbuf_append(sb, ">\n") != 0) return -1;
+        /* Print nested children */
+        for (const htaccess_directive_t *child = d->data.ifmodule.children;
+             child; child = child->next) {
+            if (print_directive(sb, child) != 0) return -1;
+            if (strbuf_append(sb, "\n") != 0) return -1;
+        }
+        if (strbuf_append(sb, "</IfModule>") != 0) return -1;
+        break;
+
+    /* --- Header always directives --- */
+    case DIR_HEADER_ALWAYS_SET:
+        if (strbuf_append(sb, "Header always set ") != 0) return -1;
+        if (strbuf_append(sb, d->name) != 0) return -1;
+        if (strbuf_append(sb, " ") != 0) return -1;
+        if (strbuf_append(sb, d->value) != 0) return -1;
+        break;
+
+    case DIR_HEADER_ALWAYS_UNSET:
+        if (strbuf_append(sb, "Header always unset ") != 0) return -1;
+        if (strbuf_append(sb, d->name) != 0) return -1;
+        break;
+
+    case DIR_HEADER_ALWAYS_APPEND:
+        if (strbuf_append(sb, "Header always append ") != 0) return -1;
+        if (strbuf_append(sb, d->name) != 0) return -1;
+        if (strbuf_append(sb, " ") != 0) return -1;
+        if (strbuf_append(sb, d->value) != 0) return -1;
+        break;
+
+    case DIR_HEADER_ALWAYS_MERGE:
+        if (strbuf_append(sb, "Header always merge ") != 0) return -1;
+        if (strbuf_append(sb, d->name) != 0) return -1;
+        if (strbuf_append(sb, " ") != 0) return -1;
+        if (strbuf_append(sb, d->value) != 0) return -1;
+        break;
+
+    case DIR_HEADER_ALWAYS_ADD:
+        if (strbuf_append(sb, "Header always add ") != 0) return -1;
+        if (strbuf_append(sb, d->name) != 0) return -1;
+        if (strbuf_append(sb, " ") != 0) return -1;
+        if (strbuf_append(sb, d->value) != 0) return -1;
+        break;
+
+    /* --- Options directive --- */
+    case DIR_OPTIONS:
+        if (strbuf_append(sb, "Options ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    /* --- Files block --- */
+    case DIR_FILES:
+        if (strbuf_append(sb, "<Files ") != 0) return -1;
+        if (d->name) {
+            if (strbuf_append(sb, d->name) != 0) return -1;
+        }
+        if (strbuf_append(sb, ">\n") != 0) return -1;
+        /* Print nested children */
+        for (const htaccess_directive_t *child = d->data.files.children;
+             child; child = child->next) {
+            if (print_directive(sb, child) != 0) return -1;
+            if (strbuf_append(sb, "\n") != 0) return -1;
+        }
+        if (strbuf_append(sb, "</Files>") != 0) return -1;
+        break;
+
     /* --- Expires directives --- */
     case DIR_EXPIRES_ACTIVE:
         if (strbuf_append(sb, "ExpiresActive ") != 0) return -1;
@@ -231,6 +310,111 @@ static int print_directive(strbuf_t *sb, const htaccess_directive_t *d)
         if (strbuf_append(sb, " \"") != 0) return -1;
         if (strbuf_append(sb, d->value) != 0) return -1;
         if (strbuf_append(sb, "\"") != 0) return -1;
+        break;
+
+    case DIR_EXPIRES_DEFAULT:
+        if (strbuf_append(sb, "ExpiresDefault \"") != 0) return -1;
+        if (strbuf_append(sb, d->value) != 0) return -1;
+        if (strbuf_append(sb, "\"") != 0) return -1;
+        break;
+
+    /* --- Require directives --- */
+    case DIR_REQUIRE_ALL_GRANTED:
+        if (strbuf_append(sb, "Require all granted") != 0) return -1;
+        break;
+
+    case DIR_REQUIRE_ALL_DENIED:
+        if (strbuf_append(sb, "Require all denied") != 0) return -1;
+        break;
+
+    case DIR_REQUIRE_IP:
+        if (strbuf_append(sb, "Require ip ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_REQUIRE_NOT_IP:
+        if (strbuf_append(sb, "Require not ip ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_REQUIRE_VALID_USER:
+        if (strbuf_append(sb, "Require valid-user") != 0) return -1;
+        break;
+
+    /* --- Auth directives --- */
+    case DIR_AUTH_TYPE:
+        if (strbuf_append(sb, "AuthType ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_AUTH_NAME:
+        if (strbuf_append(sb, "AuthName \"") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        if (strbuf_append(sb, "\"") != 0) return -1;
+        break;
+
+    case DIR_AUTH_USER_FILE:
+        if (strbuf_append(sb, "AuthUserFile ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_REQUIRE_ANY_OPEN:
+        if (strbuf_append(sb, "<RequireAny>\n") != 0) return -1;
+        for (const htaccess_directive_t *child = d->data.require_container.children;
+             child; child = child->next) {
+            if (print_directive(sb, child) != 0) return -1;
+            if (strbuf_append(sb, "\n") != 0) return -1;
+        }
+        if (strbuf_append(sb, "</RequireAny>") != 0) return -1;
+        break;
+
+    case DIR_REQUIRE_ALL_OPEN:
+        if (strbuf_append(sb, "<RequireAll>\n") != 0) return -1;
+        for (const htaccess_directive_t *child = d->data.require_container.children;
+             child; child = child->next) {
+            if (print_directive(sb, child) != 0) return -1;
+            if (strbuf_append(sb, "\n") != 0) return -1;
+        }
+        if (strbuf_append(sb, "</RequireAll>") != 0) return -1;
+        break;
+
+    /* --- Limit / LimitExcept blocks --- */
+    case DIR_LIMIT:
+        if (strbuf_append(sb, "<Limit ") != 0) return -1;
+        if (d->data.limit.methods) {
+            if (strbuf_append(sb, d->data.limit.methods) != 0) return -1;
+        }
+        if (strbuf_append(sb, ">\n") != 0) return -1;
+        for (const htaccess_directive_t *child = d->data.limit.children;
+             child; child = child->next) {
+            if (print_directive(sb, child) != 0) return -1;
+            if (strbuf_append(sb, "\n") != 0) return -1;
+        }
+        if (strbuf_append(sb, "</Limit>") != 0) return -1;
+        break;
+
+    case DIR_LIMIT_EXCEPT:
+        if (strbuf_append(sb, "<LimitExcept ") != 0) return -1;
+        if (d->data.limit.methods) {
+            if (strbuf_append(sb, d->data.limit.methods) != 0) return -1;
+        }
+        if (strbuf_append(sb, ">\n") != 0) return -1;
+        for (const htaccess_directive_t *child = d->data.limit.children;
+             child; child = child->next) {
+            if (print_directive(sb, child) != 0) return -1;
+            if (strbuf_append(sb, "\n") != 0) return -1;
+        }
+        if (strbuf_append(sb, "</LimitExcept>") != 0) return -1;
         break;
 
     /* --- Environment variable directives --- */
@@ -295,6 +479,91 @@ static int print_directive(strbuf_t *sb, const htaccess_directive_t *d)
         snprintf(tmp, sizeof(tmp), "BruteForceThrottleDuration %d",
                  d->data.brute_force.throttle_ms);
         if (strbuf_append(sb, tmp) != 0) return -1;
+        break;
+
+    case DIR_BRUTE_FORCE_X_FORWARDED_FOR:
+        if (strbuf_append(sb, "BruteForceXForwardedFor ") != 0) return -1;
+        if (strbuf_append(sb, d->data.brute_force.enabled ? "On" : "Off") != 0) return -1;
+        break;
+
+    case DIR_BRUTE_FORCE_WHITELIST:
+        if (strbuf_append(sb, "BruteForceWhitelist ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_BRUTE_FORCE_PROTECT_PATH:
+        if (strbuf_append(sb, "BruteForceProtectPath ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    /* --- Handler/Type directives --- */
+    case DIR_ADD_HANDLER:
+        if (strbuf_append(sb, "AddHandler ") != 0) return -1;
+        if (d->name) {
+            if (strbuf_append(sb, d->name) != 0) return -1;
+        }
+        if (d->value) {
+            if (strbuf_append(sb, " ") != 0) return -1;
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_SET_HANDLER:
+        if (strbuf_append(sb, "SetHandler ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_ADD_TYPE:
+        if (strbuf_append(sb, "AddType ") != 0) return -1;
+        if (d->name) {
+            if (strbuf_append(sb, d->name) != 0) return -1;
+        }
+        if (d->value) {
+            if (strbuf_append(sb, " ") != 0) return -1;
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_DIRECTORY_INDEX:
+        if (strbuf_append(sb, "DirectoryIndex ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_FORCE_TYPE:
+        if (strbuf_append(sb, "ForceType ") != 0) return -1;
+        if (d->value) {
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_ADD_ENCODING:
+        if (strbuf_append(sb, "AddEncoding ") != 0) return -1;
+        if (d->name) {
+            if (strbuf_append(sb, d->name) != 0) return -1;
+        }
+        if (d->value) {
+            if (strbuf_append(sb, " ") != 0) return -1;
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
+        break;
+
+    case DIR_ADD_CHARSET:
+        if (strbuf_append(sb, "AddCharset ") != 0) return -1;
+        if (d->name) {
+            if (strbuf_append(sb, d->name) != 0) return -1;
+        }
+        if (d->value) {
+            if (strbuf_append(sb, " ") != 0) return -1;
+            if (strbuf_append(sb, d->value) != 0) return -1;
+        }
         break;
 
     default:

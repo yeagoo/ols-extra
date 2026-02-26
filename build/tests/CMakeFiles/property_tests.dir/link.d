@@ -3,34 +3,58 @@ property_tests: \
   /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o \
   /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/property_tests.dir/property/prop_acl.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_add_type.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_auth_basic.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_brute_force.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_brute_force_v2.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_cache.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_cidr.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_dir_inherit.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_dirindex.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_encoding_charset.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_env.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_error_document.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_errordoc_text.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_expires.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_expires_default.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_expires_exec.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_files.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_files_match.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_forcetype.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_generators_smoke.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_header.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_header_always.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_ifmodule.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_limit.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_options.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_parser_order.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_parser_roundtrip.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_php_admin.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_php_blacklist.cpp.o \
   CMakeFiles/property_tests.dir/property/prop_redirect.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_require.cpp.o \
+  CMakeFiles/property_tests.dir/property/prop_v2_roundtrip.cpp.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_cache.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_cidr.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_directive.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_dirwalker.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_acl.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_auth.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_brute_force.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_dirindex.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_encoding.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_env.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_error_doc.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_expires.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_files_match.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_forcetype.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_handler.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_header.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_limit.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_options.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_php.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_exec_redirect.c.o \
+  CMakeFiles/property_tests.dir/__/src/htaccess_exec_require.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_expires.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_parser.c.o \
   CMakeFiles/property_tests.dir/__/src/htaccess_printer.c.o \
@@ -40,6 +64,7 @@ property_tests: \
   ../lib/libgtest.a \
   ../lib/libgtest_main.a \
   ../_deps/rapidcheck-build/librapidcheck.a \
+  /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libcrypt.so \
   ../lib/libgtest.a \
   ../_deps/rapidcheck-build/librapidcheck.a \
   /usr/lib/gcc/aarch64-linux-gnu/14/libstdc++.so \
@@ -78,7 +103,13 @@ property_tests: \
 
 CMakeFiles/property_tests.dir/property/prop_acl.cpp.o:
 
+CMakeFiles/property_tests.dir/property/prop_add_type.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_auth_basic.cpp.o:
+
 CMakeFiles/property_tests.dir/property/prop_brute_force.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_brute_force_v2.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_cache.cpp.o:
 
@@ -86,19 +117,39 @@ CMakeFiles/property_tests.dir/property/prop_cidr.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_dir_inherit.cpp.o:
 
+CMakeFiles/property_tests.dir/property/prop_dirindex.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_encoding_charset.cpp.o:
+
 CMakeFiles/property_tests.dir/property/prop_env.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_error_document.cpp.o:
 
+CMakeFiles/property_tests.dir/property/prop_errordoc_text.cpp.o:
+
 CMakeFiles/property_tests.dir/property/prop_expires.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_expires_default.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_expires_exec.cpp.o:
 
+CMakeFiles/property_tests.dir/property/prop_files.cpp.o:
+
 CMakeFiles/property_tests.dir/property/prop_files_match.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_forcetype.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_generators_smoke.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_header.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_header_always.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_ifmodule.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_limit.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_options.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_parser_order.cpp.o:
 
@@ -106,7 +157,13 @@ CMakeFiles/property_tests.dir/property/prop_parser_roundtrip.cpp.o:
 
 CMakeFiles/property_tests.dir/property/prop_php_admin.cpp.o:
 
+CMakeFiles/property_tests.dir/property/prop_php_blacklist.cpp.o:
+
 CMakeFiles/property_tests.dir/property/prop_redirect.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_require.cpp.o:
+
+CMakeFiles/property_tests.dir/property/prop_v2_roundtrip.cpp.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_cache.c.o:
 
@@ -118,7 +175,13 @@ CMakeFiles/property_tests.dir/__/src/htaccess_dirwalker.c.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_acl.c.o:
 
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_auth.c.o:
+
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_brute_force.c.o:
+
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_dirindex.c.o:
+
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_encoding.c.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_env.c.o:
 
@@ -128,11 +191,21 @@ CMakeFiles/property_tests.dir/__/src/htaccess_exec_expires.c.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_files_match.c.o:
 
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_forcetype.c.o:
+
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_handler.c.o:
+
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_header.c.o:
+
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_limit.c.o:
+
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_options.c.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_php.c.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_exec_redirect.c.o:
+
+CMakeFiles/property_tests.dir/__/src/htaccess_exec_require.c.o:
 
 CMakeFiles/property_tests.dir/__/src/htaccess_expires.c.o:
 
@@ -151,6 +224,8 @@ CMakeFiles/property_tests.dir/mock_lsiapi.cpp.o:
 ../lib/libgtest_main.a:
 
 ../_deps/rapidcheck-build/librapidcheck.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libcrypt.so:
 
 ../lib/libgtest.a:
 

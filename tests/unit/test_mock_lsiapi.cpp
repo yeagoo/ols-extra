@@ -243,6 +243,12 @@ TEST_F(MockSessionTest, ResetClearsAllState) {
     session_.set_status_code(500);
     lsi_session_set_php_ini(session_.handle(), "k", 1, "v", 1, 0);
     lsi_session_set_resp_body(session_.handle(), "body", 4);
+    session_.set_method("POST");
+    session_.set_auth_header("Basic dXNlcjpwYXNz");
+    session_.add_existing_file("/var/www/index.html");
+    lsi_session_set_dir_option(session_.handle(), "Indexes", 1);
+    lsi_session_set_uri_internal(session_.handle(), "/index.php", 10);
+    lsi_session_set_www_authenticate(session_.handle(), "Restricted", 10);
 
     session_.reset();
 
@@ -255,4 +261,147 @@ TEST_F(MockSessionTest, ResetClearsAllState) {
     EXPECT_EQ(session_.get_status_code(), 200);
     EXPECT_TRUE(session_.get_php_ini_records().empty());
     EXPECT_EQ(session_.get_resp_body(), "");
+    EXPECT_EQ(session_.get_method(), "");
+    EXPECT_EQ(session_.get_auth_header_value(), "");
+    EXPECT_EQ(session_.get_internal_uri(), "");
+    EXPECT_EQ(session_.get_www_authenticate(), "");
+    EXPECT_EQ(session_.get_dir_option("Indexes"), -1);
+    EXPECT_FALSE(session_.file_exists("/var/www/index.html"));
+}
+
+/* ================================================================== */
+/*  v2 Mock Interface Tests                                            */
+/* ================================================================== */
+
+/* ---- Directory options (Options directive) ---- */
+
+TEST_F(MockSessionTest, SetAndGetDirOption) {
+    lsi_session_set_dir_option(session_.handle(), "Indexes", 0);
+    EXPECT_EQ(lsi_session_get_dir_option(session_.handle(), "Indexes"), 0);
+    EXPECT_EQ(session_.get_dir_option("Indexes"), 0);
+}
+
+TEST_F(MockSessionTest, DirOptionEnable) {
+    lsi_session_set_dir_option(session_.handle(), "FollowSymLinks", 1);
+    EXPECT_EQ(lsi_session_get_dir_option(session_.handle(), "FollowSymLinks"), 1);
+}
+
+TEST_F(MockSessionTest, DirOptionUnsetReturnsNegOne) {
+    EXPECT_EQ(lsi_session_get_dir_option(session_.handle(), "Indexes"), -1);
+    EXPECT_EQ(session_.get_dir_option("Indexes"), -1);
+}
+
+TEST_F(MockSessionTest, DirOptionMultipleFlags) {
+    lsi_session_set_dir_option(session_.handle(), "Indexes", 0);
+    lsi_session_set_dir_option(session_.handle(), "FollowSymLinks", 1);
+    EXPECT_EQ(lsi_session_get_dir_option(session_.handle(), "Indexes"), 0);
+    EXPECT_EQ(lsi_session_get_dir_option(session_.handle(), "FollowSymLinks"), 1);
+}
+
+TEST_F(MockSessionTest, DirOptionNullParams) {
+    EXPECT_EQ(lsi_session_set_dir_option(nullptr, "Indexes", 1), LSI_ERROR);
+    EXPECT_EQ(lsi_session_set_dir_option(session_.handle(), nullptr, 1), LSI_ERROR);
+    EXPECT_EQ(lsi_session_get_dir_option(nullptr, "Indexes"), -1);
+    EXPECT_EQ(lsi_session_get_dir_option(session_.handle(), nullptr), -1);
+}
+
+/* ---- Internal URI redirect (DirectoryIndex) ---- */
+
+TEST_F(MockSessionTest, SetAndGetUriInternal) {
+    lsi_session_set_uri_internal(session_.handle(), "/index.php", 10);
+    EXPECT_EQ(session_.get_internal_uri(), "/index.php");
+}
+
+TEST_F(MockSessionTest, UriInternalOverwrite) {
+    lsi_session_set_uri_internal(session_.handle(), "/a.html", 7);
+    lsi_session_set_uri_internal(session_.handle(), "/b.php", 6);
+    EXPECT_EQ(session_.get_internal_uri(), "/b.php");
+}
+
+TEST_F(MockSessionTest, UriInternalNullParams) {
+    EXPECT_EQ(lsi_session_set_uri_internal(nullptr, "/x", 2), LSI_ERROR);
+    EXPECT_EQ(lsi_session_set_uri_internal(session_.handle(), nullptr, 2), LSI_ERROR);
+    EXPECT_EQ(lsi_session_set_uri_internal(session_.handle(), "/x", 0), LSI_ERROR);
+}
+
+/* ---- File existence check (DirectoryIndex) ---- */
+
+TEST_F(MockSessionTest, FileExistsPositive) {
+    session_.add_existing_file("/var/www/index.html");
+    EXPECT_EQ(lsi_session_file_exists(session_.handle(), "/var/www/index.html"), 1);
+    EXPECT_TRUE(session_.file_exists("/var/www/index.html"));
+}
+
+TEST_F(MockSessionTest, FileExistsNegative) {
+    EXPECT_EQ(lsi_session_file_exists(session_.handle(), "/var/www/missing.html"), 0);
+    EXPECT_FALSE(session_.file_exists("/var/www/missing.html"));
+}
+
+TEST_F(MockSessionTest, FileExistsNullParams) {
+    EXPECT_EQ(lsi_session_file_exists(nullptr, "/x"), 0);
+    EXPECT_EQ(lsi_session_file_exists(session_.handle(), nullptr), 0);
+}
+
+/* ---- Request method (Limit/LimitExcept) ---- */
+
+TEST_F(MockSessionTest, SetAndGetMethod) {
+    session_.set_method("POST");
+    int len = 0;
+    const char *m = lsi_session_get_method(session_.handle(), &len);
+    ASSERT_NE(m, nullptr);
+    EXPECT_EQ(std::string(m, len), "POST");
+    EXPECT_EQ(session_.get_method(), "POST");
+}
+
+TEST_F(MockSessionTest, GetMethodDefault) {
+    int len = 0;
+    const char *m = lsi_session_get_method(session_.handle(), &len);
+    EXPECT_EQ(m, nullptr);
+    EXPECT_EQ(len, 0);
+    EXPECT_EQ(session_.get_method(), "");
+}
+
+TEST_F(MockSessionTest, GetMethodNullSession) {
+    int len = 99;
+    const char *m = lsi_session_get_method(nullptr, &len);
+    EXPECT_EQ(m, nullptr);
+    EXPECT_EQ(len, 0);
+}
+
+/* ---- Authorization header (AuthType Basic) ---- */
+
+TEST_F(MockSessionTest, SetAndGetAuthHeader) {
+    session_.set_auth_header("Basic dXNlcjpwYXNz");
+    int len = 0;
+    const char *val = lsi_session_get_auth_header(session_.handle(), &len);
+    ASSERT_NE(val, nullptr);
+    EXPECT_EQ(std::string(val, len), "Basic dXNlcjpwYXNz");
+    EXPECT_EQ(session_.get_auth_header_value(), "Basic dXNlcjpwYXNz");
+}
+
+TEST_F(MockSessionTest, GetAuthHeaderDefault) {
+    int len = 0;
+    const char *val = lsi_session_get_auth_header(session_.handle(), &len);
+    EXPECT_EQ(val, nullptr);
+    EXPECT_EQ(len, 0);
+}
+
+TEST_F(MockSessionTest, GetAuthHeaderNullSession) {
+    int len = 99;
+    const char *val = lsi_session_get_auth_header(nullptr, &len);
+    EXPECT_EQ(val, nullptr);
+    EXPECT_EQ(len, 0);
+}
+
+/* ---- WWW-Authenticate header (AuthType Basic) ---- */
+
+TEST_F(MockSessionTest, SetAndGetWwwAuthenticate) {
+    lsi_session_set_www_authenticate(session_.handle(), "Restricted", 10);
+    EXPECT_EQ(session_.get_www_authenticate(), "Basic realm=\"Restricted\"");
+}
+
+TEST_F(MockSessionTest, WwwAuthenticateNullParams) {
+    EXPECT_EQ(lsi_session_set_www_authenticate(nullptr, "x", 1), LSI_ERROR);
+    EXPECT_EQ(lsi_session_set_www_authenticate(session_.handle(), nullptr, 1), LSI_ERROR);
+    EXPECT_EQ(lsi_session_set_www_authenticate(session_.handle(), "x", 0), LSI_ERROR);
 }

@@ -164,3 +164,115 @@ TEST(DirectiveFree, FreeBrowserMatchWithFields) {
     d->data.envif.pattern = strdup("Googlebot");
     htaccess_directives_free(d);
 }
+
+/* ---- v2 Enum value tests ---- */
+
+TEST(DirectiveEnums, V2EnumValuesStartAt28) {
+    /* P1: Panel core directives */
+    EXPECT_EQ(static_cast<int>(DIR_IFMODULE), 28);
+    EXPECT_EQ(static_cast<int>(DIR_OPTIONS), 29);
+    EXPECT_EQ(static_cast<int>(DIR_FILES), 30);
+
+    /* P2: Advanced directives */
+    EXPECT_EQ(static_cast<int>(DIR_HEADER_ALWAYS_SET), 31);
+    EXPECT_EQ(static_cast<int>(DIR_HEADER_ALWAYS_UNSET), 32);
+    EXPECT_EQ(static_cast<int>(DIR_HEADER_ALWAYS_APPEND), 33);
+    EXPECT_EQ(static_cast<int>(DIR_HEADER_ALWAYS_MERGE), 34);
+    EXPECT_EQ(static_cast<int>(DIR_HEADER_ALWAYS_ADD), 35);
+    EXPECT_EQ(static_cast<int>(DIR_EXPIRES_DEFAULT), 36);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_ALL_GRANTED), 37);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_ALL_DENIED), 38);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_IP), 39);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_NOT_IP), 40);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_ANY_OPEN), 41);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_ALL_OPEN), 42);
+    EXPECT_EQ(static_cast<int>(DIR_LIMIT), 43);
+    EXPECT_EQ(static_cast<int>(DIR_LIMIT_EXCEPT), 44);
+
+    /* P3: Auth/Handler directives */
+    EXPECT_EQ(static_cast<int>(DIR_AUTH_TYPE), 45);
+    EXPECT_EQ(static_cast<int>(DIR_AUTH_NAME), 46);
+    EXPECT_EQ(static_cast<int>(DIR_AUTH_USER_FILE), 47);
+    EXPECT_EQ(static_cast<int>(DIR_REQUIRE_VALID_USER), 48);
+    EXPECT_EQ(static_cast<int>(DIR_ADD_HANDLER), 49);
+    EXPECT_EQ(static_cast<int>(DIR_SET_HANDLER), 50);
+    EXPECT_EQ(static_cast<int>(DIR_ADD_TYPE), 51);
+    EXPECT_EQ(static_cast<int>(DIR_DIRECTORY_INDEX), 52);
+
+    /* P4: Low priority directives */
+    EXPECT_EQ(static_cast<int>(DIR_FORCE_TYPE), 53);
+    EXPECT_EQ(static_cast<int>(DIR_ADD_ENCODING), 54);
+    EXPECT_EQ(static_cast<int>(DIR_ADD_CHARSET), 55);
+
+    /* Brute force enhancements */
+    EXPECT_EQ(static_cast<int>(DIR_BRUTE_FORCE_X_FORWARDED_FOR), 56);
+    EXPECT_EQ(static_cast<int>(DIR_BRUTE_FORCE_WHITELIST), 57);
+    EXPECT_EQ(static_cast<int>(DIR_BRUTE_FORCE_PROTECT_PATH), 58);
+}
+
+/* ---- v2 Container type free tests ---- */
+
+TEST(DirectiveFree, FreeIfModuleWithChildren) {
+    auto *d = make_directive(DIR_IFMODULE, "mod_rewrite.c", nullptr, 1);
+    d->data.ifmodule.negated = 0;
+
+    auto *child1 = make_directive(DIR_HEADER_SET, "X-Powered-By", "OLS", 2);
+    auto *child2 = make_directive(DIR_PHP_VALUE, "memory_limit", "256M", 3);
+    child1->next = child2;
+    d->data.ifmodule.children = child1;
+
+    htaccess_directives_free(d);
+}
+
+TEST(DirectiveFree, FreeFilesWithChildren) {
+    auto *d = make_directive(DIR_FILES, "wp-config.php", nullptr, 10);
+
+    auto *child = make_directive(DIR_REQUIRE_ALL_DENIED, nullptr, nullptr, 11);
+    d->data.files.children = child;
+
+    htaccess_directives_free(d);
+}
+
+TEST(DirectiveFree, FreeRequireAnyWithChildren) {
+    auto *d = make_directive(DIR_REQUIRE_ANY_OPEN, nullptr, nullptr, 20);
+
+    auto *child1 = make_directive(DIR_REQUIRE_ALL_GRANTED, nullptr, nullptr, 21);
+    auto *child2 = make_directive(DIR_REQUIRE_IP, nullptr, "192.168.1.0/24", 22);
+    child1->next = child2;
+    d->data.require_container.children = child1;
+
+    htaccess_directives_free(d);
+}
+
+TEST(DirectiveFree, FreeRequireAllWithChildren) {
+    auto *d = make_directive(DIR_REQUIRE_ALL_OPEN, nullptr, nullptr, 30);
+
+    auto *child1 = make_directive(DIR_REQUIRE_IP, nullptr, "10.0.0.0/8", 31);
+    auto *child2 = make_directive(DIR_REQUIRE_VALID_USER, nullptr, nullptr, 32);
+    child1->next = child2;
+    d->data.require_container.children = child1;
+
+    htaccess_directives_free(d);
+}
+
+TEST(DirectiveFree, FreeLimitWithChildren) {
+    auto *d = make_directive(DIR_LIMIT, nullptr, nullptr, 40);
+    d->data.limit.methods = strdup("GET POST");
+
+    auto *child = make_directive(DIR_REQUIRE_ALL_DENIED, nullptr, nullptr, 41);
+    d->data.limit.children = child;
+
+    htaccess_directives_free(d);
+}
+
+TEST(DirectiveFree, FreeLimitExceptWithChildren) {
+    auto *d = make_directive(DIR_LIMIT_EXCEPT, nullptr, nullptr, 50);
+    d->data.limit.methods = strdup("GET HEAD");
+
+    auto *child1 = make_directive(DIR_REQUIRE_ALL_DENIED, nullptr, nullptr, 51);
+    auto *child2 = make_directive(DIR_REQUIRE_IP, nullptr, "172.16.0.0/12", 52);
+    child1->next = child2;
+    d->data.limit.children = child1;
+
+    htaccess_directives_free(d);
+}

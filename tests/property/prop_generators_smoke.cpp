@@ -187,3 +187,102 @@ RC_GTEST_PROP(GenDirectory, FilePathEndsWithHtaccess, ())
     RC_ASSERT(path.size() > 10);
     RC_ASSERT(path.substr(path.size() - 10) == "/.htaccess");
 }
+
+/* ------------------------------------------------------------------ */
+/*  v2 generator smoke tests                                           */
+/* ------------------------------------------------------------------ */
+
+#include "gen_options.h"
+#include "gen_http_method.h"
+#include "gen_mime.h"
+#include "gen_extension.h"
+#include "gen_htpasswd.h"
+#include "gen_require.h"
+
+/* gen_options.h */
+RC_GTEST_PROP(GenOptions, FlagStartsWithPlusOrMinus, ())
+{
+    auto flag = *gen::options_flag();
+    RC_ASSERT(flag[0] == '+' || flag[0] == '-');
+}
+
+RC_GTEST_PROP(GenOptions, LineStartsWithOptions, ())
+{
+    auto line = *gen::options_line();
+    RC_ASSERT(line.find("Options") == 0);
+}
+
+/* gen_http_method.h */
+RC_GTEST_PROP(GenHttpMethod, MethodIsUpperCase, ())
+{
+    auto method = *gen::http_method();
+    RC_ASSERT(!method.empty());
+    for (char c : method)
+        RC_ASSERT(isupper((unsigned char)c));
+}
+
+/* gen_mime.h */
+RC_GTEST_PROP(GenMime, MimeContainsSlash, ())
+{
+    auto mime = *gen::mime_type();
+    RC_ASSERT(mime.find('/') != std::string::npos);
+}
+
+/* gen_extension.h */
+RC_GTEST_PROP(GenExtension, ExtensionStartsWithDot, ())
+{
+    auto ext = *gen::file_extension();
+    RC_ASSERT(ext[0] == '.');
+}
+
+/* gen_htpasswd.h */
+RC_GTEST_PROP(GenHtpasswd, UsernameIsAlpha, ())
+{
+    auto user = *gen::username();
+    RC_ASSERT(user.size() >= 3);
+    for (char c : user)
+        RC_ASSERT(islower((unsigned char)c));
+}
+
+RC_GTEST_PROP(GenHtpasswd, PasswordIsNonEmpty, ())
+{
+    auto pass = *gen::password();
+    RC_ASSERT(!pass.empty());
+}
+
+/* gen_require.h */
+RC_GTEST_PROP(GenRequire, DirectiveStartsWithRequire, ())
+{
+    auto dir = *gen::require_directive();
+    RC_ASSERT(dir.find("Require") == 0);
+}
+
+/* gen_directive.h v2 types */
+RC_GTEST_PROP(GenDirectiveV2, V2DirectiveIsNotNull, ())
+{
+    /* Generate a v2 directive type and verify it produces a valid directive */
+    auto type = *rc::gen::oneOf(gen::directiveTypeV2a(), gen::directiveTypeV2b());
+    auto *d = *gen::directiveOfType(type);
+    RC_ASSERT(d != nullptr);
+    RC_ASSERT(d->type == type);
+    htaccess_directives_free(d);
+}
+
+/* gen_htaccess.h v2 content */
+RC_GTEST_PROP(GenHtaccessV2, V2ContentEndsWithNewline, ())
+{
+    auto content = *gen::htaccessContentV2(5);
+    RC_ASSERT(!content.empty());
+    RC_ASSERT(content.back() == '\n');
+}
+
+RC_GTEST_PROP(GenHtaccessV2, V2TaggedContentTypesMatchLineCount, ())
+{
+    auto tc = *gen::taggedHtaccessContentV2(5);
+    RC_ASSERT(!tc.first.empty());
+    RC_ASSERT(!tc.second.empty());
+    int newlines = 0;
+    for (char c : tc.first)
+        if (c == '\n') newlines++;
+    RC_ASSERT((int)tc.second.size() == newlines);
+}

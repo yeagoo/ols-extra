@@ -133,6 +133,30 @@ int         lsi_session_set_resp_body(lsi_session_t *session,
 /* Hook registration */
 int         lsi_register_hook(int hook_point, lsi_hook_cb cb, int priority);
 
+/* Directory options (v2: Options directive) */
+int         lsi_session_set_dir_option(lsi_session_t *session,
+                                       const char *option, int enabled);
+int         lsi_session_get_dir_option(lsi_session_t *session,
+                                       const char *option);
+
+/* Internal URI redirect (v2: DirectoryIndex) */
+int         lsi_session_set_uri_internal(lsi_session_t *session,
+                                         const char *uri, int uri_len);
+
+/* File existence check (v2: DirectoryIndex) */
+int         lsi_session_file_exists(lsi_session_t *session,
+                                    const char *path);
+
+/* Request method (v2: Limit/LimitExcept) */
+const char *lsi_session_get_method(lsi_session_t *session, int *len);
+
+/* Authorization header (v2: AuthType Basic) */
+const char *lsi_session_get_auth_header(lsi_session_t *session, int *len);
+
+/* WWW-Authenticate header (v2: AuthType Basic) */
+int         lsi_session_set_www_authenticate(lsi_session_t *session,
+                                             const char *realm, int realm_len);
+
 /* Logging */
 void        lsi_log(lsi_session_t *session, int level, const char *fmt, ...);
 
@@ -194,6 +218,11 @@ public:
     void add_response_header(const std::string &name, const std::string &value);
     void add_env_var(const std::string &name, const std::string &value);
 
+    /* v2 setup helpers */
+    void set_method(const std::string &method);
+    void set_auth_header(const std::string &value);
+    void add_existing_file(const std::string &path);
+
     /* ---- Inspection helpers (called by test assertions) ---- */
 
     std::string get_request_uri() const;
@@ -221,6 +250,14 @@ public:
     /* Response body */
     std::string get_resp_body() const;
 
+    /* v2 inspection helpers */
+    std::string get_method() const;
+    std::string get_auth_header_value() const;
+    int         get_dir_option(const std::string &option) const;
+    std::string get_internal_uri() const;
+    std::string get_www_authenticate() const;
+    bool        file_exists(const std::string &path) const;
+
     /* Reset all state */
     void reset();
 
@@ -246,6 +283,13 @@ private:
     friend const char *::lsi_session_get_client_ip(lsi_session_t*, int*);
     friend int         ::lsi_session_set_php_ini(lsi_session_t*, const char*, int, const char*, int, int);
     friend int         ::lsi_session_set_resp_body(lsi_session_t*, const char*, int);
+    friend int         ::lsi_session_set_dir_option(lsi_session_t*, const char*, int);
+    friend int         ::lsi_session_get_dir_option(lsi_session_t*, const char*);
+    friend int         ::lsi_session_set_uri_internal(lsi_session_t*, const char*, int);
+    friend int         ::lsi_session_file_exists(lsi_session_t*, const char*);
+    friend const char *::lsi_session_get_method(lsi_session_t*, int*);
+    friend const char *::lsi_session_get_auth_header(lsi_session_t*, int*);
+    friend int         ::lsi_session_set_www_authenticate(lsi_session_t*, const char*, int);
 
     /* Request headers: name → value */
     std::unordered_map<std::string, std::string> req_headers_;
@@ -267,6 +311,24 @@ private:
 
     /* Response body */
     std::string resp_body_;
+
+    /* v2: Directory options (option name → enabled flag: 1=on, 0=off) */
+    std::unordered_map<std::string, int> dir_options_;
+
+    /* v2: Internal redirect URI */
+    std::string internal_uri_;
+
+    /* v2: Request method */
+    std::string method_;
+
+    /* v2: Authorization header value */
+    std::string auth_header_;
+
+    /* v2: WWW-Authenticate realm */
+    std::string www_authenticate_;
+
+    /* v2: Set of files that "exist" for file_exists checks */
+    std::unordered_map<std::string, bool> existing_files_;
 };
 
 /* ---- Global hook registry (for testing hook registration) ---- */

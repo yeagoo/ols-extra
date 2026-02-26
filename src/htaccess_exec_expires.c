@@ -78,5 +78,42 @@ int exec_expires(lsi_session_t *session, const htaccess_directive_t *directives,
         return LSI_OK;
     }
 
+    /* Third pass: if no ExpiresByType matched, use ExpiresDefault as fallback */
+    for (dir = directives; dir != NULL; dir = dir->next) {
+        if (dir->type != DIR_EXPIRES_DEFAULT)
+            continue;
+
+        long duration_sec = dir->data.expires.duration_sec;
+        if (duration_sec <= 0 && dir->value) {
+            duration_sec = parse_expires_duration(dir->value);
+        }
+        if (duration_sec < 0)
+            continue;
+
+        char cache_control_val[64];
+        int cc_len = snprintf(cache_control_val, sizeof(cache_control_val),
+                              "max-age=%ld", duration_sec);
+        if (cc_len > 0 && (size_t)cc_len < sizeof(cache_control_val)) {
+            lsi_session_set_resp_header(session,
+                                        "Cache-Control", 13,
+                                        cache_control_val, cc_len);
+        }
+
+        time_t expire_time = time(NULL) + duration_sec;
+        struct tm tm_buf;
+        char expires_val[64];
+        if (gmtime_r(&expire_time, &tm_buf)) {
+            int exp_len = (int)strftime(expires_val, sizeof(expires_val),
+                                        "%a, %d %b %Y %H:%M:%S GMT", &tm_buf);
+            if (exp_len > 0) {
+                lsi_session_set_resp_header(session,
+                                            "Expires", 7,
+                                            expires_val, exp_len);
+            }
+        }
+
+        return LSI_OK;
+    }
+
     return LSI_OK;
 }

@@ -61,11 +61,11 @@ set_target_properties(rapidcheck_gtest PROPERTIES
   INTERFACE_LINK_LIBRARIES "rapidcheck"
 )
 
-# Import target "rapidcheck" for configuration "Debug"
-set_property(TARGET rapidcheck APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+# Import target "rapidcheck" for configuration "Release"
+set_property(TARGET rapidcheck APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(rapidcheck PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "/home/ivmm/ols-extra/build/_deps/rapidcheck-build/librapidcheck.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "/home/ivmm/ols-extra/build/_deps/rapidcheck-build/librapidcheck.a"
   )
 
 # This file does not depend on other imported targets which have

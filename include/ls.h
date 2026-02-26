@@ -153,6 +153,34 @@ int         lsi_register_hook(int hook_point, lsi_hook_cb cb, int priority);
 /* Logging */
 void        lsi_log(lsi_session_t *session, int level, const char *fmt, ...);
 
+/* ------------------------------------------------------------------ */
+/*  v2 LSIAPI extensions                                               */
+/* ------------------------------------------------------------------ */
+
+/* Directory options (v2: Options directive) */
+int         lsi_session_set_dir_option(lsi_session_t *session,
+                                       const char *option, int enabled);
+int         lsi_session_get_dir_option(lsi_session_t *session,
+                                       const char *option);
+
+/* Internal URI redirect (v2: DirectoryIndex) */
+int         lsi_session_set_uri_internal(lsi_session_t *session,
+                                         const char *uri, int uri_len);
+
+/* File existence check (v2: DirectoryIndex) */
+int         lsi_session_file_exists(lsi_session_t *session,
+                                    const char *path);
+
+/* Request method (v2: Limit/LimitExcept) */
+const char *lsi_session_get_method(lsi_session_t *session, int *len);
+
+/* Authorization header (v2: AuthType Basic) */
+const char *lsi_session_get_auth_header(lsi_session_t *session, int *len);
+
+/* WWW-Authenticate header (v2: AuthType Basic) */
+int         lsi_session_set_www_authenticate(lsi_session_t *session,
+                                             const char *realm, int realm_len);
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif

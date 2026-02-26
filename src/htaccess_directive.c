@@ -39,6 +39,26 @@ static void directive_free_fields(htaccess_directive_t *dir)
         free(dir->data.envif.pattern);
         break;
 
+    /* v2 container types — recursively free children */
+    case DIR_IFMODULE:
+        htaccess_directives_free(dir->data.ifmodule.children);
+        break;
+
+    case DIR_FILES:
+        htaccess_directives_free(dir->data.files.children);
+        break;
+
+    case DIR_REQUIRE_ANY_OPEN:
+    case DIR_REQUIRE_ALL_OPEN:
+        htaccess_directives_free(dir->data.require_container.children);
+        break;
+
+    case DIR_LIMIT:
+    case DIR_LIMIT_EXCEPT:
+        free(dir->data.limit.methods);
+        htaccess_directives_free(dir->data.limit.children);
+        break;
+
     default:
         /* No additional heap allocations for other types */
         break;

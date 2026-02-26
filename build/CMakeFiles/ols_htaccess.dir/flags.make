@@ -6,5 +6,5 @@ C_DEFINES = -Dols_htaccess_EXPORTS
 
 C_INCLUDES = -I/home/ivmm/ols-extra/include
 
-C_FLAGS = -g -std=gnu11 -fPIC
+C_FLAGS = -O3 -DNDEBUG -std=gnu11 -fPIC
 

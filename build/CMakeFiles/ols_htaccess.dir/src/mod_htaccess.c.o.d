@@ -39,6 +39,14 @@ CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o: \
  /home/ivmm/ols-extra/include/htaccess_exec_expires.h \
  /home/ivmm/ols-extra/include/htaccess_exec_error_doc.h \
  /home/ivmm/ols-extra/include/htaccess_exec_files_match.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_options.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_require.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_limit.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_auth.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_handler.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_dirindex.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_forcetype.h \
+ /home/ivmm/ols-extra/include/htaccess_exec_encoding.h \
  /usr/include/string.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/strings.h /usr/include/stdlib.h \
@@ -61,4 +69,6 @@ CMakeFiles/ols_htaccess.dir/src/mod_htaccess.c.o: \
  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
- /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h
+ /usr/include/alloca.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-float.h

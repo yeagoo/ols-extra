@@ -64,21 +64,25 @@ int exec_header(lsi_session_t *session, const htaccess_directive_t *dir)
 
     switch (dir->type) {
     case DIR_HEADER_SET:
+    case DIR_HEADER_ALWAYS_SET:
         if (!dir->value)
             return LSI_ERROR;
         return lsi_session_set_resp_header(session, dir->name, name_len,
                                            dir->value, val_len);
 
     case DIR_HEADER_UNSET:
+    case DIR_HEADER_ALWAYS_UNSET:
         return lsi_session_remove_resp_header(session, dir->name, name_len);
 
     case DIR_HEADER_APPEND:
+    case DIR_HEADER_ALWAYS_APPEND:
         if (!dir->value)
             return LSI_ERROR;
         return lsi_session_append_resp_header(session, dir->name, name_len,
                                               dir->value, val_len);
 
-    case DIR_HEADER_MERGE: {
+    case DIR_HEADER_MERGE:
+    case DIR_HEADER_ALWAYS_MERGE: {
         if (!dir->value)
             return LSI_ERROR;
 
@@ -98,6 +102,7 @@ int exec_header(lsi_session_t *session, const htaccess_directive_t *dir)
     }
 
     case DIR_HEADER_ADD:
+    case DIR_HEADER_ALWAYS_ADD:
         if (!dir->value)
             return LSI_ERROR;
         return lsi_session_add_resp_header(session, dir->name, name_len,

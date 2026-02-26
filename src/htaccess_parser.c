@@ -109,6 +109,24 @@ static char *rest_of_line(const char **pp)
     return s;
 }
 
+/**
+ * Get the rest of the line (trimmed) as a strdup'd string, preserving quotes.
+ * Used for ErrorDocument values where the leading quote is semantically significant.
+ */
+static char *rest_of_line_raw(const char **pp)
+{
+    const char *p = skip_ws(*pp);
+    if (!*p)
+        return NULL;
+    size_t len = strlen(p);
+    len = trimmed_len(p, len);
+    if (len == 0)
+        return NULL;
+    char *s = strndup(p, len);
+    *pp = p + len;
+    return s;
+}
+
 /** Allocate a zeroed directive node. */
 static htaccess_directive_t *alloc_directive(directive_type_t type, int line)
 {
@@ -140,7 +158,7 @@ static void append_directive(htaccess_directive_t **head,
 /* ------------------------------------------------------------------ */
 
 /**
- * Parse: Header set|unset|append|merge|add <name> [<value>]
+ * Parse: Header [always] set|unset|append|merge|add <name> [<value>]
  */
 static htaccess_directive_t *parse_header(const char *args, int line)
 {
@@ -149,20 +167,30 @@ static htaccess_directive_t *parse_header(const char *args, int line)
     if (!action)
         return NULL;
 
+    /* Check for "always" modifier */
+    int always = 0;
+    if (strcasecmp(action, "always") == 0) {
+        always = 1;
+        free(action);
+        action = next_token(&p);
+        if (!action)
+            return NULL;
+    }
+
     directive_type_t type;
     int needs_value = 1;
 
     if (strcasecmp(action, "set") == 0)
-        type = DIR_HEADER_SET;
+        type = always ? DIR_HEADER_ALWAYS_SET : DIR_HEADER_SET;
     else if (strcasecmp(action, "unset") == 0) {
-        type = DIR_HEADER_UNSET;
+        type = always ? DIR_HEADER_ALWAYS_UNSET : DIR_HEADER_UNSET;
         needs_value = 0;
     } else if (strcasecmp(action, "append") == 0)
-        type = DIR_HEADER_APPEND;
+        type = always ? DIR_HEADER_ALWAYS_APPEND : DIR_HEADER_APPEND;
     else if (strcasecmp(action, "merge") == 0)
-        type = DIR_HEADER_MERGE;
+        type = always ? DIR_HEADER_ALWAYS_MERGE : DIR_HEADER_MERGE;
     else if (strcasecmp(action, "add") == 0)
-        type = DIR_HEADER_ADD;
+        type = always ? DIR_HEADER_ALWAYS_ADD : DIR_HEADER_ADD;
     else {
         free(action);
         return NULL;
@@ -513,7 +541,7 @@ static htaccess_directive_t *parse_error_document(const char *args, int line)
     }
     free(code_str);
 
-    char *value = rest_of_line(&p);
+    char *value = rest_of_line_raw(&p);
     if (!value)
         return NULL;
 
@@ -578,6 +606,29 @@ static htaccess_directive_t *parse_expires_by_type(const char *args, int line)
     htaccess_directive_t *d = alloc_directive(DIR_EXPIRES_BY_TYPE, line);
     if (!d) { free(mime); free(duration_str); return NULL; }
     d->name = mime;
+    d->value = duration_str;
+    d->data.expires.duration_sec = secs;
+    return d;
+}
+
+/**
+ * Parse: ExpiresDefault "access plus N unit"
+ */
+static htaccess_directive_t *parse_expires_default(const char *args, int line)
+{
+    const char *p = skip_ws(args);
+    char *duration_str = rest_of_line(&p);
+    if (!duration_str)
+        return NULL;
+
+    long secs = parse_expires_duration(duration_str);
+    if (secs < 0) {
+        free(duration_str);
+        return NULL;
+    }
+
+    htaccess_directive_t *d = alloc_directive(DIR_EXPIRES_DEFAULT, line);
+    if (!d) { free(duration_str); return NULL; }
     d->value = duration_str;
     d->data.expires.duration_sec = secs;
     return d;
@@ -791,6 +842,69 @@ static htaccess_directive_t *parse_brute_force_action(const char *args, int line
 }
 
 /**
+ * Parse: Options [+|-]Flag1 [+|-]Flag2 ...
+ * Supported flags: Indexes, FollowSymLinks, MultiViews, ExecCGI
+ * Tri-state: +1 = enable, -1 = disable, 0 = unchanged
+ */
+static htaccess_directive_t *parse_options(const char *args, int line)
+{
+    const char *p = skip_ws(args);
+    char *flags_str = rest_of_line(&p);
+    if (!flags_str)
+        return NULL;
+
+    htaccess_directive_t *d = alloc_directive(DIR_OPTIONS, line);
+    if (!d) {
+        free(flags_str);
+        return NULL;
+    }
+    d->value = flags_str;
+
+    /* Parse individual flags from the value string */
+    const char *s = flags_str;
+    while (*s) {
+        s = skip_ws(s);
+        if (!*s)
+            break;
+
+        int sign = 0;
+        if (*s == '+') {
+            sign = 1;
+            s++;
+        } else if (*s == '-') {
+            sign = -1;
+            s++;
+        } else {
+            /* No sign prefix — treat as enable */
+            sign = 1;
+        }
+
+        /* Extract flag name */
+        const char *start = s;
+        while (*s && !isspace((unsigned char)*s))
+            s++;
+        size_t flen = (size_t)(s - start);
+
+        if (flen == 7 && strncasecmp(start, "Indexes", 7) == 0) {
+            d->data.options.indexes = sign;
+        } else if (flen == 14 && strncasecmp(start, "FollowSymLinks", 14) == 0) {
+            d->data.options.follow_symlinks = sign;
+        } else if (flen == 10 && strncasecmp(start, "MultiViews", 10) == 0) {
+            d->data.options.multiviews = sign;
+        } else if (flen == 7 && strncasecmp(start, "ExecCGI", 7) == 0) {
+            d->data.options.exec_cgi = sign;
+        } else {
+            /* Unknown flag — log WARN and ignore */
+            lsi_log(NULL, LSI_LOG_WARN,
+                    "[htaccess] line %d: unknown Options flag: %.*s",
+                    line, (int)flen, start);
+        }
+    }
+
+    return d;
+}
+
+/**
  * Parse: BruteForceThrottleDuration <N>
  */
 static htaccess_directive_t *parse_brute_force_throttle(const char *args, int line)
@@ -813,6 +927,61 @@ static htaccess_directive_t *parse_brute_force_throttle(const char *args, int li
         return NULL;
     d->data.brute_force.throttle_ms = (int)n;
     return d;
+}
+
+/**
+ * Parse: Require all granted | Require all denied | Require ip <cidr>
+ *        Require not ip <cidr> | Require valid-user
+ */
+static htaccess_directive_t *parse_require(const char *args, int line)
+{
+    const char *p = skip_ws(args);
+    const char *after;
+
+    /* Require all granted */
+    after = match_kw(p, "all");
+    if (after) {
+        const char *sub = skip_ws(after);
+        if (strncasecmp(sub, "granted", 7) == 0)
+            return alloc_directive(DIR_REQUIRE_ALL_GRANTED, line);
+        if (strncasecmp(sub, "denied", 6) == 0)
+            return alloc_directive(DIR_REQUIRE_ALL_DENIED, line);
+        return NULL;
+    }
+
+    /* Require not ip <cidr-list> */
+    after = match_kw(p, "not");
+    if (after) {
+        const char *sub = skip_ws(after);
+        const char *after2 = match_kw(sub, "ip");
+        if (after2) {
+            char *val = rest_of_line(&after2);
+            if (!val) return NULL;
+            htaccess_directive_t *d = alloc_directive(DIR_REQUIRE_NOT_IP, line);
+            if (!d) { free(val); return NULL; }
+            d->value = val;
+            return d;
+        }
+        return NULL;
+    }
+
+    /* Require ip <cidr-list> */
+    after = match_kw(p, "ip");
+    if (after) {
+        char *val = rest_of_line(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_REQUIRE_IP, line);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* Require valid-user */
+    after = match_kw(p, "valid-user");
+    if (after)
+        return alloc_directive(DIR_REQUIRE_VALID_USER, line);
+
+    return NULL;
 }
 
 /* ------------------------------------------------------------------ */
@@ -898,6 +1067,11 @@ static htaccess_directive_t *parse_line(const char *line, int line_num)
     if (after)
         return parse_expires_by_type(after, line_num);
 
+    /* ExpiresDefault */
+    after = match_kw(p, "ExpiresDefault");
+    if (after)
+        return parse_expires_default(after, line_num);
+
     /* SetEnvIf (must check before SetEnv) */
     after = match_kw(p, "SetEnvIf");
     if (after)
@@ -937,6 +1111,168 @@ static htaccess_directive_t *parse_line(const char *line, int line_num)
     after = match_kw(p, "BruteForceThrottleDuration");
     if (after)
         return parse_brute_force_throttle(after, line_num);
+
+    /* BruteForceXForwardedFor On|Off */
+    after = match_kw(p, "BruteForceXForwardedFor");
+    if (after) {
+        char *val = next_token(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_BRUTE_FORCE_X_FORWARDED_FOR, line_num);
+        if (!d) { free(val); return NULL; }
+        d->data.brute_force.enabled = (strcasecmp(val, "On") == 0) ? 1 : 0;
+        free(val);
+        return d;
+    }
+
+    /* BruteForceWhitelist CIDR list */
+    after = match_kw(p, "BruteForceWhitelist");
+    if (after) {
+        char *val = rest_of_line(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_BRUTE_FORCE_WHITELIST, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* BruteForceProtectPath URL path */
+    after = match_kw(p, "BruteForceProtectPath");
+    if (after) {
+        char *val = next_token(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_BRUTE_FORCE_PROTECT_PATH, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* Options */
+    after = match_kw(p, "Options");
+    if (after)
+        return parse_options(after, line_num);
+
+    /* Require (must check before other R-keywords) */
+    after = match_kw(p, "Require");
+    if (after)
+        return parse_require(after, line_num);
+
+    /* AuthType */
+    after = match_kw(p, "AuthType");
+    if (after) {
+        char *val = next_token(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_AUTH_TYPE, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* AuthName */
+    after = match_kw(p, "AuthName");
+    if (after) {
+        char *val = rest_of_line(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_AUTH_NAME, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* AuthUserFile */
+    after = match_kw(p, "AuthUserFile");
+    if (after) {
+        char *val = rest_of_line(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_AUTH_USER_FILE, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* AddHandler handler-name ext1 ext2 ... */
+    after = match_kw(p, "AddHandler");
+    if (after) {
+        char *handler = next_token(&after);
+        if (!handler) return NULL;
+        char *exts = rest_of_line(&after);
+        htaccess_directive_t *d = alloc_directive(DIR_ADD_HANDLER, line_num);
+        if (!d) { free(handler); free(exts); return NULL; }
+        d->name = handler;
+        d->value = exts;  /* may be NULL if no extensions */
+        return d;
+    }
+
+    /* SetHandler handler-name */
+    after = match_kw(p, "SetHandler");
+    if (after) {
+        char *val = rest_of_line(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_SET_HANDLER, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* AddType mime-type ext1 ext2 ... */
+    after = match_kw(p, "AddType");
+    if (after) {
+        char *mime = next_token(&after);
+        if (!mime) return NULL;
+        char *exts = rest_of_line(&after);
+        htaccess_directive_t *d = alloc_directive(DIR_ADD_TYPE, line_num);
+        if (!d) { free(mime); free(exts); return NULL; }
+        d->name = mime;
+        d->value = exts;  /* may be NULL if no extensions */
+        return d;
+    }
+
+    /* DirectoryIndex file1 file2 ... */
+    after = match_kw(p, "DirectoryIndex");
+    if (after) {
+        char *val = rest_of_line(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_DIRECTORY_INDEX, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* ForceType mime-type */
+    after = match_kw(p, "ForceType");
+    if (after) {
+        char *val = next_token(&after);
+        if (!val) return NULL;
+        htaccess_directive_t *d = alloc_directive(DIR_FORCE_TYPE, line_num);
+        if (!d) { free(val); return NULL; }
+        d->value = val;
+        return d;
+    }
+
+    /* AddEncoding encoding ext1 ext2 ... */
+    after = match_kw(p, "AddEncoding");
+    if (after) {
+        char *enc = next_token(&after);
+        if (!enc) return NULL;
+        char *exts = rest_of_line(&after);
+        htaccess_directive_t *d = alloc_directive(DIR_ADD_ENCODING, line_num);
+        if (!d) { free(enc); free(exts); return NULL; }
+        d->name = enc;
+        d->value = exts;
+        return d;
+    }
+
+    /* AddCharset charset ext1 ext2 ... */
+    after = match_kw(p, "AddCharset");
+    if (after) {
+        char *cs = next_token(&after);
+        if (!cs) return NULL;
+        char *exts = rest_of_line(&after);
+        htaccess_directive_t *d = alloc_directive(DIR_ADD_CHARSET, line_num);
+        if (!d) { free(cs); free(exts); return NULL; }
+        d->name = cs;
+        d->value = exts;
+        return d;
+    }
 
     return NULL; /* Unrecognised directive */
 }
@@ -1019,8 +1355,338 @@ static int is_files_match_close(const char *line)
 }
 
 /* ------------------------------------------------------------------ */
+/*  IfModule block detection helpers                                   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Check if a line is an <IfModule [!]module_name> opening tag.
+ * If so, extracts the module name (including any "!" prefix) into *out_module
+ * and sets *negated to 1 if the "!" prefix is present.
+ * Caller must free *out_module.
+ * Returns 1 if matched, 0 otherwise.
+ */
+static int is_ifmodule_open(const char *line, char **out_module, int *negated)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<')
+        return 0;
+    p++;
+    const char *after = match_kw(p, "IfModule");
+    if (!after)
+        return 0;
+    p = skip_ws(after);
+
+    /* Check for negation prefix */
+    int neg = 0;
+    if (*p == '!') {
+        neg = 1;
+        p++;
+        /* Allow optional whitespace after '!' */
+        p = skip_ws(p);
+    }
+
+    /* Extract module name (may be quoted) */
+    const char *start = p;
+    if (*p == '"') {
+        p++;
+        const char *end = strchr(p, '"');
+        if (!end)
+            return 0;
+        start = p;
+        p = end;
+        /* Build module name with possible "!" prefix */
+        size_t name_len = (size_t)(p - start);
+        if (neg) {
+            *out_module = (char *)malloc(name_len + 2);
+            if (!*out_module) return 0;
+            (*out_module)[0] = '!';
+            memcpy(*out_module + 1, start, name_len);
+            (*out_module)[name_len + 1] = '\0';
+        } else {
+            *out_module = strndup(start, name_len);
+        }
+        p++; /* skip closing quote */
+        p = skip_ws(p);
+        if (*p != '>') {
+            free(*out_module);
+            *out_module = NULL;
+            return 0;
+        }
+        *negated = neg;
+        return 1;
+    }
+
+    /* Unquoted module name */
+    while (*p && *p != '>' && !isspace((unsigned char)*p))
+        p++;
+    if (p == start)
+        return 0;
+
+    size_t name_len = (size_t)(p - start);
+    if (neg) {
+        *out_module = (char *)malloc(name_len + 2);
+        if (!*out_module) return 0;
+        (*out_module)[0] = '!';
+        memcpy(*out_module + 1, start, name_len);
+        (*out_module)[name_len + 1] = '\0';
+    } else {
+        *out_module = strndup(start, name_len);
+    }
+
+    p = skip_ws(p);
+    if (*p != '>') {
+        free(*out_module);
+        *out_module = NULL;
+        return 0;
+    }
+    *negated = neg;
+    return 1;
+}
+
+/**
+ * Check if a line is a </IfModule> closing tag.
+ * Accepts both </IfModule> and </IfModule > (with optional space).
+ */
+static int is_ifmodule_close(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<')
+        return 0;
+    p++;
+    if (*p != '/')
+        return 0;
+    p++;
+
+    size_t kw_len = strlen("IfModule");
+    if (strncasecmp(p, "IfModule", kw_len) != 0)
+        return 0;
+    p += kw_len;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+/* ------------------------------------------------------------------ */
+/*  Files block detection helpers                                      */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Check if a line is a <Files filename> opening tag.
+ * If so, extracts the filename into *out_filename (caller must free).
+ * Returns 1 if matched, 0 otherwise.
+ */
+static int is_files_open(const char *line, char **out_filename)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<')
+        return 0;
+    p++;
+    const char *after = match_kw(p, "Files");
+    if (!after)
+        return 0;
+
+    /* Ensure we don't match "FilesMatch" */
+    if (strncasecmp(p, "FilesMatch", 10) == 0)
+        return 0;
+
+    p = skip_ws(after);
+
+    /* Extract filename (may be quoted) */
+    if (*p == '"') {
+        p++;
+        const char *end = strchr(p, '"');
+        if (!end)
+            return 0;
+        *out_filename = strndup(p, (size_t)(end - p));
+        /* Verify closing '>' follows */
+        p = skip_ws(end + 1);
+        if (*p != '>') {
+            free(*out_filename);
+            *out_filename = NULL;
+            return 0;
+        }
+        return 1;
+    }
+
+    /* Unquoted filename */
+    const char *start = p;
+    while (*p && *p != '>' && !isspace((unsigned char)*p))
+        p++;
+    if (p == start)
+        return 0;
+    *out_filename = strndup(start, (size_t)(p - start));
+    p = skip_ws(p);
+    if (*p != '>') {
+        free(*out_filename);
+        *out_filename = NULL;
+        return 0;
+    }
+    return 1;
+}
+
+/**
+ * Check if a line is a </Files> closing tag.
+ * Accepts both </Files> and </Files > (with optional space).
+ * Does NOT match </FilesMatch>.
+ */
+static int is_files_close(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<')
+        return 0;
+    p++;
+    if (*p != '/')
+        return 0;
+    p++;
+
+    size_t kw_len = strlen("Files");
+    if (strncasecmp(p, "Files", kw_len) != 0)
+        return 0;
+    p += kw_len;
+
+    /* Make sure we don't match </FilesMatch> */
+    if (*p && *p != '>' && !isspace((unsigned char)*p))
+        return 0;
+
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+/* ------------------------------------------------------------------ */
+/*  RequireAny / RequireAll block detection helpers                     */
+/* ------------------------------------------------------------------ */
+
+static int is_require_any_open(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p = skip_ws(p + 1);
+    if (strncasecmp(p, "RequireAny", 10) != 0) return 0;
+    p += 10;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+static int is_require_any_close(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p++;
+    if (*p != '/') return 0;
+    p++;
+    if (strncasecmp(p, "RequireAny", 10) != 0) return 0;
+    p += 10;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+static int is_require_all_open(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p = skip_ws(p + 1);
+    if (strncasecmp(p, "RequireAll", 10) != 0) return 0;
+    p += 10;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+static int is_require_all_close(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p++;
+    if (*p != '/') return 0;
+    p++;
+    if (strncasecmp(p, "RequireAll", 10) != 0) return 0;
+    p += 10;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+/* ------------------------------------------------------------------ */
+/*  Limit / LimitExcept block detection helpers                        */
+/* ------------------------------------------------------------------ */
+
+static int is_limit_open(const char *line, char **out_methods)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p = skip_ws(p + 1);
+    /* Must match "Limit" but NOT "LimitExcept" */
+    if (strncasecmp(p, "LimitExcept", 11) == 0)
+        return 0;
+    if (strncasecmp(p, "Limit", 5) != 0) return 0;
+    p += 5;
+    if (!isspace((unsigned char)*p)) return 0;
+    p = skip_ws(p);
+    /* Extract methods up to '>' */
+    const char *start = p;
+    while (*p && *p != '>') p++;
+    if (*p != '>') return 0;
+    /* Trim trailing whitespace from methods */
+    const char *end = p;
+    while (end > start && isspace((unsigned char)*(end - 1))) end--;
+    if (end <= start) return 0;
+    *out_methods = strndup(start, (size_t)(end - start));
+    return 1;
+}
+
+static int is_limit_close(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p++;
+    if (*p != '/') return 0;
+    p++;
+    /* Must match "Limit" but NOT "LimitExcept" */
+    if (strncasecmp(p, "LimitExcept", 11) == 0)
+        return 0;
+    if (strncasecmp(p, "Limit", 5) != 0) return 0;
+    p += 5;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+static int is_limit_except_open(const char *line, char **out_methods)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p = skip_ws(p + 1);
+    if (strncasecmp(p, "LimitExcept", 11) != 0) return 0;
+    p += 11;
+    if (!isspace((unsigned char)*p)) return 0;
+    p = skip_ws(p);
+    const char *start = p;
+    while (*p && *p != '>') p++;
+    if (*p != '>') return 0;
+    const char *end = p;
+    while (end > start && isspace((unsigned char)*(end - 1))) end--;
+    if (end <= start) return 0;
+    *out_methods = strndup(start, (size_t)(end - start));
+    return 1;
+}
+
+static int is_limit_except_close(const char *line)
+{
+    const char *p = skip_ws(line);
+    if (*p != '<') return 0;
+    p++;
+    if (*p != '/') return 0;
+    p++;
+    if (strncasecmp(p, "LimitExcept", 11) != 0) return 0;
+    p += 11;
+    p = skip_ws(p);
+    return (*p == '>');
+}
+
+/* ------------------------------------------------------------------ */
 /*  Main parser entry point                                            */
 /* ------------------------------------------------------------------ */
+
+/**
+ * Maximum nesting depth for IfModule blocks.
+ */
+#define MAX_IFMODULE_DEPTH 16
 
 htaccess_directive_t *htaccess_parse(const char *content, size_t len,
                                      const char *filepath)
@@ -1045,6 +1711,41 @@ htaccess_directive_t *htaccess_parse(const char *content, size_t len,
     int fm_start_line = 0;
     htaccess_directive_t *fm_children_head = NULL;
     htaccess_directive_t *fm_children_tail = NULL;
+
+    /* Files block state */
+    int in_files = 0;
+    char *files_name = NULL;
+    int files_start_line = 0;
+    htaccess_directive_t *files_children_head = NULL;
+    htaccess_directive_t *files_children_tail = NULL;
+
+    /* RequireAny block state */
+    int in_require_any = 0;
+    int require_any_start_line = 0;
+    htaccess_directive_t *rqa_children_head = NULL;
+    htaccess_directive_t *rqa_children_tail = NULL;
+
+    /* RequireAll block state */
+    int in_require_all = 0;
+    int require_all_start_line = 0;
+    htaccess_directive_t *rqall_children_head = NULL;
+    htaccess_directive_t *rqall_children_tail = NULL;
+
+    /* Limit block state */
+    int in_limit = 0;
+    char *limit_methods = NULL;
+    int limit_start_line = 0;
+    directive_type_t limit_type = DIR_LIMIT;
+    htaccess_directive_t *limit_children_head = NULL;
+    htaccess_directive_t *limit_children_tail = NULL;
+
+    /* IfModule nesting stack */
+    int ifmod_depth = 0;
+    char *ifmod_names[MAX_IFMODULE_DEPTH];
+    int   ifmod_negated[MAX_IFMODULE_DEPTH];
+    int   ifmod_start_lines[MAX_IFMODULE_DEPTH];
+    htaccess_directive_t *ifmod_children_head[MAX_IFMODULE_DEPTH];
+    htaccess_directive_t *ifmod_children_tail[MAX_IFMODULE_DEPTH];
 
     /* Manual line splitting to correctly count empty lines */
     char *cur = buf;
@@ -1074,13 +1775,98 @@ htaccess_directive_t *htaccess_parse(const char *content, size_t len,
         if (*p == '\0' || *p == '#')
             continue;
 
-        /* Check for </FilesMatch> closing tag */
+        /* --- IfModule close tag --- */
+        if (ifmod_depth > 0 && is_ifmodule_close(p)) {
+            int idx = ifmod_depth - 1;
+
+            /* Also close any unclosed FilesMatch inside this IfModule */
+            if (in_files_match) {
+                lsi_log(NULL, LSI_LOG_WARN,
+                        "[htaccess] %s:%d: unclosed <FilesMatch> block inside <IfModule>, discarding",
+                        fp, fm_start_line);
+                free(fm_pattern);
+                htaccess_directives_free(fm_children_head);
+                fm_pattern = NULL;
+                fm_children_head = NULL;
+                fm_children_tail = NULL;
+                in_files_match = 0;
+            }
+
+            /* Also close any unclosed Files inside this IfModule */
+            if (in_files) {
+                lsi_log(NULL, LSI_LOG_WARN,
+                        "[htaccess] %s:%d: unclosed <Files> block inside <IfModule>, discarding",
+                        fp, files_start_line);
+                free(files_name);
+                htaccess_directives_free(files_children_head);
+                files_name = NULL;
+                files_children_head = NULL;
+                files_children_tail = NULL;
+                in_files = 0;
+            }
+
+            /* Build the IfModule container node */
+            htaccess_directive_t *im = alloc_directive(DIR_IFMODULE, ifmod_start_lines[idx]);
+            if (im) {
+                im->name = ifmod_names[idx];
+                im->data.ifmodule.negated = ifmod_negated[idx];
+                im->data.ifmodule.children = ifmod_children_head[idx];
+
+                ifmod_depth--;
+
+                /* Append to parent context */
+                if (ifmod_depth > 0) {
+                    int parent = ifmod_depth - 1;
+                    append_directive(&ifmod_children_head[parent],
+                                     &ifmod_children_tail[parent], im);
+                } else {
+                    append_directive(&head, &tail, im);
+                }
+            } else {
+                free(ifmod_names[idx]);
+                htaccess_directives_free(ifmod_children_head[idx]);
+                ifmod_depth--;
+            }
+            continue;
+        }
+
+        /* --- IfModule open tag --- */
+        {
+            char *mod_name = NULL;
+            int neg = 0;
+            if (is_ifmodule_open(p, &mod_name, &neg)) {
+                if (ifmod_depth >= MAX_IFMODULE_DEPTH) {
+                    lsi_log(NULL, LSI_LOG_WARN,
+                            "[htaccess] %s:%d: IfModule nesting too deep, skipping",
+                            fp, line_num);
+                    free(mod_name);
+                } else {
+                    int idx = ifmod_depth;
+                    ifmod_names[idx] = mod_name;
+                    ifmod_negated[idx] = neg;
+                    ifmod_start_lines[idx] = line_num;
+                    ifmod_children_head[idx] = NULL;
+                    ifmod_children_tail[idx] = NULL;
+                    ifmod_depth++;
+                }
+                continue;
+            }
+        }
+
+        /* --- FilesMatch close tag --- */
         if (in_files_match && is_files_match_close(p)) {
             htaccess_directive_t *fm = alloc_directive(DIR_FILES_MATCH, fm_start_line);
             if (fm) {
                 fm->data.files_match.pattern = fm_pattern;
                 fm->data.files_match.children = fm_children_head;
-                append_directive(&head, &tail, fm);
+                /* Append to current context (IfModule or top-level) */
+                if (ifmod_depth > 0) {
+                    int idx = ifmod_depth - 1;
+                    append_directive(&ifmod_children_head[idx],
+                                     &ifmod_children_tail[idx], fm);
+                } else {
+                    append_directive(&head, &tail, fm);
+                }
             } else {
                 free(fm_pattern);
                 htaccess_directives_free(fm_children_head);
@@ -1092,8 +1878,8 @@ htaccess_directive_t *htaccess_parse(const char *content, size_t len,
             continue;
         }
 
-        /* Check for <FilesMatch "pattern"> opening tag */
-        if (!in_files_match) {
+        /* --- FilesMatch open tag --- */
+        if (!in_files_match && !in_files) {
             char *pattern = NULL;
             if (is_files_match_open(p, &pattern)) {
                 in_files_match = 1;
@@ -1105,11 +1891,181 @@ htaccess_directive_t *htaccess_parse(const char *content, size_t len,
             }
         }
 
+        /* --- Files close tag --- */
+        if (in_files && is_files_close(p)) {
+            htaccess_directive_t *fd = alloc_directive(DIR_FILES, files_start_line);
+            if (fd) {
+                fd->name = files_name;
+                fd->data.files.children = files_children_head;
+                /* Append to current context (IfModule or top-level) */
+                if (ifmod_depth > 0) {
+                    int idx = ifmod_depth - 1;
+                    append_directive(&ifmod_children_head[idx],
+                                     &ifmod_children_tail[idx], fd);
+                } else {
+                    append_directive(&head, &tail, fd);
+                }
+            } else {
+                free(files_name);
+                htaccess_directives_free(files_children_head);
+            }
+            files_name = NULL;
+            files_children_head = NULL;
+            files_children_tail = NULL;
+            in_files = 0;
+            continue;
+        }
+
+        /* --- Files open tag --- */
+        if (!in_files_match && !in_files) {
+            char *fname = NULL;
+            if (is_files_open(p, &fname)) {
+                in_files = 1;
+                files_name = fname;
+                files_start_line = line_num;
+                files_children_head = NULL;
+                files_children_tail = NULL;
+                continue;
+            }
+        }
+
+        /* --- RequireAny close tag --- */
+        if (in_require_any && is_require_any_close(p)) {
+            htaccess_directive_t *rqa = alloc_directive(DIR_REQUIRE_ANY_OPEN, require_any_start_line);
+            if (rqa) {
+                rqa->data.require_container.children = rqa_children_head;
+                if (ifmod_depth > 0) {
+                    int idx = ifmod_depth - 1;
+                    append_directive(&ifmod_children_head[idx],
+                                     &ifmod_children_tail[idx], rqa);
+                } else {
+                    append_directive(&head, &tail, rqa);
+                }
+            } else {
+                htaccess_directives_free(rqa_children_head);
+            }
+            rqa_children_head = NULL;
+            rqa_children_tail = NULL;
+            in_require_any = 0;
+            continue;
+        }
+
+        /* --- RequireAny open tag --- */
+        if (!in_require_any && !in_require_all && is_require_any_open(p)) {
+            in_require_any = 1;
+            require_any_start_line = line_num;
+            rqa_children_head = NULL;
+            rqa_children_tail = NULL;
+            continue;
+        }
+
+        /* --- RequireAll close tag --- */
+        if (in_require_all && is_require_all_close(p)) {
+            htaccess_directive_t *rqall = alloc_directive(DIR_REQUIRE_ALL_OPEN, require_all_start_line);
+            if (rqall) {
+                rqall->data.require_container.children = rqall_children_head;
+                if (ifmod_depth > 0) {
+                    int idx = ifmod_depth - 1;
+                    append_directive(&ifmod_children_head[idx],
+                                     &ifmod_children_tail[idx], rqall);
+                } else {
+                    append_directive(&head, &tail, rqall);
+                }
+            } else {
+                htaccess_directives_free(rqall_children_head);
+            }
+            rqall_children_head = NULL;
+            rqall_children_tail = NULL;
+            in_require_all = 0;
+            continue;
+        }
+
+        /* --- RequireAll open tag --- */
+        if (!in_require_any && !in_require_all && is_require_all_open(p)) {
+            in_require_all = 1;
+            require_all_start_line = line_num;
+            rqall_children_head = NULL;
+            rqall_children_tail = NULL;
+            continue;
+        }
+
+        /* --- Limit close tag --- */
+        if (in_limit && !in_require_any && !in_require_all) {
+            int is_close = 0;
+            if (limit_type == DIR_LIMIT)
+                is_close = is_limit_close(p);
+            else
+                is_close = is_limit_except_close(p);
+
+            if (is_close) {
+                htaccess_directive_t *ld = alloc_directive(limit_type, limit_start_line);
+                if (ld) {
+                    ld->data.limit.methods = limit_methods;
+                    ld->data.limit.children = limit_children_head;
+                    if (ifmod_depth > 0) {
+                        int idx = ifmod_depth - 1;
+                        append_directive(&ifmod_children_head[idx],
+                                         &ifmod_children_tail[idx], ld);
+                    } else {
+                        append_directive(&head, &tail, ld);
+                    }
+                } else {
+                    free(limit_methods);
+                    htaccess_directives_free(limit_children_head);
+                }
+                limit_methods = NULL;
+                limit_children_head = NULL;
+                limit_children_tail = NULL;
+                in_limit = 0;
+                continue;
+            }
+        }
+
+        /* --- LimitExcept open tag (must check before Limit) --- */
+        if (!in_limit && !in_require_any && !in_require_all) {
+            char *methods = NULL;
+            if (is_limit_except_open(p, &methods)) {
+                in_limit = 1;
+                limit_type = DIR_LIMIT_EXCEPT;
+                limit_methods = methods;
+                limit_start_line = line_num;
+                limit_children_head = NULL;
+                limit_children_tail = NULL;
+                continue;
+            }
+        }
+
+        /* --- Limit open tag --- */
+        if (!in_limit && !in_require_any && !in_require_all) {
+            char *methods = NULL;
+            if (is_limit_open(p, &methods)) {
+                in_limit = 1;
+                limit_type = DIR_LIMIT;
+                limit_methods = methods;
+                limit_start_line = line_num;
+                limit_children_head = NULL;
+                limit_children_tail = NULL;
+                continue;
+            }
+        }
+
         /* Parse the directive line */
         htaccess_directive_t *dir = parse_line(p, line_num);
         if (dir) {
             if (in_files_match) {
                 append_directive(&fm_children_head, &fm_children_tail, dir);
+            } else if (in_files) {
+                append_directive(&files_children_head, &files_children_tail, dir);
+            } else if (in_require_any) {
+                append_directive(&rqa_children_head, &rqa_children_tail, dir);
+            } else if (in_require_all) {
+                append_directive(&rqall_children_head, &rqall_children_tail, dir);
+            } else if (in_limit) {
+                append_directive(&limit_children_head, &limit_children_tail, dir);
+            } else if (ifmod_depth > 0) {
+                int idx = ifmod_depth - 1;
+                append_directive(&ifmod_children_head[idx],
+                                 &ifmod_children_tail[idx], dir);
             } else {
                 append_directive(&head, &tail, dir);
             }
@@ -1127,6 +2083,51 @@ htaccess_directive_t *htaccess_parse(const char *content, size_t len,
                 fp, fm_start_line);
         free(fm_pattern);
         htaccess_directives_free(fm_children_head);
+    }
+
+    /* Handle unclosed Files block */
+    if (in_files) {
+        lsi_log(NULL, LSI_LOG_WARN,
+                "[htaccess] %s:%d: unclosed <Files> block, discarding",
+                fp, files_start_line);
+        free(files_name);
+        htaccess_directives_free(files_children_head);
+    }
+
+    /* Handle unclosed RequireAny block */
+    if (in_require_any) {
+        lsi_log(NULL, LSI_LOG_WARN,
+                "[htaccess] %s:%d: unclosed <RequireAny> block, discarding",
+                fp, require_any_start_line);
+        htaccess_directives_free(rqa_children_head);
+    }
+
+    /* Handle unclosed RequireAll block */
+    if (in_require_all) {
+        lsi_log(NULL, LSI_LOG_WARN,
+                "[htaccess] %s:%d: unclosed <RequireAll> block, discarding",
+                fp, require_all_start_line);
+        htaccess_directives_free(rqall_children_head);
+    }
+
+    /* Handle unclosed Limit/LimitExcept block */
+    if (in_limit) {
+        lsi_log(NULL, LSI_LOG_WARN,
+                "[htaccess] %s:%d: unclosed <%s> block, discarding",
+                fp, limit_start_line,
+                limit_type == DIR_LIMIT ? "Limit" : "LimitExcept");
+        free(limit_methods);
+        htaccess_directives_free(limit_children_head);
+    }
+
+    /* Handle unclosed IfModule blocks */
+    while (ifmod_depth > 0) {
+        ifmod_depth--;
+        lsi_log(NULL, LSI_LOG_WARN,
+                "[htaccess] %s:%d: unclosed <IfModule> block, discarding",
+                fp, ifmod_start_lines[ifmod_depth]);
+        free(ifmod_names[ifmod_depth]);
+        htaccess_directives_free(ifmod_children_head[ifmod_depth]);
     }
 
     free(buf);

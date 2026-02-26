@@ -3,19 +3,28 @@ compat_tests: \
   /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o \
   /usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/compat_tests.dir/compat/test_compat.cpp.o \
+  CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_directive.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_error_doc.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o \
+  CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_parser.c.o \
   CMakeFiles/compat_tests.dir/__/src/htaccess_printer.c.o \
@@ -24,6 +33,7 @@ compat_tests: \
   CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o \
   ../lib/libgtest.a \
   ../lib/libgtest_main.a \
+  /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libcrypt.so \
   ../lib/libgtest.a \
   /usr/lib/gcc/aarch64-linux-gnu/14/libstdc++.so \
   /usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libm.so \
@@ -61,6 +71,8 @@ compat_tests: \
 
 CMakeFiles/compat_tests.dir/compat/test_compat.cpp.o:
 
+CMakeFiles/compat_tests.dir/compat/test_compat_v2.cpp.o:
+
 CMakeFiles/compat_tests.dir/__/src/htaccess_cache.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_cidr.c.o:
@@ -71,7 +83,13 @@ CMakeFiles/compat_tests.dir/__/src/htaccess_dirwalker.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_acl.c.o:
 
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_auth.c.o:
+
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_brute_force.c.o:
+
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_dirindex.c.o:
+
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_encoding.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_env.c.o:
 
@@ -81,11 +99,21 @@ CMakeFiles/compat_tests.dir/__/src/htaccess_exec_expires.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_files_match.c.o:
 
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_forcetype.c.o:
+
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_handler.c.o:
+
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_header.c.o:
+
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_limit.c.o:
+
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_options.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_php.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_exec_redirect.c.o:
+
+CMakeFiles/compat_tests.dir/__/src/htaccess_exec_require.c.o:
 
 CMakeFiles/compat_tests.dir/__/src/htaccess_expires.c.o:
 
@@ -102,6 +130,8 @@ CMakeFiles/compat_tests.dir/mock_lsiapi.cpp.o:
 ../lib/libgtest.a:
 
 ../lib/libgtest_main.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libcrypt.so:
 
 ../lib/libgtest.a:
 

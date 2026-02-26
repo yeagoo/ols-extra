@@ -20,6 +20,7 @@ file(GLOB MODULE_SOURCES src/*.c)
 if(MODULE_SOURCES)
     add_library(ols_htaccess SHARED ${MODULE_SOURCES})
     target_include_directories(ols_htaccess PUBLIC ${CMAKE_SOURCE_DIR}/include)
+    target_link_libraries(ols_htaccess crypt)
     set_target_properties(ols_htaccess PROPERTIES
         OUTPUT_NAME "ols_htaccess"
         PREFIX ""
