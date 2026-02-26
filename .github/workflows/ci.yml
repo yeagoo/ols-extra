@@ -385,6 +385,23 @@ jobs:
       - name: Wait for services
         run: bash tests/e2e/lib/wait_for_services.sh
 
+      - name: Debug OLS config
+        run: |
+          echo "=== httpd_config.conf ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/httpd_config.conf 2>/dev/null || true
+          echo ""
+          echo "=== vhconf.conf ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols cat /usr/local/lsws/conf/vhosts/localhost/vhconf.conf 2>/dev/null || true
+          echo ""
+          echo "=== Document root listing ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols ls -la /var/www/vhosts/localhost/html/ 2>/dev/null || true
+          echo ""
+          echo "=== LSPHP versions available ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols ls -la /usr/local/lsws/lsphp*/bin/ 2>/dev/null || true
+          echo ""
+          echo "=== PHP version ==="
+          docker compose -f tests/e2e/docker-compose.yml exec -T ols php -v 2>/dev/null || true
+
       - name: Run PHP app tests
         run: bash tests/e2e/test_apps.sh --all
 

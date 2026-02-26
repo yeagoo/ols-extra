@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     unzip \
     wget \
+    bzip2 \
     mariadb-client \
     && rm -rf /var/lib/apt/lists/*
 
@@ -38,19 +39,52 @@ RUN mkdir -p /var/www/vhosts/localhost/html/wordpress \
     && chown -R nobody:nogroup /var/www/vhosts/localhost
 
 # Patch the default vhost config to enable .htaccess support and PHP
+# The base image vhost config may already have a scripthandler, but we ensure
+# lsphp81 is configured since we installed lsphp81 extensions.
 RUN VHCONF="/usr/local/lsws/conf/vhosts/localhost/vhconf.conf" && \
     if [ -f "$VHCONF" ]; then \
       sed -i 's/allowOverride.*/allowOverride             255/' "$VHCONF" || true; \
       grep -q 'allowOverride' "$VHCONF" || echo 'allowOverride 255' >> "$VHCONF"; \
     fi
 
-# Add module loading to httpd_config.conf
+# Ensure the httpd_config has an lsphp extprocessor and scripthandler.
+# The base image may use a different PHP version — we patch to use lsphp81
+# which has our mysql/curl/intl extensions installed.
 RUN CONF="/usr/local/lsws/conf/httpd_config.conf" && \
     if ! grep -q 'ols_htaccess' "$CONF" 2>/dev/null; then \
       echo '' >> "$CONF"; \
       echo 'module ols_htaccess {' >> "$CONF"; \
       echo '  ls_enabled              1' >> "$CONF"; \
       echo '}' >> "$CONF"; \
+    fi && \
+    if ! grep -q 'extprocessor lsphp' "$CONF" 2>/dev/null; then \
+      echo '' >> "$CONF"; \
+      echo 'extprocessor lsphp {' >> "$CONF"; \
+      echo '  type                    lsapi' >> "$CONF"; \
+      echo '  address                 uds://tmp/lshttpd/lsphp.sock' >> "$CONF"; \
+      echo '  maxConns                10' >> "$CONF"; \
+      echo '  env                     PHP_LSAPI_CHILDREN=10' >> "$CONF"; \
+      echo '  env                     LSAPI_AVOID_FORK=200M' >> "$CONF"; \
+      echo '  initTimeout             60' >> "$CONF"; \
+      echo '  retryTimeout            0' >> "$CONF"; \
+      echo '  persistConn             1' >> "$CONF"; \
+      echo '  respBuffer              0' >> "$CONF"; \
+      echo '  autoStart               2' >> "$CONF"; \
+      echo '  path                    /usr/local/lsws/lsphp81/bin/lsphp' >> "$CONF"; \
+      echo '  backlog                 100' >> "$CONF"; \
+      echo '  instances               1' >> "$CONF"; \
+      echo '}' >> "$CONF"; \
+    fi && \
+    if ! grep -q 'scripthandler' "$CONF" 2>/dev/null; then \
+      echo '' >> "$CONF"; \
+      echo 'scripthandler {' >> "$CONF"; \
+      echo '  add                     lsapi:lsphp php' >> "$CONF"; \
+      echo '}' >> "$CONF"; \
     fi
+
+# Also ensure the base image's existing lsphp extprocessor points to lsphp81
+# (base image may have lsphp83 or other version as default)
+RUN CONF="/usr/local/lsws/conf/httpd_config.conf" && \
+    sed -i 's|/usr/local/lsws/lsphp[0-9]*/bin/lsphp|/usr/local/lsws/lsphp81/bin/lsphp|g' "$CONF" || true
 
 EXPOSE 8088
