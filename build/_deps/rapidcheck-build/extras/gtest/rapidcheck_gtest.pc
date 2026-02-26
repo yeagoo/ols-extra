@@ -1,9 +1,0 @@
-Name: rapidcheck_gtest
-Description: gtest headers for rapidcheck
-Version: 
-Requires: rapidcheck
-prefix=/usr/local
-includedir=${prefix}/include
-libdir=${prefix}/lib
-Libs: 
-Cflags: -I${includedir}
